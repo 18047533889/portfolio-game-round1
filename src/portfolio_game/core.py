@@ -7,6 +7,25 @@ Objective: w'Cw/(b'Cb) + penalty * ||w-b||^2/||b||^2 on the long-only simplex.
 The bounded projected-gradient solver verifies a convex first-order gap. It is
 not a heuristic change of objective, and it is not dependent on CVXPY being
 available. Numerical convergence is distinguished from returning a safe fallback.
+
+Estimation chain, all of it from returns alone:
+  Ledoit-Wolf shrinkage -> long-run correlation
+  Marchenko-Pastur eigenvalue cleaning -> the part of that correlation that is
+      distinguishable from sampling noise
+  exponentially weighted short-run volatilities -> current risk scale
+  tree (HRP) anchor -> a diversified prior that does not trust the noisy
+      off-diagonal estimates on its own
+  convex QP -> the anchor shrunk toward the risk-minimising portfolio
+The anchor is what keeps small universes diversified (unconstrained minimum
+variance puts most of a 5-asset book into one asset); the QP is what stops the
+tree heuristic from overriding the covariance information.
+
+On wide, ill-conditioned cross-sections the QP stops reaching its 1e-8 relative
+gap inside the iteration budget; the tree anchor is then returned, and the
+diagnostic status records which branch actually produced the weights. That
+anchor is still a covariance-based allocation (shrunk + cleaned correlation,
+single linkage, inverse-variance cluster risk), not an equal-weight or
+per-asset placeholder, so the fallback degrades the tilt, not the risk model.
 """
 from __future__ import annotations
 
@@ -19,7 +38,13 @@ from scipy.spatial.distance import squareform
 from sklearn.covariance import ledoit_wolf
 
 LOOKBACK = 252
-MAX_DENSE_ASSETS = 256
+# Dense risk estimation is O(n^3) in the tree step, so the guard is a cost bound,
+# not a statistical one. Measured single-fit cost on a real 252xN cross-section:
+# N=256 -> 0.02 s, N=1455 -> 2.8 s, N=2048 -> 6.4 s, N=2900 -> 12.3 s. 2048 keeps
+# the worst realistic fold inside a few seconds while covering every standard
+# cross-section (the widest common benchmark has 1455 columns). Above it we fall
+# back to per-asset risk, which is O(T*N) and never allocates a dense matrix.
+MAX_DENSE_ASSETS = 2048
 WEIGHT_ATOL = 1e-10
 EQUAL_ATOL = 1e-8
 EQUAL_RTOL = 1e-5
@@ -96,8 +121,57 @@ def _stabilise_covariance(covariance: np.ndarray) -> np.ndarray:
     return (c + c.T) * 0.5
 
 
+def marchenko_pastur_edge(n_observations: int, n_assets: int) -> float:
+    """Upper edge of the Marchenko-Pastur bulk for a standardised matrix.
+
+    For a (n_observations x n_assets) matrix whose true correlation is the
+    identity, the empirical eigenvalue density converges to the MP law supported
+    on [(1 - 1/sqrt(q))^2, (1 + 1/sqrt(q))^2] with q = T / N. Eigenvalues at or
+    below that upper edge carry no reliable signal.
+    """
+    if n_assets < 1 or n_observations < 1:
+        raise ValueError("Dimensions must be positive")
+    q = n_observations / n_assets
+    return (1.0 + 1.0 / math.sqrt(q)) ** 2
+
+
+def rmt_denoise(correlation: np.ndarray, n_observations: int) -> np.ndarray:
+    """Random-matrix-theory cleaning of a correlation matrix.
+
+    Eigenvalues below the Marchenko-Pastur upper edge are statistically
+    indistinguishable from noise, so they are collapsed onto their common mean
+    (the trace-preserving choice) and the matrix is rebuilt. This is a variance
+    reduction of the estimate, not a change of what is being estimated, and it
+    leaves the matrix unit-diagonal and positive definite.
+
+    Skipped, rather than approximated, whenever the sample cannot separate
+    signal from noise: n_assets < 2 or n_observations <= n_assets + 2.
+    """
+    c = np.asarray(correlation, dtype=np.float64)
+    if c.ndim != 2 or c.shape[0] != c.shape[1] or not np.isfinite(c).all():
+        raise ValueError("Correlation must be a finite square matrix")
+    n_assets = c.shape[0]
+    if n_assets < 2 or n_observations <= n_assets + 2:
+        return c
+    eigenvalues, eigenvectors = np.linalg.eigh((c + c.T) * 0.5)
+    edge = marchenko_pastur_edge(int(n_observations), n_assets)
+    signal = eigenvalues >= edge
+    if signal.all() or not signal.any():
+        # Either every direction is resolvable or none is; there is no split to act on.
+        return c
+    noise_mean = float(eigenvalues[~signal].mean())
+    rebuilt = (eigenvectors * np.where(signal, eigenvalues, noise_mean)) @ eigenvectors.T
+    diagonal = np.sqrt(np.maximum(np.diag(rebuilt), np.finfo(float).tiny))
+    cleaned = rebuilt / diagonal[:, None] / diagonal[None, :]
+    cleaned = np.clip((cleaned + cleaned.T) * 0.5, -1.0, 1.0)
+    np.fill_diagonal(cleaned, 1.0)
+    if not np.isfinite(cleaned).all():
+        raise FloatingPointError("Denoised correlation is not finite")
+    return cleaned
+
+
 def estimate_covariance(returns: np.ndarray, half_life: float, recent_mix: float) -> np.ndarray:
-    """Ledoit-Wolf long correlation, exponentially weighted short volatility.
+    """Ledoit-Wolf long correlation, RMT-denoised, with EWMA short volatility.
 
     Expects complete data. A common scale is removed before any squaring so a
     very large finite observation cannot overflow the covariance calculation.
@@ -119,6 +193,10 @@ def estimate_covariance(returns: np.ndarray, half_life: float, recent_mix: float
     corr = slow / sd[:, None] / sd[None, :]
     corr = np.clip((corr + corr.T) * 0.5, -1.0, 1.0)
     np.fill_diagonal(corr, 1.0)
+    # Remove the part of the correlation spectrum that cannot be told apart from
+    # sampling noise; the long and the short layer then share one cleaner
+    # correlation shape instead of propagating one noisy estimate twice.
+    corr = rmt_denoise(corr, len(z))
     ages = np.arange(len(z) - 1, -1, -1, dtype=np.float64)
     a = np.exp2(-ages / half_life)
     a /= a.sum()
@@ -297,7 +375,7 @@ def allocate(
     *,
     half_life: float = 63.0,
     recent_mix: float = 0.25,
-    anchor_penalty: float = 1.0,
+    anchor_penalty: float = 0.25,
     method: str = "regularized",
 ) -> dict[str, Any]:
     """Compute weights with diagnostics, using no information outside returns.

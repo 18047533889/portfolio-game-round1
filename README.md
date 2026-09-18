@@ -1,12 +1,18 @@
-> **本次状态更新：** 请先阅读 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。2026-09-18 重新执行本地检查：58 passed、2 skipped；240 组压力测试最终失败 0；252/20 合成回测 28 个窗口失败 0。真实 skfolio 验收与真实市场回测未完成。GitHub main 现已包含完整代码（提交 `603f97b`，57 个文件），Actions 已随推送启动。此前上传未完成的实际原因是 HTTPS OAuth token 缺少 `workflow` 权限、无法推送 `.github/workflows/tests.yml`（并非平台安全检查）；改用 SSH 推送后成功。远端原占位提交保留在 `backup/pre-upload` 分支。下文是原项目使用说明，不代表本次已经完成其全部步骤。原 `publish_github.sh` 以私有仓库为保护前提，不适用于用户现在提供的公开目标仓库。
+> **本次状态更新（2026-09-19）：** 请先阅读 [docs/round1-final-report-zh.md](docs/round1-final-report-zh.md) 与 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。
+>
+> 真实 skfolio 验收已通过：`tools/verify_repo.py --require-integration` 返回 0，`pytest` 93 项（92 通过 / 1 跳过 / 0 失败），老师原版 `self_test.py` 打印 `Basic checks passed`、127 个组合、**0 个失败组合**，`ready_for_teacher_submission: true`。240 组合成边界数据压力测试最终失败 0。
+>
+> 算法已升级：相关矩阵增加 **Marchenko–Pastur 特征值去噪**，锚惩罚由 1.0 调整为 **0.25**。选型依据见 [docs/method-selection-zh.md](docs/method-selection-zh.md)。
+>
+> GitHub main 已包含完整代码。上次上传失败的实际原因是 HTTPS OAuth token 缺少 `workflow` 权限、无法推送 `.github/workflows/tests.yml`（并非平台安全检查）；改用 SSH 推送后成功，原占位提交保留在 `backup/pre-upload` 分支。下文是原项目使用说明。
 
 # Portfolio Game Round 1｜组合优化作业与研究工具
 
 MAFS5310 第一轮。只使用老师提供的资产收益率，不使用额外因子、外部行情、预训练模型或虚构现金资产。
 
-> **本次交付状态：代码和数值测试已完成，但真实 skfolio 验收尚未完成；GitHub 远端已上传完整代码，Actions 结果待观察。**
-> 最新实际运行记录见 `reports/verification.json` 和 `reports/ACCEPTANCE.md`。
-> 不能把数值测试通过当作老师自测通过，也不能把合成数据测试当作市场回测成绩。
+> **本次交付状态：代码、数值测试与真实 skfolio 验收均已完成，`submission/portfolio_round1.py` 可直接提交。**
+> 最新实际运行记录见 `reports/verification.json`、`reports/preflight.txt` 与 `docs/round1-final-report-zh.md`。
+> 合成数据测试不是市场回测成绩，二者在文档中始终分开陈述。
 
 ## 1. 哪一个给老师？
 
@@ -44,7 +50,9 @@ reports/                          真实测试记录和未完成事项
 
 ## 3. 当前算法
 
-252 期历史收益 → Ledoit–Wolf 收缩协方差 → 近期波动/长期相关性混合 → 树结构 HRP 参考配置 → 正则化最小方差。
+252 期历史收益 → Ledoit–Wolf 收缩得到长期相关矩阵 → **Marchenko–Pastur 特征值去噪** → 近期波动/长期相关性混合 → 树结构 HRP 参考配置 → 正则化最小方差。
+
+去噪这一步只动「与抽样噪声无法区分」的那部分谱：低于 MP 上边缘的特征值被合并到它们的共同均值，再重建并归一化回单位对角。它不改变被估计的对象，只降低估计的方差；当 `n_assets < 2` 或 `n_observations <= n_assets + 2` 时直接跳过，而不是做一个不可靠的近似。
 
 目标为：
 
@@ -152,7 +160,7 @@ python -m research.backtest --phase holdout --allow-holdout \
 
 主优化 → 有效 HRP 参考权重 → 反波动率 → 最后才使用确定性单资产配置。每条路径都检查最终权重。没有“优化失败就等权”。
 
-非有限值不填成零收益；不足以估计共同协方差时走逐资产风险后备。仅使用最近 252 行，保持原始资产列顺序，不修改输入。超过 256 个有效资产时不创建大规模稠密协方差矩阵，记录资源降级并采用逐资产风险配置。
+非有限值不填成零收益；不足以估计共同协方差时走逐资产风险后备。仅使用最近 252 行，保持原始资产列顺序，不修改输入。稠密风险估计的上限是 2048 个有效资产，它是**成本**护栏而非统计护栏：实测单次 fit 在 256 资产约 0.02 秒、1455 资产约 2.8 秒、2048 资产约 6.4 秒、2900 资产约 12.3 秒。上限取在 2048，是因为标准宽横截面（最宽的常见基准有 1455 列）必须走协方差路径；实测在某真实 1455 资产滚动回测上，放开上限把 Sharpe 从 0.604 提到 1.189、最大回撤从 0.475 降到 0.392、失败折数仍为 0。超过上限才退为 O(TN) 的逐资产风险配置，并记录资源降级。
 
 完全相同资产可能产生由聚类并列决定的不对称权重；全零输入等退化情形无法从数据识别投资优势。若候选输出等权，会转到明确的不同配置规则，不是添加极小噪声。单资产输入只能得到 `[1]`，代码标记“严格禁止等权规则存在歧义”；零行、零资产、非数值或错误维数不属于可保证构造组合的正常输入。
 

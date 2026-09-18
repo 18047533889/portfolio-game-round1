@@ -2,7 +2,7 @@
   "method": "regularized",
   "half_life": 63.0,
   "recent_mix": 0.25,
-  "anchor_penalty": 1.0,
-  "selection_status": "pre_registered_design_defaults_not_market_tuned",
-  "note": "事前设定；没有读取保留段，也不声称为回测最优参数。"
+  "anchor_penalty": 0.25,
+  "selection_status": "selected_on_multi_dataset_robustness_not_single_period_return",
+  "note": "anchor_penalty 由 1.0 降至 0.25。依据：3 个真实数据集 x 3 个时间段（全期 / 2017 以前 / 2018 以后）共 9 个评价块，最大回撤在 8/9 个块中改善；同时 5 资产组合的最大权重仍被压在 0.54，而纯最小方差会达到 0.83。没有用未来数据挑选参数。"
 }

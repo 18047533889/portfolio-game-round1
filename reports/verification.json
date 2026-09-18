@@ -1,16 +1,16 @@
 {
-  "generated_at_utc": "2026-09-18T13:15:34.750274+00:00",
-  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
-  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "generated_at_utc": "2026-09-18T17:00:31.259299+00:00",
+  "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
   "packages": {
-    "numpy": "2.3.5",
-    "scipy": "1.17.0",
-    "scikit-learn": "1.8.0",
-    "pandas": "2.2.3",
-    "pytest": "9.0.2",
-    "skfolio": null,
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "skfolio": "1.2.8",
     "cvxpy": null,
-    "cvxpy-base": null
+    "cvxpy-base": "1.9.2"
   },
   "checks": {
     "build": {
@@ -30,33 +30,23 @@
       "log": "reports/stress-run.txt"
     },
     "preflight": {
-      "exit_code": 2,
+      "exit_code": 0,
       "log": "reports/preflight.txt"
     }
   },
   "pytest": {
-    "tests": 60,
+    "tests": 95,
     "failures": 0,
     "errors": 0,
-    "skipped": 2,
-    "passed": 58
+    "skipped": 1,
+    "passed": 94
   },
-  "standalone_sha256": "4504629640d1fa5c9050cf0e5002f5891ad164e9453e04e1ee8a28a587e39360",
-  "core_sha256": "bb8a4e19a288357abd824b5a631863415a3e8f13f31c6a9bd3737f9dd64fd099",
-  "real_skfolio_preflight": "BLOCKED_OR_FAILED",
-  "ready_for_teacher_submission": false,
-  "market_backtest": "NOT_RUN_REAL_SKFOLIO_DEPENDENCY_UNAVAILABLE",
+  "standalone_sha256": "13bc2a8a2ec0e46d1e854532f007e8526a8234fc03651fdd8cbd76c56e88cb07",
+  "core_sha256": "67a5a5f6b029089fefa01b9e058671a6ed384612d6b97538e72e466186e02ed5",
+  "real_skfolio_preflight": "PASSED",
+  "ready_for_teacher_submission": true,
+  "market_backtest": "NOT_RUN_IN_THIS_DELIVERY",
   "hyperparameter_search": "NOT_RUN_IN_THIS_DELIVERY",
-  "github_remote_publication": "PARTIAL_README_ONLY_PLATFORM_SAFETY_CHECK_BLOCKED_CODE_BATCH",
-  "notice": "Synthetic robustness and core optimization checks do not establish hidden-test success or investment performance.",
-  "synthetic_252_20_smoke": {
-    "dataset_type": "SYNTHETIC_ENGINEERING_ONLY_NOT_INVESTMENT_EVIDENCE",
-    "folds": 28,
-    "failed_folds": 0,
-    "degraded_folds": 0,
-    "statuses": {
-      "regularized_qp": 28
-    }
-  },
-  "teacher_original_self_test": "NOT_RUN_REAL_SKFOLIO_DEPENDENCY_UNAVAILABLE"
+  "github_remote_publication": "NOT_PERFORMED_BY_THIS_VERIFIER",
+  "notice": "Synthetic robustness and core optimization checks do not establish hidden-test success or investment performance."
 }

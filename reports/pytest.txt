@@ -1,5 +1,14 @@
-..........................................................               [100%]
+........................................................................ [ 75%]
+..........s............                                                  [100%]
+=============================== warnings summary ===============================
+tests/test_cvxpy_reference.py::test_qp_matches_cvxpy[0.0]
+tests/test_cvxpy_reference.py::test_qp_matches_cvxpy[0.3]
+tests/test_cvxpy_reference.py::test_qp_matches_cvxpy[1.0]
+tests/test_cvxpy_reference.py::test_qp_matches_cvxpy[3.0]
+  /Users/shw/Downloads/portfolio-game-round1/tests/test_cvxpy_reference.py:14: UserWarning: The default solvers are not available. Using CLARABEL. Consider specifying a solver explicitly via the ``solver`` argument.
+    problem=cp.Problem(cp.Minimize(objective),[v>=0,cp.sum(v)==1]);problem.solve()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
-SKIPPED [1] tests/test_cvxpy_reference.py:4: BLOCKED: CVXPY independent reference not installed
-SKIPPED [1] tests/test_skfolio_integration.py:12: BLOCKED: genuine skfolio is not installed
-58 passed, 2 skipped in 4.62s
+SKIPPED [1] tests/test_research.py:70: This test covers absent optional dependency only
+94 passed, 1 skipped, 4 warnings in 4.16s

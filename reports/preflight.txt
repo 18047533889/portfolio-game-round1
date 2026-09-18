@@ -1,1 +1,56 @@
-BLOCKED: missing genuine dependencies: skfolio
+Standalone submission matches core and frozen config.
+......                                                                   [100%]
+6 passed in 1.93s
+Basic checks passed. Backtest summary:
+Mean                                     0.056%
+Annualized Mean                          14.03%
+Variance                               0.000092
+Annualized Variance                       2.33%
+Semi-Variance                          0.000047
+Annualized Semi-Variance                  1.17%
+Standard Deviation                        0.96%
+Annualized Standard Deviation            15.26%
+Semi-Deviation                            0.68%
+Annualized Semi-Deviation                10.83%
+Mean Absolute Deviation                   0.66%
+CVaR at 95%                               2.18%
+EVaR at 95%                               4.38%
+Worst Realization                         9.27%
+CDaR at 95%                              25.23%
+MAX Drawdown                             46.34%
+Average Drawdown                          4.05%
+EDaR at 95%                              31.47%
+First Lower Partial Moment                0.33%
+Ulcer Index                               0.074
+Gini Mean Difference                      0.98%
+Value at Risk at 95%                      1.40%
+Drawdown at Risk at 95%                  15.58%
+Entropic Risk Measure at 95%               3.00
+Fourth Central Moment                 0.000012%
+Fourth Lower Partial Moment           0.000005%
+Skew                                     11.77%
+Kurtosis                               1451.31%
+Sharpe Ratio                              0.058
+Annualized Sharpe Ratio                    0.92
+Sortino Ratio                             0.082
+Annualized Sortino Ratio                   1.30
+Mean Absolute Deviation Ratio             0.085
+First Lower Partial Moment Ratio           0.17
+Value at Risk Ratio at 95%                0.040
+CVaR Ratio at 95%                         0.025
+Entropic Risk Measure Ratio at 95%      0.00019
+EVaR Ratio at 95%                         0.013
+Worst Realization Ratio                  0.0060
+Drawdown at Risk Ratio at 95%            0.0036
+CDaR Ratio at 95%                        0.0022
+Calmar Ratio                             0.0012
+Average Drawdown Ratio                    0.014
+EDaR Ratio at 95%                        0.0018
+Ulcer Index Ratio                        0.0076
+Gini Mean Difference Ratio                0.057
+Avg nb of Assets per Portfolio             20.0
+Number of Portfolios                        127
+Number of Failed Portfolios                   0
+Number of Fallback Portfolios                 0
+dtype: object
+FULL PREFLIGHT PASSED: real skfolio integration and original teacher self-test.

@@ -53,9 +53,18 @@ def test_real_walk_forward(step):
 
 
 def test_adapter_and_numerical_core_are_identical():
+    """The embedded adapter must call allocate() with the frozen configuration.
+
+    Compared against the config file rather than against allocate()'s defaults,
+    so freezing a different value in configs/submission.json cannot silently
+    desynchronise the teacher file from the core under test.
+    """
+    import json
     x=frame().iloc[:252]
     model=load()().fit(x)
-    np.testing.assert_allclose(model.weights_,allocate(x.to_numpy())['weights'],atol=1e-12)
+    cfg=json.loads((ROOT/'configs/submission.json').read_text(encoding='utf-8'))
+    frozen={k:cfg[k] for k in ('method','half_life','recent_mix','anchor_penalty')}
+    np.testing.assert_allclose(model.weights_,allocate(x.to_numpy(),**frozen)['weights'],atol=1e-12)
 
 
 def test_real_adapter_handles_missing_fit_input():

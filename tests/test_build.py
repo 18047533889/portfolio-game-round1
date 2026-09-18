@@ -27,6 +27,24 @@ def test_submission_build_is_deterministic_and_embeds_core():
     assert all(not (name or '').startswith(('portfolio_game','research')) for name in imports)
     assert all(not isinstance(n,ast.If) or not isinstance(n.test,ast.Compare) or '__name__' not in ast.unparse(n.test) for n in tree.body)
 
+def test_frozen_config_is_reachable_and_matches_core_defaults():
+    """A frozen value the core would reject, or one that silently differs from
+    the documented defaults, is a build-time error rather than a surprise at
+    grading time."""
+    import inspect
+    import json
+    sys.path.insert(0, str(ROOT / 'src'))
+    from portfolio_game.core import allocate
+    cfg = json.loads((ROOT / 'configs/submission.json').read_text(encoding='utf-8'))
+    signature = inspect.signature(allocate)
+    for key in ('method', 'half_life', 'recent_mix', 'anchor_penalty'):
+        assert key in cfg, f'{key} missing from the frozen configuration'
+        assert signature.parameters[key].default == cfg[key], (
+            f'{key}: default {signature.parameters[key].default!r} in core.py '
+            f'differs from the frozen {cfg[key]!r} in configs/submission.json'
+        )
+
+
 def test_teacher_sources_are_unchanged():
     import json
     p=ROOT/'teacher_reference/SHA256.json'
