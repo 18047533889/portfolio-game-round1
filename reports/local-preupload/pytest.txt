@@ -1,0 +1,5 @@
+..........................................................               [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_cvxpy_reference.py:4: BLOCKED: CVXPY independent reference not installed
+SKIPPED [1] tests/test_skfolio_integration.py:12: BLOCKED: genuine skfolio is not installed
+58 passed, 2 skipped in 4.60s

@@ -1,0 +1,5 @@
+# Pure numerical code and research engine. Exact locally tested versions are in reports/verification.json.
+numpy>=1.26,<3
+scipy>=1.11,<2
+scikit-learn>=1.6,<2
+pandas>=2.2,<3

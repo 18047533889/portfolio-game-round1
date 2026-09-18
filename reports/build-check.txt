@@ -1,0 +1,1 @@
+Standalone submission matches core and frozen config.

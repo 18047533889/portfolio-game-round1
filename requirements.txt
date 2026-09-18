@@ -1,0 +1,4 @@
+-r requirements-core.txt
+# Reference integration version, observed on the official repository on 2026-09-18.
+# The instructor's exact environment is unknown; run preflight there too.
+skfolio==1.2.8

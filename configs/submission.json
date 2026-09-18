@@ -1,0 +1,8 @@
+{
+  "method": "regularized",
+  "half_life": 63.0,
+  "recent_mix": 0.25,
+  "anchor_penalty": 1.0,
+  "selection_status": "pre_registered_design_defaults_not_market_tuned",
+  "note": "事前设定；没有读取保留段，也不声称为回测最优参数。"
+}

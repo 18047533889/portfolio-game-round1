@@ -1,0 +1,45 @@
+{
+  "dataset_type": "SYNTHETIC_ENGINEERING_ONLY_NOT_INVESTMENT_EVIDENCE",
+  "phase": "engineering",
+  "config": {
+    "method": "regularized",
+    "half_life": 63.0,
+    "recent_mix": 0.25,
+    "anchor_penalty": 1.0,
+    "selection_status": "pre_registered_design_defaults_not_market_tuned",
+    "note": "事前设定；没有读取保留段，也不声称为回测最优参数。"
+  },
+  "config_sha256": "4742bbb8e9ee390d4468e7c9dbdb820c2d90634fd0cca0559b51401a2b64ff9b",
+  "is_teacher_grading_result": false,
+  "holdout_opened": false,
+  "phase_start": "2000-12-20",
+  "phase_end": "2003-01-24",
+  "folds": 28,
+  "failed_folds": 0,
+  "failure_rate": 0.0,
+  "degraded_folds": 0,
+  "degradation_rate": 0.0,
+  "statuses": {
+    "regularized_qp": 28
+  },
+  "fit_and_hold_seconds_median": 0.003384414499976174,
+  "fit_and_hold_seconds_p95": 0.004686460650009393,
+  "performance": {
+    "n_observations": 548,
+    "cumulative_return": -0.20912277374389288,
+    "cagr": -0.10227142989016036,
+    "annualized_mean": -0.10152833372921553,
+    "annualized_volatility": 0.11266982339941718,
+    "sharpe": -0.9011138090568865,
+    "max_drawdown": 0.28674311606442804,
+    "risk_free_rate_assumption": 0.0
+  },
+  "assumptions": {
+    "lookback": 252,
+    "rebalance": 20,
+    "weight_drift": false,
+    "cost_bps_per_dollar_traded": 0.0,
+    "cost_model": "multiplicative_capital_haircut_L1_turnover",
+    "teacher_annual_return_definition": "unknown; both CAGR and annualized mean reported"
+  }
+}

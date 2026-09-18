@@ -1,0 +1,24 @@
+{
+  "dataset_type": "SYNTHETIC_ENGINEERING_ONLY",
+  "cases": 240,
+  "final_failures": 0,
+  "failure_rate": 0.0,
+  "degraded_cases": 98,
+  "statuses": {
+    "fallback_insufficient_common_rows": 42,
+    "fallback_resource_guard": 24,
+    "regularized_qp": 150,
+    "fallback_hrp": 12,
+    "one_eligible_asset": 12
+  },
+  "failures": [],
+  "two_fit_seconds_p50": 0.004429628499963201,
+  "two_fit_seconds_p95": 0.041679430499954116,
+  "two_fit_seconds_max": 0.12583812200000466,
+  "maximum_attempted_qp_relative_gap": 0.1541962277434379,
+  "main_solver_attempts": 162,
+  "main_solver_converged_cases": 150,
+  "main_solver_nonconverged_cases": 12,
+  "maximum_converged_qp_relative_gap": 9.952273387324392e-09,
+  "note": "Includes intentionally degenerate data and resource guards. Zero failures here is not a hidden-test guarantee."
+}

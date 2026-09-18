@@ -1,0 +1,16 @@
+{
+  "verified_at_utc": "2026-09-18T13:16:48.274310+00:00",
+  "repository": "18047533889/portfolio-game-round1",
+  "visibility": "public",
+  "connector_permissions_push": true,
+  "main_commit": "2eca5f381569f5c0a7a3b0d5e39abd0f3eb20d15",
+  "verified_main_files": [
+    "README.md"
+  ],
+  "uncommitted_core_tree_sha": "a6d95626f22e60ffe694d8a3f8da3834b00b5a7a",
+  "research_upload_status": "BLOCKED_BY_PLATFORM_SAFETY_CHECK",
+  "platform_error": "因 OpenAI 无法确定请求的安全状态，已拦截此工具调用。",
+  "complete_upload": false,
+  "github_actions_started": false,
+  "notice": "Objects not referenced from main are not a published code delivery. No code workflow was committed or started."
+}
