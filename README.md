@@ -1,10 +1,10 @@
-> **本次状态更新：** 请先阅读 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。2026-09-18 重新执行本地检查：58 passed、2 skipped；240 组压力测试最终失败 0；252/20 合成回测 28 个窗口失败 0。真实 skfolio 验收与真实市场回测未完成。GitHub main 目前仅 README.md，完整代码上传被平台安全检查拦截，Actions 未启动。下文是原项目使用说明，不代表本次已经完成其全部步骤。原 `publish_github.sh` 以私有仓库为保护前提，不适用于用户现在提供的公开目标仓库。
+> **本次状态更新：** 请先阅读 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。2026-09-18 重新执行本地检查：58 passed、2 skipped；240 组压力测试最终失败 0；252/20 合成回测 28 个窗口失败 0。真实 skfolio 验收与真实市场回测未完成。GitHub main 现已包含完整代码（提交 `603f97b`，57 个文件），Actions 已随推送启动。此前上传未完成的实际原因是 HTTPS OAuth token 缺少 `workflow` 权限、无法推送 `.github/workflows/tests.yml`（并非平台安全检查）；改用 SSH 推送后成功。远端原占位提交保留在 `backup/pre-upload` 分支。下文是原项目使用说明，不代表本次已经完成其全部步骤。原 `publish_github.sh` 以私有仓库为保护前提，不适用于用户现在提供的公开目标仓库。
 
 # Portfolio Game Round 1｜组合优化作业与研究工具
 
 MAFS5310 第一轮。只使用老师提供的资产收益率，不使用额外因子、外部行情、预训练模型或虚构现金资产。
 
-> **本次交付状态：代码和数值测试已完成，但真实 skfolio 验收尚未完成；GitHub 远端尚未创建/上传。**
+> **本次交付状态：代码和数值测试已完成，但真实 skfolio 验收尚未完成；GitHub 远端已上传完整代码，Actions 结果待观察。**
 > 最新实际运行记录见 `reports/verification.json` 和 `reports/ACCEPTANCE.md`。
 > 不能把数值测试通过当作老师自测通过，也不能把合成数据测试当作市场回测成绩。
 
