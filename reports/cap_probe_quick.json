@@ -1,0 +1,172 @@
+{
+  "penalty": 0.25,
+  "cap_multiples": [
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    null
+  ],
+  "datasets": {
+    "sp500(20)": {
+      "n_assets": 20,
+      "rows": [
+        {
+          "cap": "1.5/n",
+          "cap_multiple": 1.5,
+          "cap_value": 0.075,
+          "sharpe": 0.9838670379341735,
+          "annual": 0.16184192657874064,
+          "maxdd": 0.5164840720239483,
+          "failed_folds": 0,
+          "n_folds": 403,
+          "mean_max_weight": 0.07500000000000023,
+          "mean_effective_n": 15.210557476326482,
+          "reference_sharpe": 0.9905137858437378,
+          "reference_annual": 0.18680634021766773,
+          "reference_maxdd": 0.5622820035147891
+        },
+        {
+          "cap": "2/n",
+          "cap_multiple": 2.0,
+          "cap_value": 0.1,
+          "sharpe": 0.9715477549987065,
+          "annual": 0.15419298697064723,
+          "maxdd": 0.5023950886125998,
+          "failed_folds": 0,
+          "n_folds": 403,
+          "mean_max_weight": 0.09993801787981943,
+          "mean_effective_n": 12.878069241172872,
+          "reference_sharpe": 0.9905137858437378,
+          "reference_annual": 0.18680634021766773,
+          "reference_maxdd": 0.5622820035147891
+        },
+        {
+          "cap": "3/n",
+          "cap_multiple": 3.0,
+          "cap_value": 0.15,
+          "sharpe": 0.9769501185453656,
+          "annual": 0.15010818423398573,
+          "maxdd": 0.5022046596649683,
+          "failed_folds": 0,
+          "n_folds": 403,
+          "mean_max_weight": 0.14385733808707316,
+          "mean_effective_n": 10.618721936564492,
+          "reference_sharpe": 0.9905137858437378,
+          "reference_annual": 0.18680634021766773,
+          "reference_maxdd": 0.5622820035147891
+        },
+        {
+          "cap": "5/n",
+          "cap_multiple": 5.0,
+          "cap_value": 0.25,
+          "sharpe": 0.9583622257388902,
+          "annual": 0.14573696782441675,
+          "maxdd": 0.49914740681191194,
+          "failed_folds": 0,
+          "n_folds": 403,
+          "mean_max_weight": 0.1953912243021775,
+          "mean_effective_n": 9.35354576975514,
+          "reference_sharpe": 0.9905137858437378,
+          "reference_annual": 0.18680634021766773,
+          "reference_maxdd": 0.5622820035147891
+        },
+        {
+          "cap": "none",
+          "cap_multiple": null,
+          "cap_value": null,
+          "sharpe": 0.9494230404251389,
+          "annual": 0.1442026061568323,
+          "maxdd": 0.48451705834351966,
+          "failed_folds": 0,
+          "n_folds": 403,
+          "mean_max_weight": 0.21663749867680546,
+          "mean_effective_n": 9.083624519868286,
+          "reference_sharpe": 0.9905137858437378,
+          "reference_annual": 0.18680634021766773,
+          "reference_maxdd": 0.5622820035147891
+        }
+      ]
+    },
+    "factors(5)": {
+      "n_assets": 5,
+      "rows": [
+        {
+          "cap": "1.5/n",
+          "cap_multiple": 1.5,
+          "cap_value": 0.3,
+          "sharpe": 0.6336599697662225,
+          "annual": 0.11054650071835881,
+          "maxdd": 0.40365705744872704,
+          "failed_folds": 0,
+          "n_folds": 100,
+          "mean_max_weight": 0.3,
+          "mean_effective_n": 4.015916680773741,
+          "reference_sharpe": 0.6173277214695327,
+          "reference_annual": 0.11183890502845212,
+          "reference_maxdd": 0.41234982621161775
+        },
+        {
+          "cap": "2/n",
+          "cap_multiple": 2.0,
+          "cap_value": 0.4,
+          "sharpe": 0.6331149832691585,
+          "annual": 0.1085009356391522,
+          "maxdd": 0.3998685456900212,
+          "failed_folds": 0,
+          "n_folds": 100,
+          "mean_max_weight": 0.39722841866498654,
+          "mean_effective_n": 3.3308380881120403,
+          "reference_sharpe": 0.6173277214695327,
+          "reference_annual": 0.11183890502845212,
+          "reference_maxdd": 0.41234982621161775
+        },
+        {
+          "cap": "3/n",
+          "cap_multiple": 3.0,
+          "cap_value": 0.6,
+          "sharpe": 0.6519037191004491,
+          "annual": 0.10929669714840017,
+          "maxdd": 0.39350799575215906,
+          "failed_folds": 0,
+          "n_folds": 100,
+          "mean_max_weight": 0.5054804203277417,
+          "mean_effective_n": 2.709183111732411,
+          "reference_sharpe": 0.6173277214695327,
+          "reference_annual": 0.11183890502845212,
+          "reference_maxdd": 0.41234982621161775
+        },
+        {
+          "cap": "5/n",
+          "cap_multiple": 5.0,
+          "cap_value": 1.0,
+          "sharpe": 0.6502796874200696,
+          "annual": 0.10863626191580839,
+          "maxdd": 0.3935080029551409,
+          "failed_folds": 0,
+          "n_folds": 100,
+          "mean_max_weight": 0.5354540292406125,
+          "mean_effective_n": 2.590612104500902,
+          "reference_sharpe": 0.6173277214695327,
+          "reference_annual": 0.11183890502845212,
+          "reference_maxdd": 0.41234982621161775
+        },
+        {
+          "cap": "none",
+          "cap_multiple": null,
+          "cap_value": null,
+          "sharpe": 0.6502796874200696,
+          "annual": 0.10863626191580839,
+          "maxdd": 0.3935080029551409,
+          "failed_folds": 0,
+          "n_folds": 100,
+          "mean_max_weight": 0.5354540292406125,
+          "mean_effective_n": 2.590612104500902,
+          "reference_sharpe": 0.6173277214695327,
+          "reference_annual": 0.11183890502845212,
+          "reference_maxdd": 0.41234982621161775
+        }
+      ]
+    }
+  }
+}

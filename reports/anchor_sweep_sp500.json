@@ -1,0 +1,125 @@
+{
+  "contract": {
+    "train_size": 252,
+    "test_size": 20
+  },
+  "shipped_penalty": 0.25,
+  "datasets": {
+    "sp500(20)": {
+      "n_obs": 8312,
+      "n_assets": 20,
+      "start": "1990-01-03",
+      "end": "2022-12-28",
+      "rows": [
+        {
+          "model": "reference_equal_weight",
+          "metrics": {
+            "annualized_mean": 0.18680634021766773,
+            "annualized_sharpe": 0.9905137858437378,
+            "max_drawdown": 0.5622820035147891
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": NaN,
+          "failures": []
+        },
+        {
+          "model": "hrp",
+          "metrics": {
+            "annualized_mean": 0.17848798202327687,
+            "annualized_sharpe": 1.052208578799637,
+            "max_drawdown": 0.6101543628588018
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.5082963090583935,
+          "failures": []
+        },
+        {
+          "model": "inverse_volatility",
+          "metrics": {
+            "annualized_mean": 0.16544080010785128,
+            "annualized_sharpe": 0.9667176629689531,
+            "max_drawdown": 0.5066787019424375
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.10860022433638723,
+          "failures": []
+        },
+        {
+          "model": "minimum_variance(p=0)",
+          "metrics": {
+            "annualized_mean": 0.13719846841078898,
+            "annualized_sharpe": 0.9221921006207017,
+            "max_drawdown": 0.41188536330537184
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.5104009239313039,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=0.25)",
+          "metrics": {
+            "annualized_mean": 0.14420261036330137,
+            "annualized_sharpe": 0.9494230675738962,
+            "max_drawdown": 0.4845170950833406
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.45906219192278436,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=1)",
+          "metrics": {
+            "annualized_mean": 0.15492309245335684,
+            "annualized_sharpe": 0.9809345770134846,
+            "max_drawdown": 0.5483730869628425
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.5002751924466665,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=4)",
+          "metrics": {
+            "annualized_mean": 0.16764732119136105,
+            "annualized_sharpe": 1.020727816658531,
+            "max_drawdown": 0.586636309007647
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.5119127697327019,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=16)",
+          "metrics": {
+            "annualized_mean": 0.17486593294628275,
+            "annualized_sharpe": 1.0421477952053029,
+            "max_drawdown": 0.6030593186429827
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 0.510808647201471,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=1e+09)",
+          "metrics": null,
+          "failed_folds": 403,
+          "n_folds": 403,
+          "max_weight": NaN,
+          "failures": [
+            "ValueError: anchor_penalty must be finite and in [0,1e6]",
+            "ValueError: anchor_penalty must be finite and in [0,1e6]",
+            "ValueError: anchor_penalty must be finite and in [0,1e6]"
+          ]
+        }
+      ]
+    }
+  }
+}

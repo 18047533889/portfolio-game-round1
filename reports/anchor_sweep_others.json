@@ -1,0 +1,321 @@
+{
+  "contract": {
+    "train_size": 252,
+    "test_size": 20
+  },
+  "shipped_penalty": 0.25,
+  "datasets": {
+    "ftse100(64)": {
+      "n_obs": 5959,
+      "n_assets": 64,
+      "start": "2000-01-05",
+      "end": "2023-05-31",
+      "rows": [
+        {
+          "model": "reference_equal_weight",
+          "metrics": {
+            "annualized_mean": 0.12543876896848175,
+            "annualized_sharpe": 0.6886513588760182,
+            "max_drawdown": 0.5753789629393447
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": NaN,
+          "failures": []
+        },
+        {
+          "model": "hrp",
+          "metrics": {
+            "annualized_mean": 0.14615636910740493,
+            "annualized_sharpe": 0.9541975989861684,
+            "max_drawdown": 0.46631731124726017
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.431736963404176,
+          "failures": []
+        },
+        {
+          "model": "inverse_volatility",
+          "metrics": {
+            "annualized_mean": 0.11700212233760457,
+            "annualized_sharpe": 0.6984656483974859,
+            "max_drawdown": 0.4931069585337995
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.03917820723152817,
+          "failures": []
+        },
+        {
+          "model": "minimum_variance(p=0)",
+          "metrics": {
+            "annualized_mean": 0.13947814495601688,
+            "annualized_sharpe": 0.9991887754685257,
+            "max_drawdown": 0.34668759359899914
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.39683426528078175,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=0.25)",
+          "metrics": {
+            "annualized_mean": 0.13687330782292434,
+            "annualized_sharpe": 1.0227765161425946,
+            "max_drawdown": 0.41659754520984826
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.30357053432290704,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=1)",
+          "metrics": {
+            "annualized_mean": 0.13778489975149072,
+            "annualized_sharpe": 0.9818044559527497,
+            "max_drawdown": 0.434560981554158
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.3507379879533725,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=4)",
+          "metrics": {
+            "annualized_mean": 0.14121549426851465,
+            "annualized_sharpe": 0.9580365570874414,
+            "max_drawdown": 0.45348928711030323
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.39687707733182914,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=16)",
+          "metrics": {
+            "annualized_mean": 0.14393524926560328,
+            "annualized_sharpe": 0.9522017518858877,
+            "max_drawdown": 0.45955678586623483
+          },
+          "failed_folds": 0,
+          "n_folds": 285,
+          "max_weight": 0.4214645243304299,
+          "failures": []
+        }
+      ]
+    },
+    "factors(5)": {
+      "n_obs": 2263,
+      "n_assets": 5,
+      "start": "2014-01-03",
+      "end": "2022-12-28",
+      "rows": [
+        {
+          "model": "reference_equal_weight",
+          "metrics": {
+            "annualized_mean": 0.11183890502845212,
+            "annualized_sharpe": 0.6173277214695327,
+            "max_drawdown": 0.41234982621161775
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": NaN,
+          "failures": []
+        },
+        {
+          "model": "hrp",
+          "metrics": {
+            "annualized_mean": 0.10931711981572169,
+            "annualized_sharpe": 0.6317643927055929,
+            "max_drawdown": 0.3991110379450535
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.6382865026004684,
+          "failures": []
+        },
+        {
+          "model": "inverse_volatility",
+          "metrics": {
+            "annualized_mean": 0.1123890410303406,
+            "annualized_sharpe": 0.6286033840598192,
+            "max_drawdown": 0.4090328319473189
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.270557863930259,
+          "failures": []
+        },
+        {
+          "model": "minimum_variance(p=0)",
+          "metrics": {
+            "annualized_mean": 0.10366924367608324,
+            "annualized_sharpe": 0.6490427532499785,
+            "max_drawdown": 0.38814470712960364
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=0.25)",
+          "metrics": {
+            "annualized_mean": 0.10863625946877739,
+            "annualized_sharpe": 0.6502796726646796,
+            "max_drawdown": 0.3935079985381955
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.8743993838300372,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=1)",
+          "metrics": {
+            "annualized_mean": 0.10960754700663458,
+            "annualized_sharpe": 0.6423801463644396,
+            "max_drawdown": 0.39694231850509043
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.7268222917884475,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=4)",
+          "metrics": {
+            "annualized_mean": 0.10945872690808806,
+            "annualized_sharpe": 0.6352290636885655,
+            "max_drawdown": 0.39848910272179827
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.6628232984085639,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=16)",
+          "metrics": {
+            "annualized_mean": 0.10935690963646137,
+            "annualized_sharpe": 0.6326787025767768,
+            "max_drawdown": 0.3989501036046024
+          },
+          "failed_folds": 0,
+          "n_folds": 100,
+          "max_weight": 0.6445931183185704,
+          "failures": []
+        }
+      ]
+    },
+    "sp500_index(1)": {
+      "n_obs": 8312,
+      "n_assets": 1,
+      "start": "1990-01-03",
+      "end": "2022-12-28",
+      "rows": [
+        {
+          "model": "reference_equal_weight",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": NaN,
+          "failures": []
+        },
+        {
+          "model": "hrp",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "inverse_volatility",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "minimum_variance(p=0)",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=0.25)",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=1)",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=4)",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        },
+        {
+          "model": "regularized(p=16)",
+          "metrics": {
+            "annualized_mean": 0.09315120405607477,
+            "annualized_sharpe": 0.5071816775947351,
+            "max_drawdown": 0.7361716688960747
+          },
+          "failed_folds": 0,
+          "n_folds": 403,
+          "max_weight": 1.0,
+          "failures": []
+        }
+      ]
+    }
+  }
+}

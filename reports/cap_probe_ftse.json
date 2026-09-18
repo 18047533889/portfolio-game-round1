@@ -1,0 +1,92 @@
+{
+  "penalty": 0.25,
+  "cap_multiples": [
+    1.5,
+    2.0,
+    3.0,
+    5.0,
+    null
+  ],
+  "datasets": {
+    "ftse100(64)": {
+      "n_assets": 64,
+      "rows": [
+        {
+          "cap": "1.5/n",
+          "cap_multiple": 1.5,
+          "cap_value": 0.0234375,
+          "sharpe": 0.750643566122334,
+          "annual": 0.11162694191134796,
+          "maxdd": 0.48577169339285,
+          "failed_folds": 0,
+          "n_folds": 285,
+          "mean_max_weight": 0.023437500000000413,
+          "mean_effective_n": 44.42720810501118,
+          "reference_sharpe": 0.6886513588760182,
+          "reference_annual": 0.12543876896848175,
+          "reference_maxdd": 0.5753789629393447
+        },
+        {
+          "cap": "2/n",
+          "cap_multiple": 2.0,
+          "cap_value": 0.03125,
+          "sharpe": 0.8153003383311768,
+          "annual": 0.11325615209344,
+          "maxdd": 0.40975620150453107,
+          "failed_folds": 0,
+          "n_folds": 285,
+          "mean_max_weight": 0.03125000000000153,
+          "mean_effective_n": 35.1193046353154,
+          "reference_sharpe": 0.6886513588760182,
+          "reference_annual": 0.12543876896848175,
+          "reference_maxdd": 0.5753789629393447
+        },
+        {
+          "cap": "3/n",
+          "cap_multiple": 3.0,
+          "cap_value": 0.046875,
+          "sharpe": 0.8931721796209987,
+          "annual": 0.11900134752744734,
+          "maxdd": 0.3538968261428339,
+          "failed_folds": 1,
+          "n_folds": 285,
+          "mean_max_weight": 0.046875000000009576,
+          "mean_effective_n": 26.4804593224787,
+          "reference_sharpe": 0.6886513588760182,
+          "reference_annual": 0.12543876896848175,
+          "reference_maxdd": 0.5753789629393447
+        },
+        {
+          "cap": "5/n",
+          "cap_multiple": 5.0,
+          "cap_value": 0.078125,
+          "sharpe": 0.9403745508783485,
+          "annual": 0.12455716296111405,
+          "maxdd": 0.37297543264013244,
+          "failed_folds": 0,
+          "n_folds": 285,
+          "mean_max_weight": 0.07787946486213637,
+          "mean_effective_n": 20.511705488947918,
+          "reference_sharpe": 0.6886513588760182,
+          "reference_annual": 0.12543876896848175,
+          "reference_maxdd": 0.5753789629393447
+        },
+        {
+          "cap": "none",
+          "cap_multiple": null,
+          "cap_value": null,
+          "sharpe": 1.0227765471525923,
+          "annual": 0.1368733111491176,
+          "maxdd": 0.41659754446634933,
+          "failed_folds": 0,
+          "n_folds": 285,
+          "mean_max_weight": 0.15531131865972714,
+          "mean_effective_n": 15.535896951660034,
+          "reference_sharpe": 0.6886513588760182,
+          "reference_annual": 0.12543876896848175,
+          "reference_maxdd": 0.5753789629393447
+        }
+      ]
+    }
+  }
+}
