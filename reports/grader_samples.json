@@ -1,0 +1,495 @@
+{
+  "submission": "submission/portfolio_round1.py",
+  "seed": 20260919,
+  "window_trading_days": 504,
+  "contract": {
+    "train_size": 252,
+    "test_size": 20,
+    "long_only": true,
+    "leverage": 1
+  },
+  "cases": [
+    {
+      "dataset": "sp500",
+      "n_assets": 5,
+      "tickers": [
+        "AMD",
+        "BBY",
+        "PEP",
+        "PG",
+        "XOM"
+      ],
+      "window_start": "1990-05-02",
+      "window_end": "1992-04-28",
+      "eval_start": "1991-05-01",
+      "eval_end": "1992-04-28",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.574377561261783,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.16131532055294848,
+        "annualized_sharpe": 1.1288275098144431,
+        "max_drawdown": 0.05164783314392071
+      },
+      "reference": {
+        "annualized_mean": 0.4066434880828645,
+        "annualized_sharpe": 1.888818429467038,
+        "max_drawdown": 0.10566329310059477
+      },
+      "eval_days": 240,
+      "case": 1,
+      "regime": "early",
+      "seed_draw": {
+        "k": 5,
+        "start_index": 83
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 12,
+      "tickers": [
+        "AAPL",
+        "AMD",
+        "BAC",
+        "CVX",
+        "GE",
+        "HD",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "PFE",
+        "RRC",
+        "XOM"
+      ],
+      "window_start": "1995-02-09",
+      "window_end": "1997-02-05",
+      "eval_start": "1996-02-08",
+      "eval_end": "1997-02-05",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.18073510904460782,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.3717811932247116,
+        "annualized_sharpe": 2.40334698747173,
+        "max_drawdown": 0.08895441707042936
+      },
+      "reference": {
+        "annualized_mean": 0.3702880131029645,
+        "annualized_sharpe": 2.351461656076482,
+        "max_drawdown": 0.11191055659029649
+      },
+      "eval_days": 240,
+      "case": 2,
+      "regime": "early",
+      "seed_draw": {
+        "k": 12,
+        "start_index": 1291
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 20,
+      "tickers": [
+        "AAPL",
+        "AMD",
+        "BAC",
+        "BBY",
+        "CVX",
+        "GE",
+        "HD",
+        "JNJ",
+        "JPM",
+        "KO",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "PEP",
+        "PFE",
+        "PG",
+        "RRC",
+        "UNH",
+        "WMT",
+        "XOM"
+      ],
+      "window_start": "1996-11-22",
+      "window_end": "1998-11-20",
+      "eval_start": "1997-11-21",
+      "eval_end": "1998-11-20",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.18606800306391183,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.1989616700705589,
+        "annualized_sharpe": 0.9018406707328707,
+        "max_drawdown": 0.24823929054414512
+      },
+      "reference": {
+        "annualized_mean": 0.31936118875460673,
+        "annualized_sharpe": 1.3830154154247483,
+        "max_drawdown": 0.21591909378115126
+      },
+      "eval_days": 240,
+      "case": 3,
+      "regime": "early",
+      "seed_draw": {
+        "k": 20,
+        "start_index": 1744
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 5,
+      "tickers": [
+        "JNJ",
+        "MRK",
+        "MSFT",
+        "PEP",
+        "WMT"
+      ],
+      "window_start": "1990-11-21",
+      "window_end": "1992-11-17",
+      "eval_start": "1991-11-20",
+      "eval_end": "1992-11-17",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.3414525508870368,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.21839369040781254,
+        "annualized_sharpe": 1.3040780402032488,
+        "max_drawdown": 0.12892792650446827
+      },
+      "reference": {
+        "annualized_mean": 0.2282156258333588,
+        "annualized_sharpe": 1.3143966013209694,
+        "max_drawdown": 0.1236414440706169
+      },
+      "eval_days": 240,
+      "case": 4,
+      "regime": "early",
+      "seed_draw": {
+        "k": 5,
+        "start_index": 225
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 15,
+      "tickers": [
+        "AMD",
+        "BAC",
+        "BBY",
+        "CVX",
+        "GE",
+        "HD",
+        "JNJ",
+        "KO",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "PEP",
+        "PFE",
+        "PG",
+        "RRC"
+      ],
+      "window_start": "1994-11-04",
+      "window_end": "1996-10-31",
+      "eval_start": "1995-11-03",
+      "eval_end": "1996-10-31",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.18391879338833086,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.3562029125154991,
+        "annualized_sharpe": 2.471544579627022,
+        "max_drawdown": 0.07607545136917412
+      },
+      "reference": {
+        "annualized_mean": 0.3201108428312906,
+        "annualized_sharpe": 2.171295678478923,
+        "max_drawdown": 0.09834789777432448
+      },
+      "eval_days": 240,
+      "case": 5,
+      "regime": "early",
+      "seed_draw": {
+        "k": 15,
+        "start_index": 1225
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 12,
+      "tickers": [
+        "AMD",
+        "BAC",
+        "HD",
+        "JNJ",
+        "JPM",
+        "LLY",
+        "MRK",
+        "PFE",
+        "PG",
+        "RRC",
+        "UNH",
+        "XOM"
+      ],
+      "window_start": "2014-10-20",
+      "window_end": "2016-10-18",
+      "eval_start": "2015-10-20",
+      "eval_end": "2016-10-18",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.39252209776885316,
+      "weight_sum_error": 2.220446049250313e-16,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.17625950275755395,
+        "annualized_sharpe": 1.4288493259451671,
+        "max_drawdown": 0.07603162530403614
+      },
+      "reference": {
+        "annualized_mean": 0.2786180048256603,
+        "annualized_sharpe": 1.5520574415942052,
+        "max_drawdown": 0.12724660351699363
+      },
+      "eval_days": 240,
+      "case": 6,
+      "regime": "any",
+      "seed_draw": {
+        "k": 12,
+        "start_index": 6249
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 15,
+      "tickers": [
+        "AAPL",
+        "AMD",
+        "BBY",
+        "CVX",
+        "GE",
+        "HD",
+        "JPM",
+        "LLY",
+        "MRK",
+        "MSFT",
+        "PEP",
+        "PFE",
+        "PG",
+        "UNH",
+        "WMT"
+      ],
+      "window_start": "2019-02-04",
+      "window_end": "2021-02-02",
+      "eval_start": "2020-02-04",
+      "eval_end": "2021-02-02",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.46961736949732097,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.19061189411465793,
+        "annualized_sharpe": 0.5972911678034442,
+        "max_drawdown": 0.27035300684231905
+      },
+      "reference": {
+        "annualized_mean": 0.31337085388174735,
+        "annualized_sharpe": 0.8788667063307612,
+        "max_drawdown": 0.3318961836513955
+      },
+      "eval_days": 240,
+      "case": 7,
+      "regime": "any",
+      "seed_draw": {
+        "k": 15,
+        "start_index": 7328
+      }
+    },
+    {
+      "dataset": "sp500",
+      "n_assets": 5,
+      "tickers": [
+        "AMD",
+        "CVX",
+        "GE",
+        "LLY",
+        "MRK"
+      ],
+      "window_start": "1998-01-22",
+      "window_end": "2000-01-20",
+      "eval_start": "1999-01-22",
+      "eval_end": "2000-01-20",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.42718269906255324,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.19848051990139068,
+        "annualized_sharpe": 1.0061267108078942,
+        "max_drawdown": 0.12021006788892183
+      },
+      "reference": {
+        "annualized_mean": 0.22601629334448461,
+        "annualized_sharpe": 0.9908792237550845,
+        "max_drawdown": 0.11763560123337961
+      },
+      "eval_days": 240,
+      "case": 8,
+      "regime": "any",
+      "seed_draw": {
+        "k": 5,
+        "start_index": 2036
+      }
+    },
+    {
+      "dataset": "ftse100",
+      "n_assets": 40,
+      "tickers": [
+        "AAL.L",
+        "ANTO.L",
+        "AV.L",
+        "AZN.L",
+        "BA.L",
+        "BATS.L",
+        "BKG.L",
+        "BLND.L",
+        "BNZL.L",
+        "BP.L",
+        "BT-A.L",
+        "CRDA.L",
+        "GSK.L",
+        "HLMA.L",
+        "HSBA.L",
+        "III.L",
+        "INF.L",
+        "JD.L",
+        "JMAT.L",
+        "LAND.L",
+        "LGEN.L",
+        "NWG.L",
+        "PRU.L",
+        "PSON.L",
+        "REL.L",
+        "RIO.L",
+        "RKT.L",
+        "SBRY.L",
+        "SGE.L",
+        "SGRO.L",
+        "SMT.L",
+        "SN.L",
+        "SPX.L",
+        "STAN.L",
+        "STJ.L",
+        "SVT.L",
+        "TW.L",
+        "UU.L",
+        "VOD.L",
+        "WEIR.L"
+      ],
+      "window_start": "2004-06-14",
+      "window_end": "2006-05-24",
+      "eval_start": "2005-06-01",
+      "eval_end": "2006-05-24",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.11205568294400385,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.24472740853938124,
+        "annualized_sharpe": 2.962137748179829,
+        "max_drawdown": 0.0463868055848949
+      },
+      "reference": {
+        "annualized_mean": 0.33244030594248203,
+        "annualized_sharpe": 3.338947961387871,
+        "max_drawdown": 0.05560003638507099
+      },
+      "eval_days": 240,
+      "case": 9,
+      "regime": "any",
+      "seed_draw": {
+        "k": 40,
+        "start_index": 1158
+      }
+    },
+    {
+      "dataset": "factors",
+      "n_assets": 5,
+      "tickers": [
+        "MTUM",
+        "QUAL",
+        "SIZE",
+        "USMV",
+        "VLUE"
+      ],
+      "window_start": "2017-04-24",
+      "window_end": "2019-04-24",
+      "eval_start": "2018-04-24",
+      "eval_end": "2019-04-24",
+      "n_folds": 12,
+      "failed_folds": 0,
+      "fallback_folds": 0,
+      "equal_weight_folds": 0,
+      "max_weight": 0.5550206664047,
+      "weight_sum_error": 0.0,
+      "errors": [],
+      "portfolio": {
+        "annualized_mean": 0.13508185383388047,
+        "annualized_sharpe": 1.1078038972477815,
+        "max_drawdown": 0.17005808581522686
+      },
+      "reference": {
+        "annualized_mean": 0.10407093589264026,
+        "annualized_sharpe": 0.7285172596830987,
+        "max_drawdown": 0.2058626083754425
+      },
+      "eval_days": 240,
+      "case": 10,
+      "regime": "any",
+      "seed_draw": {
+        "k": 5,
+        "start_index": 831
+      }
+    }
+  ],
+  "total": {
+    "cases": 10,
+    "valid_cases": 10,
+    "folds": 120,
+    "failed_folds": 0,
+    "equal_weight_folds": 0,
+    "fallback_folds": 0
+  }
+}
