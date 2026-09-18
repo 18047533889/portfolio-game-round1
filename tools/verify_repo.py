@@ -33,6 +33,13 @@ def main():
     checks['syntax']=run('syntax-check',['-m','compileall','-q','src','research','submission','tools'])
     checks['pytest']=run('pytest',['-m','pytest','-q','--junitxml=reports/pytest.xml'])
     checks['stress']=run('stress-run',['tools/stress.py','--cases','240'])
+    # Grader-shaped stress: random asset subsets x random 2-year windows, the
+    # scenario in which the hidden test sets are believed to be drawn. Kept
+    # small enough to stay in the default verification loop.
+    checks['random_windows']=run('random-windows',[
+        'tools/random_window_stress.py','--reps','25','--wide-reps','0',
+        '--datasets','sp500(20),ftse100(64),factors(5),sp500_index(1)',
+        '--out','reports/random_windows.json'])
     checks['preflight']=run('preflight',['tools/preflight.py'])
     totals={'tests':0,'failures':0,'errors':0,'skipped':0}
     if (ROOT/'reports/pytest.xml').exists():
@@ -50,13 +57,13 @@ def main():
         'standalone_sha256':hashlib.sha256((ROOT/'submission/portfolio_round1.py').read_bytes()).hexdigest(),
         'core_sha256':hashlib.sha256((ROOT/'src/portfolio_game/core.py').read_bytes()).hexdigest(),
         'real_skfolio_preflight':'PASSED' if full else 'BLOCKED_OR_FAILED',
-        'ready_for_teacher_submission':full and all(checks[k]['exit_code']==0 for k in ('build','syntax','pytest','stress')),
+        'ready_for_teacher_submission':full and all(checks[k]['exit_code']==0 for k in ('build','syntax','pytest','stress','random_windows')),
         'market_backtest':'NOT_RUN_IN_THIS_DELIVERY','hyperparameter_search':'NOT_RUN_IN_THIS_DELIVERY',
         'github_remote_publication':'NOT_PERFORMED_BY_THIS_VERIFIER',
         'notice':'Synthetic robustness and core optimization checks do not establish hidden-test success or investment performance.'}
     (ROOT/'reports/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
-    if any(checks[k]['exit_code']!=0 for k in ('build','syntax','pytest','stress')):return 1
+    if any(checks[k]['exit_code']!=0 for k in ('build','syntax','pytest','stress','random_windows')):return 1
     return 2 if a.require_integration and not full else 0
 
 if __name__=='__main__':raise SystemExit(main())

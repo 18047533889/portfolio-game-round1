@@ -1,8 +1,14 @@
 > **本次状态更新（2026-09-19）：** 请先阅读 [docs/round1-final-report-zh.md](docs/round1-final-report-zh.md) 与 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。
 >
-> 真实 skfolio 验收已通过：`tools/verify_repo.py --require-integration` 返回 0，`pytest` 93 项（92 通过 / 1 跳过 / 0 失败），老师原版 `self_test.py` 打印 `Basic checks passed`、127 个组合、**0 个失败组合**，`ready_for_teacher_submission: true`。240 组合成边界数据压力测试最终失败 0。
+> 真实 skfolio 验收已通过：`tools/verify_repo.py --require-integration` 返回 0，`pytest` 108 项（107 通过 / 1 跳过 / 0 失败），老师原版 `self_test.py` 打印 `Basic checks passed`、127 个组合、**0 个失败组合**，`ready_for_teacher_submission: true`。240 组合成边界数据压力测试最终失败 0。
+>
+> **模拟老师的出题方式**（随机抽股票子集 × 随机两年窗口）已单独压测：5 个数据集、**12,132 个折**，失败 0、非法权重 0、等权 0。回归入口在 `tools/verify_repo.py` 的 `random_windows` 检查项。
+>
+> 失败回退链已加固：候选链末级由"押注单一资产"改为**风险序递减预算**（按观测风险升序、按 1/rank 分配再归一化），既永远不等于等权，也不会在多标的可用时把全部资金押在一个名字上。回归测试见 `tests/test_equal_weight_prohibition.py`。
 >
 > 算法已升级：相关矩阵增加 **Marchenko–Pastur 特征值去噪**，锚惩罚由 1.0 调整为 **0.25**。选型依据见 [docs/method-selection-zh.md](docs/method-selection-zh.md)。
+>
+> **因子倾斜经完整评估后决定不上线**：从 COS 拉取 A 股 263 个已产出因子，移植到美股时点成分 SP500 面板回测，再作为线性倾斜接入优化端。在"随机子集 × 随机两年窗口"口径下，所有测试强度下夏普胜率均低于 50%。完整证据见 [docs/round1-factor-transfer-zh.md](docs/round1-factor-transfer-zh.md)。
 >
 > GitHub main 已包含完整代码。上次上传失败的实际原因是 HTTPS OAuth token 缺少 `workflow` 权限、无法推送 `.github/workflows/tests.yml`（并非平台安全检查）；改用 SSH 推送后成功，原占位提交保留在 `backup/pre-upload` 分支。下文是原项目使用说明。
 

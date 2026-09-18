@@ -1,0 +1,18 @@
+sp500(20)        slices=  51 folds=  612 failed=  0 illegal=  0 equal=  0
+/Users/shw/Downloads/portfolio-game-round1/tools/random_window_stress.py:66: FutureWarning: The default fill_method='pad' in DataFrame.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  return prices.pct_change().dropna()
+ftse100(64)      slices=  51 folds=  612 failed=  0 illegal=  0 equal=  0
+factors(5)       slices=  51 folds=  612 failed=  0 illegal=  0 equal=  0
+sp500_index(1)   slices=  50 folds=  600 failed=  0 illegal=  0 equal=  0
+
+=== TOTAL ===
+folds           : 2436
+failed folds    : 0  (0.000000%)
+illegal folds   : 0
+equal-wt folds  : 0
+  worst in sp500(20): rand#0@2013-05-20k2 failed=0/12 reasons={}
+  worst in ftse100(64): rand#0@2016-02-09k2 failed=0/12 reasons={}
+  worst in factors(5): rand#0@2019-04-12k2 failed=0/12 reasons={}
+  worst in sp500_index(1): rand#0@2014-07-23k1 failed=0/12 reasons={}
+
+written -> reports/random_windows.json

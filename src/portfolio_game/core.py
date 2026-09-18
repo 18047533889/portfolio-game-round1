@@ -356,16 +356,26 @@ def _finish(
             return {"weights": w, "diagnostics": diagnostics}
         except (ValueError, FloatingPointError):
             continue
-    # Not an epsilon perturbation of equal weight: a distinct, explicit rule.
+    # Last resort. Every instrument that reached this point is degenerate in a
+    # way that makes the risk model meaningless (zero variance, duplicated or
+    # constant columns), so no rule here can be risk-justified. What it must NOT
+    # do is return the prohibited equal-weight book, and what it should not do is
+    # bet the whole budget on one name. The rule below allocates a deterministic
+    # rank-declining budget, lowest observed risk first: a real (if coarse)
+    # ordering rule, not an epsilon perturbation of 1/n, and not a single-asset
+    # concentration when more than one instrument is investable.
     pool = np.flatnonzero(eligible)
     if not pool.size:
         pool = np.arange(n_assets)
-    k = int(pool[np.argmin(risks[pool])])
+    order = pool[np.argsort(risks[pool], kind="stable")]
+    budget = 1.0 / np.arange(1, order.size + 1, dtype=np.float64)
     w = np.zeros(n_assets, dtype=np.float64)
-    w[k] = 1.0
-    diagnostics["events"].append("deterministic_single_asset_fallback")
-    diagnostics["final_rule"] = "minimum_observed_variance_then_column_position"
-    diagnostics["single_asset_fallback"] = True
+    w[order] = budget / budget.sum()
+    diagnostics["events"].append("deterministic_last_resort_budget")
+    diagnostics["final_rule"] = "risk_ranked_declining_budget_lowest_risk_first"
+    diagnostics["last_resort_fallback"] = True
+    diagnostics["last_resort_names"] = int(order.size)
+    diagnostics["single_asset_fallback"] = bool(order.size == 1)
     check_weights(w, n_assets)
     return {"weights": w, "diagnostics": diagnostics}
 
@@ -413,6 +423,7 @@ def allocate(
         "rows_used": t, "assets_total": n, "eligible_assets": int(eligible.sum()),
         "complete_rows": 0, "main_solver_converged": False,
         "anti_equal_weight_applied": False, "single_asset_fallback": False,
+        "last_resort_fallback": False, "last_resort_names": 0,
         "single_asset_rule_ambiguity": n == 1, "events": [],
         "half_life": float(half_life), "recent_mix": float(recent_mix),
         "anchor_penalty": float(anchor_penalty),

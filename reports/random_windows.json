@@ -1,0 +1,300 @@
+{
+  "submission": "submission/portfolio_round1.py",
+  "window_trading_days": 504,
+  "seed": 20260919,
+  "contract": {
+    "train_size": 252,
+    "test_size": 20,
+    "long_only": true,
+    "leverage": 1
+  },
+  "datasets": [
+    {
+      "dataset": "sp500(20)",
+      "n_obs_total": 8312,
+      "n_assets_total": 20,
+      "window": 504,
+      "reps": 25,
+      "slices": 51,
+      "folds": 612,
+      "failed_folds": 0,
+      "illegal_folds": 0,
+      "equal_weight_folds": 0,
+      "failure_rate": 0.0,
+      "worst_slices": [
+        {
+          "prefix": "rand#0@2013-05-20k2",
+          "n_assets": 2,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#1@2014-11-07k8",
+          "n_assets": 8,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#2@2003-07-25k3",
+          "n_assets": 3,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#3@1997-11-07k5",
+          "n_assets": 5,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#4@1993-10-21k3",
+          "n_assets": 3,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        }
+      ]
+    },
+    {
+      "dataset": "ftse100(64)",
+      "n_obs_total": 5959,
+      "n_assets_total": 64,
+      "window": 504,
+      "reps": 25,
+      "slices": 51,
+      "folds": 612,
+      "failed_folds": 0,
+      "illegal_folds": 0,
+      "equal_weight_folds": 0,
+      "failure_rate": 0.0,
+      "worst_slices": [
+        {
+          "prefix": "rand#0@2016-02-09k2",
+          "n_assets": 2,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#1@2009-08-28k16",
+          "n_assets": 16,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#2@2012-04-30k16",
+          "n_assets": 16,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#3@2004-09-09k13",
+          "n_assets": 13,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#4@2003-06-27k45",
+          "n_assets": 45,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        }
+      ]
+    },
+    {
+      "dataset": "factors(5)",
+      "n_obs_total": 2263,
+      "n_assets_total": 5,
+      "window": 504,
+      "reps": 25,
+      "slices": 51,
+      "folds": 612,
+      "failed_folds": 0,
+      "illegal_folds": 0,
+      "equal_weight_folds": 0,
+      "failure_rate": 0.0,
+      "worst_slices": [
+        {
+          "prefix": "rand#0@2019-04-12k2",
+          "n_assets": 2,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#1@2020-02-20k4",
+          "n_assets": 4,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#2@2019-08-13k3",
+          "n_assets": 3,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#3@2017-01-25k3",
+          "n_assets": 3,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#4@2019-05-03k4",
+          "n_assets": 4,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        }
+      ]
+    },
+    {
+      "dataset": "sp500_index(1)",
+      "n_obs_total": 8312,
+      "n_assets_total": 1,
+      "window": 504,
+      "reps": 25,
+      "slices": 50,
+      "folds": 600,
+      "failed_folds": 0,
+      "illegal_folds": 0,
+      "equal_weight_folds": 0,
+      "failure_rate": 0.0,
+      "worst_slices": [
+        {
+          "prefix": "rand#0@2014-07-23k1",
+          "n_assets": 1,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#1@2016-10-21k1",
+          "n_assets": 1,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#2@2006-05-23k1",
+          "n_assets": 1,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#3@2020-07-29k1",
+          "n_assets": 1,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        },
+        {
+          "prefix": "rand#4@2018-07-31k1",
+          "n_assets": 1,
+          "n_obs": 504,
+          "n_folds": 12,
+          "failed": 0,
+          "equal_weight": 0,
+          "illegal": 0,
+          "exceptions": [],
+          "reasons": {}
+        }
+      ]
+    }
+  ],
+  "total": {
+    "folds": 2436,
+    "failed_folds": 0,
+    "illegal_folds": 0,
+    "equal_weight_folds": 0,
+    "failure_rate": 0.0
+  }
+}

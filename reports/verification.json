@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T17:00:31.259299+00:00",
+  "generated_at_utc": "2026-09-18T17:48:24.436099+00:00",
   "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
   "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
   "packages": {
@@ -29,20 +29,24 @@
       "exit_code": 0,
       "log": "reports/stress-run.txt"
     },
+    "random_windows": {
+      "exit_code": 0,
+      "log": "reports/random-windows.txt"
+    },
     "preflight": {
       "exit_code": 0,
       "log": "reports/preflight.txt"
     }
   },
   "pytest": {
-    "tests": 95,
+    "tests": 108,
     "failures": 0,
     "errors": 0,
     "skipped": 1,
-    "passed": 94
+    "passed": 107
   },
-  "standalone_sha256": "13bc2a8a2ec0e46d1e854532f007e8526a8234fc03651fdd8cbd76c56e88cb07",
-  "core_sha256": "67a5a5f6b029089fefa01b9e058671a6ed384612d6b97538e72e466186e02ed5",
+  "standalone_sha256": "5acb9ce718902428e9ab879a16a4676b84c2464179f3c24b80e3b6616791639a",
+  "core_sha256": "1b9906cfba03943429e90bf0d11ec7d7f9d8a1a10e299de7596c6cdbd1aed7be",
   "real_skfolio_preflight": "PASSED",
   "ready_for_teacher_submission": true,
   "market_backtest": "NOT_RUN_IN_THIS_DELIVERY",

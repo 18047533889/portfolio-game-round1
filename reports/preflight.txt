@@ -1,6 +1,6 @@
 Standalone submission matches core and frozen config.
 ......                                                                   [100%]
-6 passed in 1.93s
+6 passed in 1.64s
 Basic checks passed. Backtest summary:
 Mean                                     0.056%
 Annualized Mean                          14.03%

@@ -41,7 +41,7 @@ def stress(n_cases: int=240) -> dict:
                 if d['main_solver_converged']:
                     converged+=1;accepted_gapmax=max(accepted_gapmax,float(d['qp_relative_gap']))
             degraded+=int(d['status'].startswith(('fallback','emergency')) or
-                          d['anti_equal_weight_applied'] or d['single_asset_fallback'])
+                          d['anti_equal_weight_applied'] or d['last_resort_fallback'])
             # Repeated calls must not depend on hidden state or randomness.
             repeated=allocate(x)['weights']
             if not np.array_equal(result['weights'],repeated):
