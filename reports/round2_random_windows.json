@@ -1,0 +1,61 @@
+{
+  "contract": {
+    "lookback": 252,
+    "step": 20,
+    "weight_drift": true,
+    "long_only": true
+  },
+  "datasets": {
+    "sp500": {
+      "slices": 120,
+      "folds": 3000,
+      "failed": 0,
+      "illegal": 0,
+      "equal": 0,
+      "reasons": {},
+      "max_weight_median": 0.28044436224693203,
+      "gross_max": 1.0000000000000002,
+      "short_max": -0.0
+    },
+    "ftse100": {
+      "slices": 120,
+      "folds": 3000,
+      "failed": 0,
+      "illegal": 0,
+      "equal": 0,
+      "reasons": {},
+      "max_weight_median": 0.28404477381491766,
+      "gross_max": 1.0000000000000002,
+      "short_max": -0.0
+    },
+    "nasdaq": {
+      "slices": 120,
+      "folds": 3000,
+      "failed": 0,
+      "illegal": 0,
+      "equal": 0,
+      "reasons": {},
+      "max_weight_median": 0.29442234834033254,
+      "gross_max": 1.0000000000000002,
+      "short_max": -0.0
+    },
+    "factors": {
+      "slices": 120,
+      "folds": 3000,
+      "failed": 0,
+      "illegal": 0,
+      "equal": 0,
+      "reasons": {},
+      "max_weight_median": 0.5228769065737098,
+      "gross_max": 1.0,
+      "short_max": -0.0
+    }
+  },
+  "total": {
+    "slices": 480,
+    "folds": 12000,
+    "failed": 0,
+    "illegal": 0,
+    "equal": 0
+  }
+}

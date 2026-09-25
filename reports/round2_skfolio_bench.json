@@ -1,0 +1,295 @@
+{
+  "datasets": {
+    "sp500(20)": {
+      "shape": [
+        8312,
+        20
+      ],
+      "methods": {
+        "HRP": {
+          "n_portfolios": 403,
+          "n_failed": 402,
+          "failure_rate": 0.9975186104218362,
+          "annual_return": 0.8023535911172022,
+          "max_drawdown": 0.040423163499497705,
+          "sharpe": 4.424234508416262
+        },
+        "HERC": {
+          "n_portfolios": 403,
+          "n_failed": 402,
+          "failure_rate": 0.9975186104218362,
+          "annual_return": 0.5771470689865122,
+          "max_drawdown": 0.05248154856266929,
+          "sharpe": 2.491099052824103
+        },
+        "NCO": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.13226769394675975,
+          "max_drawdown": 0.39620121730011926,
+          "sharpe": 0.8853536115296214
+        },
+        "MaxDiv": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1898552292140456,
+          "max_drawdown": 0.5954990054965861,
+          "sharpe": 1.0083244924188897
+        },
+        "RiskBudgeting": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.16796728890190216,
+          "max_drawdown": 0.530347592114222,
+          "sharpe": 0.9819141969851649
+        },
+        "SchurComp": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.14661354022829215,
+          "max_drawdown": 0.4255152654960903,
+          "sharpe": 0.9329382323968232
+        },
+        "MeanRisk+Denoise": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.13328743936390047,
+          "max_drawdown": 0.3803207671410336,
+          "sharpe": 0.8888019458341756
+        },
+        "_ref EqualWeighted": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.18238928680675726,
+          "max_drawdown": 0.5703247990591382,
+          "sharpe": 0.9701754273538598
+        },
+        "_ref InverseVol": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.16199971861024326,
+          "max_drawdown": 0.5134832629688959,
+          "sharpe": 0.950023154114034
+        },
+        "_ref MeanRisk(SCM)": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.132979251098395,
+          "max_drawdown": 0.41103546447749384,
+          "sharpe": 0.8897743140232246
+        },
+        "OURS p=0.25": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.14098015865292782,
+          "max_drawdown": 0.4847140126313052,
+          "sharpe": 0.9311763309592701
+        }
+      }
+    },
+    "ftse100(64)": {
+      "shape": [
+        5915,
+        64
+      ],
+      "methods": {
+        "HRP": {
+          "n_portfolios": 283,
+          "n_failed": 282,
+          "failure_rate": 0.9964664310954063,
+          "annual_return": 0.1907344088961057,
+          "max_drawdown": 0.019156429241476203,
+          "sharpe": 2.1989741341611606
+        },
+        "HERC": {
+          "n_portfolios": 283,
+          "n_failed": 282,
+          "failure_rate": 0.9964664310954063,
+          "annual_return": 0.25256963864853244,
+          "max_drawdown": 0.01488895862333528,
+          "sharpe": 2.7024673773132695
+        },
+        "NCO": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1363166322250194,
+          "max_drawdown": 0.30091299517161507,
+          "sharpe": 1.0208349182868988
+        },
+        "MaxDiv": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1358328889505725,
+          "max_drawdown": 0.6323381662748737,
+          "sharpe": 0.8923075965903624
+        },
+        "RiskBudgeting": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11742185819188122,
+          "max_drawdown": 0.5098769672576053,
+          "sharpe": 0.7343287720994821
+        },
+        "SchurComp": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1104073326566614,
+          "max_drawdown": 0.3738000231293921,
+          "sharpe": 0.7589352085991475
+        },
+        "MeanRisk+Denoise": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.13604908768541124,
+          "max_drawdown": 0.3882235184766274,
+          "sharpe": 1.018521510534711
+        },
+        "_ref EqualWeighted": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1177894751016025,
+          "max_drawdown": 0.5879252486648432,
+          "sharpe": 0.6502313038259748
+        },
+        "_ref InverseVol": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11017740842116262,
+          "max_drawdown": 0.5061150896870646,
+          "sharpe": 0.6617510561224196
+        },
+        "_ref MeanRisk(SCM)": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.13532726464456477,
+          "max_drawdown": 0.42064692065469966,
+          "sharpe": 1.0207909547356955
+        },
+        "OURS p=0.25": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.13341901694009056,
+          "max_drawdown": 0.4140161988239529,
+          "sharpe": 1.0001964989024306
+        }
+      }
+    },
+    "factors(5)": {
+      "shape": [
+        2263,
+        5
+      ],
+      "methods": {
+        "HRP": {
+          "n_portfolios": 100,
+          "n_failed": 99,
+          "failure_rate": 0.99,
+          "annual_return": -0.13424550753966447,
+          "max_drawdown": 0.027731288302000223,
+          "sharpe": -1.0163068558615267
+        },
+        "HERC": {
+          "n_portfolios": 100,
+          "n_failed": 99,
+          "failure_rate": 0.99,
+          "annual_return": -0.13747023217794818,
+          "max_drawdown": 0.02648587444689776,
+          "sharpe": -1.1181588608555955
+        },
+        "NCO": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.10300142157378597,
+          "max_drawdown": 0.37800428088132587,
+          "sharpe": 0.6552972299963722
+        },
+        "MaxDiv": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11266383627214706,
+          "max_drawdown": 0.408283474233627,
+          "sharpe": 0.6292035414511968
+        },
+        "RiskBudgeting": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11196202009844979,
+          "max_drawdown": 0.409173726570761,
+          "sharpe": 0.6269525946572739
+        },
+        "SchurComp": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.10914045214041787,
+          "max_drawdown": 0.38709834029645107,
+          "sharpe": 0.6305546834999037
+        },
+        "MeanRisk+Denoise": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.10478077180230393,
+          "max_drawdown": 0.3767944222328313,
+          "sharpe": 0.6680257822723732
+        },
+        "_ref EqualWeighted": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11160680328859782,
+          "max_drawdown": 0.4126134366367564,
+          "sharpe": 0.6165457543952975
+        },
+        "_ref InverseVol": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.11213797489869032,
+          "max_drawdown": 0.4093109205969384,
+          "sharpe": 0.6276971102730582
+        },
+        "_ref MeanRisk(SCM)": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "annual_return": 0.1027751326766419,
+          "max_drawdown": 0.3811787687626228,
+          "sharpe": 0.65223750461331
+        },
+        "OURS p=0.25": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10841648502163129,
+          "max_drawdown": 0.3938123624576685,
+          "sharpe": 0.6494772574478158
+        }
+      }
+    }
+  }
+}

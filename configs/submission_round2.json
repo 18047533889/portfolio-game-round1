@@ -1,0 +1,9 @@
+{
+  "round": 2,
+  "method": "regularized",
+  "half_life": 63.0,
+  "recent_mix": 0.25,
+  "anchor_penalty": 4.0,
+  "selection_status": "selected_on_a_rank_percentile_simulation_over_three_datasets_not_on_a_single_period_return",
+  "note": "Round 2 drops Sharpe from the score and gives annual return 15%, max drawdown 15% and failure rate 70%, so the round-1 choice of anchor_penalty (0.25, picked on a Sharpe era drawdown criterion) was re-derived rather than inherited. Candidates 0, 0.25, 1, 4, 16 were run under the round-2 contract -- WalkForward(252, 20) with weight_drift on -- on sp500(20), ftse100(64) and factors(5), then scored under a simulated field of skfolio optimizers. Two findings decided this: (1) the 70% failure term dominates everything, so the method must simply not fail, and every candidate here survives all folds; (2) across the annual-return and drawdown terms the candidates are nearly tied, which is the familiar signature of sliding along the efficient frontier rather than improving it. Under that tie the choice was made on compliance distance, and 4.0 sits furthest from the three prohibited books among the settings that do not give up rank. anchor_penalty = 0 is explicitly excluded: on a 5-asset panel denoising is skipped and shrinkage is weak, the result correlates 0.999 with the prohibited SCM minimum variance portfolio, and that is a violation rather than a near miss. Evidence: research/round2/."
+}

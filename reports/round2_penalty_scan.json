@@ -1,0 +1,303 @@
+{
+  "contract": {
+    "lookback": 252,
+    "step": 20,
+    "weight_drift": true
+  },
+  "datasets": {
+    "sp500(20)": {
+      "shape": [
+        8312,
+        20
+      ],
+      "configs": {
+        "p=0(=minvar)": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.13431892342332163,
+          "max_drawdown": 0.41513077841431345,
+          "sharpe": 0.9044922322526681
+        },
+        "shipped-p=0.25": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.14098015865292782,
+          "max_drawdown": 0.4847140126313052,
+          "sharpe": 0.9311763309592701
+        },
+        "p=1": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.15159119278128064,
+          "max_drawdown": 0.5401998669090049,
+          "sharpe": 0.9644345626527362
+        },
+        "p=4": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1640688737460085,
+          "max_drawdown": 0.5700135838835476,
+          "sharpe": 1.0041716857053014
+        },
+        "p=16": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.17127899604886246,
+          "max_drawdown": 0.5850578401784539,
+          "sharpe": 1.025991775361817
+        },
+        "p=64": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.17389251995715535,
+          "max_drawdown": 0.590026992635365,
+          "sharpe": 1.0334895035896254
+        },
+        "p=1e6(ceil)": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1749107998353701,
+          "max_drawdown": 0.5916673929341876,
+          "sharpe": 1.0361951575286887
+        },
+        "hrp": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1749108667535097,
+          "max_drawdown": 0.5916674908920987,
+          "sharpe": 1.0361953176053043
+        },
+        "EQUAL-WEIGHT ref": {
+          "n_portfolios": 403,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.18238928680675726,
+          "max_drawdown": 0.5703247990591382,
+          "sharpe": 0.9701754273538598
+        }
+      },
+      "equal_weight_reference": {
+        "n_portfolios": 403,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "n_fallback": 0,
+        "annual_return": 0.18238928680675726,
+        "max_drawdown": 0.5703247990591382,
+        "sharpe": 0.9701754273538598
+      }
+    },
+    "ftse100(64)": {
+      "shape": [
+        5915,
+        64
+      ],
+      "configs": {
+        "p=0(=minvar)": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1352656314950687,
+          "max_drawdown": 0.35399717828513944,
+          "sharpe": 0.9774948380636326
+        },
+        "shipped-p=0.25": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.13341901694009056,
+          "max_drawdown": 0.4140161988239529,
+          "sharpe": 1.0001964989024306
+        },
+        "p=1": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.13375637023109768,
+          "max_drawdown": 0.4351564587088994,
+          "sharpe": 0.9566706896089582
+        },
+        "p=4": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.13684143396103013,
+          "max_drawdown": 0.45668028526039817,
+          "sharpe": 0.931820680537127
+        },
+        "p=16": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1396260603154533,
+          "max_drawdown": 0.4640343943696411,
+          "sharpe": 0.9270217742052014
+        },
+        "p=64": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.14113021846090937,
+          "max_drawdown": 0.46614276019726864,
+          "sharpe": 0.9282148414107706
+        },
+        "p=1e6(ceil)": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.14208733277738236,
+          "max_drawdown": 0.4669585975783155,
+          "sharpe": 0.930718687033043
+        },
+        "hrp": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1420874783289572,
+          "max_drawdown": 0.4669587320786115,
+          "sharpe": 0.9307191957795934
+        },
+        "EQUAL-WEIGHT ref": {
+          "n_portfolios": 283,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1177894751016025,
+          "max_drawdown": 0.5879252486648432,
+          "sharpe": 0.6502313038259748
+        }
+      },
+      "equal_weight_reference": {
+        "n_portfolios": 283,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "n_fallback": 0,
+        "annual_return": 0.1177894751016025,
+        "max_drawdown": 0.5879252486648432,
+        "sharpe": 0.6502313038259748
+      }
+    },
+    "factors(5)": {
+      "shape": [
+        2263,
+        5
+      ],
+      "configs": {
+        "p=0(=minvar)": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10347193115572849,
+          "max_drawdown": 0.3886268848151816,
+          "sharpe": 0.6482000994152707
+        },
+        "shipped-p=0.25": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10841648502163129,
+          "max_drawdown": 0.3938123624576685,
+          "sharpe": 0.6494772574478158
+        },
+        "p=1": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10940902977685152,
+          "max_drawdown": 0.3972079526788731,
+          "sharpe": 0.6417798994166072
+        },
+        "p=4": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1092536026967616,
+          "max_drawdown": 0.39873911384381366,
+          "sharpe": 0.6346167010426486
+        },
+        "p=16": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10914877248136584,
+          "max_drawdown": 0.3991967528499273,
+          "sharpe": 0.6320566357203456
+        },
+        "p=64": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10911848880308321,
+          "max_drawdown": 0.39931625185297515,
+          "sharpe": 0.6313718167023522
+        },
+        "p=1e6(ceil)": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.1091080069843495,
+          "max_drawdown": 0.3993565548355438,
+          "sharpe": 0.631139325486981
+        },
+        "hrp": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.10910800630715461,
+          "max_drawdown": 0.39935655742274523,
+          "sharpe": 0.6311393105377974
+        },
+        "EQUAL-WEIGHT ref": {
+          "n_portfolios": 100,
+          "n_failed": 0,
+          "failure_rate": 0.0,
+          "n_fallback": 0,
+          "annual_return": 0.11160680328859782,
+          "max_drawdown": 0.4126134366367564,
+          "sharpe": 0.6165457543952975
+        }
+      },
+      "equal_weight_reference": {
+        "n_portfolios": 100,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "n_fallback": 0,
+        "annual_return": 0.11160680328859782,
+        "max_drawdown": 0.4126134366367564,
+        "sharpe": 0.6165457543952975
+      }
+    }
+  }
+}

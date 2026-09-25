@@ -1,0 +1,192 @@
+{
+  "submission": "submission/portfolio_round2.py",
+  "submission_sha256": "9c38aa47cd1ba82bb4245f216def87a89c7baca86c20faee317f4bf55c6c3319",
+  "datasets": [
+    {
+      "dataset": "sp500",
+      "panel": {
+        "observations": 8312,
+        "assets": 20,
+        "start": "1990-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 252,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 403,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.1640688737460085,
+      "annualized_mean": 0.1640688737460085,
+      "max_drawdown": 0.5700135838835476,
+      "sharpe": 1.0041716857053014,
+      "exposure": {
+        "net_min": 0.9999999999999994,
+        "net_max": 1.0000000000000004,
+        "gross_max": 1.0000000000000004,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.2112790924224695,
+        "max": 0.5119127697327019
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 403,
+          "median": 0.8265840673422666,
+          "p05": 0.5063676402550865,
+          "p95": 1.271160746716848,
+          "min": 0.40287154627883576
+        },
+        "ivp": {
+          "n": 403,
+          "median": 0.7875662594562076,
+          "p05": 0.43934077411637146,
+          "p95": 1.1687505999399526,
+          "min": 0.3072677129465
+        },
+        "scm_gmvp": {
+          "n": 403,
+          "median": 0.737819229652523,
+          "p05": 0.4320203864842814,
+          "p95": 1.2089628362982372,
+          "min": 0.23783237327351017
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    {
+      "dataset": "ftse100",
+      "panel": {
+        "observations": 5915,
+        "assets": 64,
+        "start": "2000-01-05",
+        "end": "2023-05-31"
+      },
+      "contract": {
+        "lookback": 252,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 283,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.13684143396103013,
+      "annualized_mean": 0.13684143396103013,
+      "max_drawdown": 0.45668028526039817,
+      "sharpe": 0.931820680537127,
+      "exposure": {
+        "net_min": 0.9999899023023976,
+        "net_max": 1.0000000000000009,
+        "gross_max": 1.0000000000000009,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.20250912645375524,
+        "max": 0.39687707733182914
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 283,
+          "median": 1.404571212485773,
+          "p05": 1.030185263126897,
+          "p95": 1.5996450424058701,
+          "min": 0.8973627666457249
+        },
+        "ivp": {
+          "n": 283,
+          "median": 1.3655268608494446,
+          "p05": 1.0073450830986201,
+          "p95": 1.5440431867108946,
+          "min": 0.8418014681621651
+        },
+        "scm_gmvp": {
+          "n": 283,
+          "median": 1.048104515861046,
+          "p05": 0.5952127021759809,
+          "p95": 1.3721190471119538,
+          "min": 0.45054847840074863
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    {
+      "dataset": "factors",
+      "panel": {
+        "observations": 2263,
+        "assets": 5,
+        "start": "2014-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 252,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 100,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.1092536026967616,
+      "annualized_mean": 0.1092536026967616,
+      "max_drawdown": 0.39873911384381366,
+      "sharpe": 0.6346167010426486,
+      "exposure": {
+        "net_min": 0.9999999999999997,
+        "net_max": 1.0000000000000004,
+        "gross_max": 1.0000000000000004,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.4680415690884633,
+        "max": 0.6628232984085639
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 100,
+          "median": 0.6870618285639052,
+          "p05": 0.3534641044309133,
+          "p95": 0.9256663695161979,
+          "min": 0.19102942265520104
+        },
+        "ivp": {
+          "n": 100,
+          "median": 0.6534052590903264,
+          "p05": 0.333200346236345,
+          "p95": 0.7948755186622132,
+          "min": 0.2717324401432426
+        },
+        "scm_gmvp": {
+          "n": 100,
+          "median": 1.1048004490173642,
+          "p05": 0.6836102198675205,
+          "p95": 1.4221692599833111,
+          "min": 0.6185532128851234
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    }
+  ]
+}

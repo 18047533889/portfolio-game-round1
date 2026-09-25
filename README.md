@@ -1,4 +1,14 @@
-> **本次状态更新（2026-09-19）：** 请先阅读 [docs/round1-final-report-zh.md](docs/round1-final-report-zh.md) 与 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。
+> **第二轮（2026-09-25）：** 提交物是 [submission/portfolio_round2.py](submission/portfolio_round2.py)（单文件，610 行，SHA256 `9c38aa47...`），完整报告见 [docs/round2-report-zh.md](docs/round2-report-zh.md)。本轮规则变化很大：**禁止 EWP / IVP / SCM-GMVP 三个组合**、`shortselling` 改为 TRUE、`weight_drift` 改为 TRUE（要求 skfolio ≥ 1.3.0）、评分改为年化 15% + 回撤 15% + 失败率 70%（**Sharpe 被移出评分**）。
+>
+> 本轮最重要的一条发现：**`weight_drift=TRUE` 会让 skfolio 自带的 `HierarchicalRiskParity` / `HierarchicalEqualRiskContribution` 全数失败**（sp500 上 402/403 折失败）。根因是 `cross_val_predict` 把上一折权重以字典传递，而 HRP/HERC 内部拿这个字典构造 `Portfolio` 时 X 已是 numpy、列名丢失 → 每折必抛 `ValueError`。直接提交这两个类的同学 failure rate 会接近 100%，而失败率占 70% 的分。我们自己的实现不触碰 `previous_weights`，不受影响。
+>
+> 合规改造：Round 1 的回退链有六处调用 `_inverse_risk()`（`w ∝ 1/σ`，就是本轮被禁的 IVP），已**整条删除**而非重新加权；末级兜底改为**按列序线性递减预算**（与任何风险估计无关）。`anchor_penalty` 由 0.25 重推为 **4.0**，并在合规上明确排除 `p=0`——它在 5 资产上与 SCM-GMVP 相关性 **0.999**，那是同一方法而非相似方法。
+>
+> 验证：老师 `self_test.py` 127 组合 0 失败；隔离测试通过；23 例合成退化面板 0 失败 / 0 等权 / 0 逆波动率；**随机子集 × 随机两年窗口 12,000 折 / 0 失败 / 0 非法 / 0 等权**。
+>
+> ---
+>
+> **第一轮状态（2026-09-19）：** 请先阅读 [docs/round1-final-report-zh.md](docs/round1-final-report-zh.md) 与 [reports/RUN_REPORT.md](reports/RUN_REPORT.md)。
 >
 > 真实 skfolio 验收已通过：`tools/verify_repo.py --require-integration` 返回 0，`pytest` 108 项（107 通过 / 1 跳过 / 0 失败），老师原版 `self_test.py` 打印 `Basic checks passed`、127 个组合、**0 个失败组合**，`ready_for_teacher_submission: true`。240 组合成边界数据压力测试最终失败 0。
 >

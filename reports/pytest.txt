@@ -11,4 +11,4 @@ tests/test_cvxpy_reference.py::test_qp_matches_cvxpy[3.0]
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
 SKIPPED [1] tests/test_research.py:70: This test covers absent optional dependency only
-107 passed, 1 skipped, 4 warnings in 3.72s
+107 passed, 1 skipped, 4 warnings in 4.28s

@@ -1,0 +1,11 @@
+shipped submission SHA256: 9c38aa47cd1ba82bb4245f216def87a89c7baca86c20faee317f4bf55c6c3319
+
+dataset       n folds fail    annual    maxdd  sharpe  L1_EWP  L1_IVP  L1_GMVP  gross
+-------------------------------------------------------------------------------------
+sp500        20   403    0   16.41%  57.00%   1.004   0.827   0.788    0.738  1.000
+ftse100      64   283    0   13.68%  45.67%   0.932   1.405   1.366    1.048  1.000
+factors       5   100    0   10.93%  39.87%   0.635   0.687   0.653    1.105  1.000
+
+total failed portfolios : 0 / 786
+total fallback portfolios: 0
+exact hits on a prohibited book: {'sp500': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}, 'ftse100': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}, 'factors': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}}
