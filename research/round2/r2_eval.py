@@ -33,10 +33,19 @@ REPO = Path(__file__).resolve().parents[2]
 LOOKBACK = 252
 STEP = 20
 
+# The round-2 core is the default. An earlier version of this file defaulted to
+# src/portfolio_game/core.py, which is the ROUND-1 tree and still present on
+# disk, so every caller that did not pass a path was silently measuring the
+# round-1 algorithm while reporting round-2 results. The default is now the
+# round-2 tree, and CORE_OVERRIDE exists so a sweep can pin one core for every
+# fold without relying on an instance attribute that sklearn's clone discards.
+CORE_DEFAULT = REPO / "src" / "portfolio_game_round2" / "core.py"
+CORE_OVERRIDE: Path | None = None
+
 
 def load_core(path: str | Path | None = None):
     """Import a portfolio core module by file path."""
-    target = Path(path) if path else REPO / "src" / "portfolio_game" / "core.py"
+    target = Path(path) if path else (CORE_OVERRIDE or CORE_DEFAULT)
     spec = importlib.util.spec_from_file_location("r2core", target)
     if spec is None or spec.loader is None:
         raise ImportError(f"Cannot import core from {target}")
@@ -76,6 +85,7 @@ class Probe(BaseOptimization):
 
     def __init__(self, penalty: float = 0.25, method: str = "regularized",
                  half_life: float = 63.0, recent_mix: float = 0.25,
+                 allow_short: bool = False, short_cap: float = 0.0,
                  portfolio_params: dict | None = None, fallback=None,
                  previous_weights=None, raise_on_failure: bool = True):
         super().__init__(portfolio_params=portfolio_params, fallback=fallback,
@@ -85,6 +95,8 @@ class Probe(BaseOptimization):
         self.method = method
         self.half_life = half_life
         self.recent_mix = recent_mix
+        self.allow_short = allow_short
+        self.short_cap = short_cap
 
     def fit(self, X, y=None):
         X = validate_data(self, X)
@@ -99,7 +111,8 @@ class Probe(BaseOptimization):
         result = self._core().allocate(
             np.asarray(X, dtype=float), half_life=self.half_life,
             recent_mix=self.recent_mix, anchor_penalty=self.penalty,
-            method=self.method,
+            method=self.method, allow_short=self.allow_short,
+            short_cap=self.short_cap,
         )
         self.weights_ = np.asarray(result["weights"], dtype=float)
         self.diagnostics_ = result["diagnostics"]
@@ -113,23 +126,40 @@ class Probe(BaseOptimization):
 
 def run(X: pd.DataFrame, penalty: float, method: str = "regularized",
         *, weight_drift: bool = True, half_life: float = 63.0,
-        recent_mix: float = 0.25) -> dict:
+        recent_mix: float = 0.25, allow_short: bool = False,
+        short_cap: float = 0.0) -> dict:
     """One walk-forward run under the round-2 contract."""
     cv = WalkForward(train_size=LOOKBACK, test_size=STEP)
     model = Probe(penalty=penalty, method=method, half_life=half_life,
-                  recent_mix=recent_mix,
+                  recent_mix=recent_mix, allow_short=allow_short,
+                  short_cap=short_cap,
                   portfolio_params={"weight_drift": weight_drift, "name": "probe"})
     model.raise_on_failure = False
     pred = cross_val_predict(model, X, cv=cv, n_jobs=1)
 
     n_total = len(pred)
     n_failed = int(getattr(pred, "n_failed_portfolios", 0) or 0)
+    weights = [np.asarray(p.weights, dtype=float) for p in pred.portfolios
+               if p.__class__.__name__ != "FailedPortfolio"
+               and getattr(p, "weights", None) is not None]
     out = {
         "n_portfolios": n_total,
         "n_failed": n_failed,
         "failure_rate": n_failed / n_total if n_total else 1.0,
         "n_fallback": int(getattr(pred, "n_fallback_portfolios", 0) or 0),
     }
+    if weights:
+        # The exposure rule is measured on the delivered books, not inferred
+        # from the long-only flag: Net = sum(w), Gross = sum|w|.
+        out["short_max"] = float(max(np.maximum(-w, 0.0).sum() for w in weights))
+        out["gross_max"] = float(max(float(np.abs(w).sum()) for w in weights))
+        out["min_weight"] = float(min(float(w.min()) for w in weights))
+        out["n_negative_ever"] = int(sum(int((w < 0).any()) for w in weights))
+    else:
+        out["short_max"] = float("nan")
+        out["gross_max"] = float("nan")
+        out["min_weight"] = float("nan")
+        out["n_negative_ever"] = 0
     if n_total - n_failed > 0:
         out["annual_return"] = float(pred.annualized_mean)
         out["max_drawdown"] = float(pred.max_drawdown)

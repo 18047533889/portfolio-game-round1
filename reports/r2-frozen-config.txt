@@ -1,0 +1,5 @@
+CONFIG GATE PASSED
+  round            : 2
+  frozen params    : {'method': 'regularized', 'half_life': 63.0, 'recent_mix': 0.25, 'anchor_penalty': 4.0, 'allow_short': False, 'short_cap': 0.0}
+  core sha256      : f84301853f90863dca1844c00ad54a3b8c6bcf411aa2bcd9ab449a20d1c36edb
+  shipped sha256   : 3c4151d34779034e7a04dd574e4a7f31f0bb97c2610ff4c0c9f0817a370aceb7

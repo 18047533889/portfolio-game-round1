@@ -1,0 +1,9 @@
+/Users/shw/Downloads/portfolio-game-round1/tools/round2_short_projection_check.py:60: UserWarning: The default solvers are not available. Using CLARABEL. Consider specifying a solver explicitly via the ``solver`` argument.
+  problem.solve(tol_gap_abs=1e-12, tol_gap_rel=1e-12, tol_feas=1e-12)
+trials                        : 60
+max ||ours - bisection||_inf  : 1.443e-15
+max ||ours - cvxpy||_inf      : 1.580e-11   (solver tolerance)
+max |bound - LP value|        : 4.279e-12   (solver tolerance)
+
+SHORT PROJECTION & GAP: VERIFIED
+written -> reports/round2_short_projection.json

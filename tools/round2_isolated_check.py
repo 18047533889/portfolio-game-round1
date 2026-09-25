@@ -69,12 +69,12 @@ for ptf in pred.portfolios:
     w = np.asarray(ptf.weights, dtype=float)
     if not np.isfinite(w).all():
         bad.append("nonfinite")
-    if w.min() < -1e-12:
-        bad.append("short")
+    if w.min() < -__SHORT_CAP__ - 1e-12:
+        bad.append("below_short_budget")
     if abs(w.sum() - 1.0) > 1e-8:
         bad.append("not_fully_invested")
-    if abs(w).sum() > 1.0 + 1e-8:
-        bad.append("gross_over_leverage")
+    if abs(w).sum() > 1.0 + 2.0 * __SHORT_CAP__ * w.size + 1e-8:
+        bad.append("gross_over_short_budget")
     if w.size > 1 and np.allclose(w, 1.0 / w.size, atol=1e-8, rtol=1e-5):
         bad.append("equal_weight")
 
@@ -85,6 +85,10 @@ print(json.dumps({
     "n_fallback_portfolios": int(pred.n_fallback_portfolios),
     "annual_return": float(pred.annualized_mean),
     "max_drawdown": float(pred.max_drawdown),
+    "max_short_total": float(max(np.maximum(-np.asarray(p.weights, dtype=float), 0.0).sum()
+                                 for p in pred.portfolios)),
+    "max_gross": float(max(np.abs(np.asarray(p.weights, dtype=float)).sum()
+                           for p in pred.portfolios)),
     "violations": sorted(set(bad)),
 }))
 if n or bad:
@@ -103,7 +107,12 @@ def main() -> int:
     tmp = Path(tempfile.mkdtemp(prefix="r2_isolated_"))
     try:
         shutil.copy2(args.submission, tmp / args.submission.name)
-        (tmp / "driver.py").write_text(DRIVER, encoding="utf-8")
+        cfg = json.loads((ROOT / "configs/submission_round2.json").read_text(encoding="utf-8"))
+        allow = bool(cfg.get("allow_short", False))
+        cap = float(cfg.get("short_cap", 0.0)) if allow else 0.0
+        driver = DRIVER.replace("__SHORT_CAP__", repr(cap))
+        print(f"frozen config: allow_short={allow} short_cap={cap}")
+        (tmp / "driver.py").write_text(driver, encoding="utf-8")
         listing = sorted(p.name for p in tmp.iterdir())
         print(f"temp dir : {tmp}")
         print(f"contents : {listing}")

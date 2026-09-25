@@ -1,0 +1,19 @@
+{
+  "frozen_sha256": "80bbd5594bf98e97642afbdb4107c3edfb0aecce0a6cf0a663882740ae3849cd",
+  "current_core_sha256": "f84301853f90863dca1844c00ad54a3b8c6bcf411aa2bcd9ab449a20d1c36edb",
+  "cases": 220,
+  "differences": [],
+  "intended_fixes": [
+    "missing252x6 {}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'anchor_penalty': 0.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'anchor_penalty': 4.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'recent_mix': 0.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'recent_mix': 1.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'half_life': 1.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'half_life': 252.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'method': 'hrp'}: status fallback_hrp -> hrp (weights unchanged)",
+    "missing252x6 {'allow_short': False, 'short_cap': 0.0}: fallback_hrp -> regularized_qp",
+    "missing252x6 {'allow_short': True, 'short_cap': 0.0}: fallback_hrp -> regularized_qp"
+  ],
+  "verdict": "IDENTICAL"
+}

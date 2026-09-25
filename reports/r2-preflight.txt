@@ -1,0 +1,57 @@
+Round-2 standalone submission matches core and frozen config.
+.....................                                                    [100%]
+21 passed in 1.44s
+Basic checks passed. Backtest summary:
+Mean                                     0.067%
+Annualized Mean                          16.80%
+Variance                                0.00011
+Annualized Variance                       2.68%
+Semi-Variance                          0.000053
+Annualized Semi-Variance                  1.34%
+Standard Deviation                        1.03%
+Annualized Standard Deviation            16.38%
+Semi-Deviation                            0.73%
+Annualized Semi-Deviation                11.58%
+Mean Absolute Deviation                   0.70%
+CVaR at 95%                               2.33%
+EVaR at 95%                               4.42%
+Worst Realization                         9.07%
+CDaR at 95%                              28.59%
+MAX Drawdown                             53.15%
+Average Drawdown                          4.05%
+EDaR at 95%                              37.07%
+First Lower Partial Moment                0.35%
+Ulcer Index                               0.079
+Gini Mean Difference                      1.05%
+Value at Risk at 95%                      1.52%
+Drawdown at Risk at 95%                  16.37%
+Entropic Risk Measure at 95%               3.00
+Fourth Central Moment                 0.000016%
+Fourth Lower Partial Moment           0.000006%
+Skew                                     21.98%
+Kurtosis                               1448.13%
+Sharpe Ratio                              0.065
+Annualized Sharpe Ratio                    1.03
+Sortino Ratio                             0.091
+Annualized Sortino Ratio                   1.45
+Mean Absolute Deviation Ratio             0.095
+First Lower Partial Moment Ratio           0.19
+Value at Risk Ratio at 95%                0.044
+CVaR Ratio at 95%                         0.029
+Entropic Risk Measure Ratio at 95%      0.00022
+EVaR Ratio at 95%                         0.015
+Worst Realization Ratio                  0.0073
+Drawdown at Risk Ratio at 95%            0.0041
+CDaR Ratio at 95%                        0.0023
+Calmar Ratio                             0.0013
+Average Drawdown Ratio                    0.016
+EDaR Ratio at 95%                        0.0018
+Ulcer Index Ratio                        0.0084
+Gini Mean Difference Ratio                0.064
+Avg nb of Assets per Portfolio             20.0
+Number of Portfolios                        127
+Number of Failed Portfolios                   0
+Number of Fallback Portfolios                 0
+dtype: object
+isolated directory contents: ['portfolio_round2.py', 'self_test.py']
+ROUND-2 FULL PREFLIGHT PASSED: real skfolio integration and the original instructor self-test, on the uploaded file alone.

@@ -1,0 +1,165 @@
+{
+  "round": 2,
+  "generated_at_utc": "2026-09-25T14:35:05.722928+00:00",
+  "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "skfolio": "1.3.4",
+    "cvxpy": null,
+    "cvxpy-base": "1.9.2"
+  },
+  "contract": {
+    "shortselling": true,
+    "leverage": 1,
+    "lookback": 252,
+    "optimize_every": 20,
+    "weight_drift": true,
+    "scoring": {
+      "annual_return": 0.15,
+      "max_drawdown": 0.15,
+      "failure_rate": 0.7
+    }
+  },
+  "short_selling": {
+    "option_implemented": true,
+    "frozen_allow_short": false,
+    "frozen_short_cap": 0.0,
+    "net_exposure_always": 1.0,
+    "gross_exposure_identity": "1 + 2 * (total short)",
+    "long_only_path_bit_identical_to_pre_short_core": true,
+    "projection_and_duality_gap_verified": true,
+    "sweep": "reports/round2_short_sweep.json"
+  },
+  "prohibitions": [
+    "equally weighted portfolio (EWP)",
+    "inverse-volatility portfolio (IVP)",
+    "GMVP on the sample covariance matrix (SCM)"
+  ],
+  "checks": {
+    "build": {
+      "exit_code": 0,
+      "log": "reports/r2-build-check.txt"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log": "reports/r2-syntax-check.txt"
+    },
+    "frozen_config": {
+      "exit_code": 0,
+      "log": "reports/r2-frozen-config.txt"
+    },
+    "long_only_equivalence": {
+      "exit_code": 0,
+      "log": "reports/r2-long-only-equivalence.txt"
+    },
+    "short_math": {
+      "exit_code": 0,
+      "log": "reports/r2-short-projection.txt"
+    },
+    "pytest": {
+      "exit_code": 0,
+      "log": "reports/r2-pytest.txt"
+    },
+    "hostile_inputs": {
+      "exit_code": 0,
+      "log": "reports/r2-stress.txt"
+    },
+    "random_windows": {
+      "exit_code": 0,
+      "log": "reports/r2-random-windows.txt"
+    },
+    "isolated_file": {
+      "exit_code": 0,
+      "log": "reports/r2-isolated.txt"
+    },
+    "backtest": {
+      "exit_code": 0,
+      "log": "reports/r2-backtest.txt"
+    },
+    "teacher_preflight": {
+      "exit_code": 0,
+      "log": "reports/r2-preflight.txt"
+    }
+  },
+  "pytest": {
+    "tests": 129,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 128
+  },
+  "submission_sha256": "3c4151d34779034e7a04dd574e4a7f31f0bb97c2610ff4c0c9f0817a370aceb7",
+  "core_sha256": "f84301853f90863dca1844c00ad54a3b8c6bcf411aa2bcd9ab449a20d1c36edb",
+  "config_sha256": "138f850a344bd266ccb92d38240f348c53c8259cc4c3c784b4674eba225a4dab",
+  "backtest_sha256_matches_shipped_file": true,
+  "headline_backtest": {
+    "sp500": {
+      "portfolios": 403,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.1640688737460085,
+      "max_drawdown": 0.5700135838835476,
+      "gross_max": 1.0000000000000004,
+      "short_max": 0.0,
+      "l1_to_ewp_median": 0.8265840673422666,
+      "l1_to_ivp_median": 0.7875662594562076,
+      "l1_to_scm_gmvp_median": 0.737819229652523,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    "ftse100": {
+      "portfolios": 283,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.13684143396103013,
+      "max_drawdown": 0.45668028526039817,
+      "gross_max": 1.0000000000000009,
+      "short_max": 0.0,
+      "l1_to_ewp_median": 1.404571212485773,
+      "l1_to_ivp_median": 1.3655268608494446,
+      "l1_to_scm_gmvp_median": 1.048104515861046,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    "factors": {
+      "portfolios": 100,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.1092536026967616,
+      "max_drawdown": 0.39873911384381366,
+      "gross_max": 1.0000000000000004,
+      "short_max": 0.0,
+      "l1_to_ewp_median": 0.6870618285639052,
+      "l1_to_ivp_median": 0.6534052590903264,
+      "l1_to_scm_gmvp_median": 1.1048004490173642,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    }
+  },
+  "random_window_totals": {
+    "slices": 480,
+    "folds": 12000,
+    "failed": 0,
+    "illegal": 0,
+    "equal": 0
+  },
+  "real_skfolio_preflight": "PASSED",
+  "ready_for_teacher_submission": true,
+  "market_backtest": "RUN_ON_THREE_SKFOLIO_DATASETS_UNDER_THE_ROUND_2_CONTRACT",
+  "hyperparameter_search": "RUN_AS_A_PENALTY_SWEEP,SEE_reports/round2_penalty_scan.json",
+  "notice": "Passing these gates establishes format compliance, absence of the three prohibited books on every tested fold, and robustness to hostile inputs. It does not establish a rank in the round-2 field: failure rate is 70% of that score and the annual-return and drawdown terms are near-tied across all compliant candidates, so a clean run is the dominant term."
+}

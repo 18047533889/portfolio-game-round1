@@ -203,9 +203,22 @@ def main() -> int:
 
     report = {"submission": str(args.submission.relative_to(ROOT)),
               "submission_sha256": sha, "datasets": rows}
+    cfg_path = ROOT / "configs/submission_round2.json"
+    if cfg_path.exists():
+        cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        allow = bool(cfg.get("allow_short", False))
+        report["frozen_short_setting"] = {
+            "allow_short": allow,
+            "short_cap": float(cfg.get("short_cap", 0.0)) if allow else 0.0,
+        }
     args.out.write_text(json.dumps(report, indent=2), encoding="utf-8")
 
-    lines = [f"shipped submission SHA256: {sha}", ""]
+    lines = [f"shipped submission SHA256: {sha}"]
+    if "frozen_short_setting" in report:
+        s = report["frozen_short_setting"]
+        lines.append(f"frozen short setting     : allow_short={s['allow_short']} "
+                     f"short_cap={s['short_cap']}")
+    lines.append("")
     head = (f"{'dataset':10s} {'n':>4s} {'folds':>5s} {'fail':>4s} "
             f"{'annual':>9s} {'maxdd':>8s} {'sharpe':>7s} "
             f"{'L1_EWP':>7s} {'L1_IVP':>7s} {'L1_GMVP':>8s} {'gross':>6s}")
@@ -228,6 +241,12 @@ def main() -> int:
                  f"{sum(r['n_fallback_portfolios'] for r in rows)}")
     lines.append("exact hits on a prohibited book: "
                  f"{ {r['dataset']: r['prohibited_exact_hits'] for r in rows} }")
+    gross_over = [r["dataset"] for r in rows if not r["exposure"]["leverage_ok"]]
+    lines.append(f"max gross exposure       : "
+                 f"{max(r['exposure']['gross_max'] for r in rows):.6f}")
+    lines.append(f"max short exposure       : "
+                 f"{max(r['exposure']['short_max'] for r in rows):.6f}")
+    lines.append(f"datasets with gross > 1  : {gross_over if gross_over else 'none'}")
     text = "\n".join(lines)
     (args.out.with_suffix(".txt")).write_text(text + "\n", encoding="utf-8")
     print("\n" + text)

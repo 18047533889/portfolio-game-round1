@@ -91,24 +91,41 @@ def evaluate(factory, X) -> dict:
     return out
 
 
-def rank_pct(values: list[float], higher_is_better: bool) -> np.ndarray:
-    """Percentile rank in [0,1]; 1.0 is best. NaNs score 0.
+def rank_pct(values: list[float], higher_is_better: bool,
+             *, rtol: float = 1e-6) -> np.ndarray:
+    """Percentile rank in [0,1]; 1.0 is best. NaNs score 0. Ties share a rank.
 
-    Ties MUST share a rank. An earlier version of this file used argsort, which
-    assigns ties in list order -- with 14 methods all on a 0% failure rate that
-    fabricated a spread of r_fail from 0.13 to 1.00 that was pure ordering, and
-    it silently decided the ranking. Average ranks are the only defensible
-    treatment here, because a shared failure rate carries no information about
-    who is better.
+    Ties MUST share a rank, and "tie" has to include values that differ only in
+    their last bits. Two versions of this function have now been wrong in the
+    same direction:
+
+      * an argsort version assigned ties in list order, fabricating a spread of
+        r_fail from 0.13 to 1.00 across 14 methods that all had a 0% failure
+        rate -- pure ordering decided the ranking;
+      * rankdata alone still splits values that are equal to within 1e-16,
+        which is what two short-cap settings produce when the cap is not
+        binding. On the factors panel, cap = 0.00 and cap = 0.20 deliver the
+        identical long-only book, yet differ in the solver's last iterate, and
+        rankdata scored them 1.000 and 0.000. That is 0.30 of the composite
+        score manufactured from floating-point noise.
+
+    Values are therefore quantised to a relative tolerance before ranking, and
+    anything inside that window is reported as tied. The window is 1e-6
+    relative, far below any economically meaningful difference in a return or a
+    drawdown, and far above solver roundoff.
     """
     v = np.asarray(values, dtype=float)
     out = np.zeros(len(v))
     ok = np.isfinite(v)
     if ok.sum() <= 1:
         return out
-    sub = v[ok]
+    sub = v[ok].copy()
+    if not higher_is_better:
+        sub = -sub
+    scale = max(1.0, float(np.max(np.abs(sub))))
+    keys = np.round(sub / (scale * rtol))
     # rankdata gives rank 1 to the worst and len(sub) to the best.
-    r = rankdata(sub if higher_is_better else -sub, method="average")
+    r = rankdata(keys, method="average")
     out[ok] = (r - 1.0) / (len(sub) - 1.0)
     return out
 

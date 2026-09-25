@@ -8,15 +8,21 @@ that the replacement still survives, and that no path lands on either
 prohibited book.
 
 Checked on every case:
-  * weights are finite, nonnegative, sum to 1
+  * weights are finite, sum to 1, and respect the short floor from the frozen
+    config (long-only when none is granted)
   * weights are NOT equal weight (prohibited this round)
   * weights are NOT the inverse-volatility book (prohibited this round)
   * the call returns rather than raising
+
+The floor is read from configs/submission_round2.json rather than assumed to be
+zero, so this stress test keeps testing the shipped setting even if the short
+budget is turned on. Gross exposure is reported either way.
 """
 from __future__ import annotations
 
 import argparse
 import importlib.util
+import json
 import sys
 import warnings
 from pathlib import Path
@@ -26,6 +32,7 @@ import numpy as np
 warnings.filterwarnings("ignore")
 
 ROOT = Path(__file__).resolve().parents[1]
+CONFIG = ROOT / "configs/submission_round2.json"
 
 
 def load_submission(path: Path):
@@ -91,8 +98,15 @@ def main() -> int:
     cls = module.CVXPYPortfolio
     rng = np.random.default_rng(20260925)
 
+    cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
+    allow_short = bool(cfg.get("allow_short", False))
+    short_cap = float(cfg.get("short_cap", 0.0)) if allow_short else 0.0
+    print(f"frozen config: allow_short={allow_short} short_cap={short_cap} "
+          f"-> per-asset floor {-short_cap:.4f}\n")
+
     failures, equal_hits, ivp_hits, illegal = [], [], [], []
     statuses: dict[str, int] = {}
+    short_totals, gross_totals = [], []
     total = 0
     print(f"{'case':26s} {'status':32s} {'n':>3s} {'maxw':>7s} "
           f"{'L1_eq':>7s} {'L1_ivp':>7s}  verdict")
@@ -114,13 +128,15 @@ def main() -> int:
             n = panel.shape[1]
             ok_shape = w.shape == (n,)
             ok_finite = bool(np.isfinite(w).all())
-            ok_nonneg = bool((w >= 0).all())
+            ok_floor = bool((w >= -short_cap - 1e-10).all())
             ok_sum = abs(float(w.sum()) - 1.0) < 1e-8
-            if not (ok_shape and ok_finite and ok_nonneg and ok_sum):
+            if not (ok_shape and ok_finite and ok_floor and ok_sum):
                 illegal.append((name, w))
                 print(f"{name:26s} {status:32s} {n:3d} {float(w.max()):7.4f} "
                       f"{'-':>7s} {'-':>7s}  ILLEGAL")
                 continue
+            short_totals.append(float(np.maximum(-w, 0.0).sum()))
+            gross_totals.append(float(np.abs(w).sum()))
             eq = float(np.abs(w - 1.0 / n).sum())
             # inverse volatility on the observed column volatilities
             with np.errstate(invalid="ignore"):
@@ -154,6 +170,12 @@ def main() -> int:
     print(f"equal-weight outputs   : {len(equal_hits)}  {equal_hits}")
     print(f"inverse-vol outputs    : {len(ivp_hits)}  {ivp_hits}")
     print(f"final-rule statuses    : {statuses}")
+    if short_totals:
+        print(f"max total short        : {max(short_totals):.6f}")
+        print(f"max gross exposure     : {max(gross_totals):.6f} "
+              f"(net is 1 by construction; gross = 1 + 2*short)")
+        print(f"gross within leverage 1: "
+              f"{max(gross_totals) <= 1.0 + 1e-9}")
     if failures:
         for name, why in failures:
             print(f"  FAIL {name}: {why}")

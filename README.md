@@ -1,10 +1,14 @@
-> **第二轮（2026-09-25）：** 提交物是 [submission/portfolio_round2.py](submission/portfolio_round2.py)（单文件，610 行，SHA256 `9c38aa47...`），完整报告见 [docs/round2-report-zh.md](docs/round2-report-zh.md)。本轮规则变化很大：**禁止 EWP / IVP / SCM-GMVP 三个组合**、`shortselling` 改为 TRUE、`weight_drift` 改为 TRUE（要求 skfolio ≥ 1.3.0）、评分改为年化 15% + 回撤 15% + 失败率 70%（**Sharpe 被移出评分**）。
+> **第二轮（2026-09-25）：** 提交物是 [submission/portfolio_round2.py](submission/portfolio_round2.py)（单文件，773 行，SHA256 `3c4151d3...`），完整报告见 [docs/round2-report-zh.md](docs/round2-report-zh.md)。本轮规则变化很大：**禁止 EWP / IVP / SCM-GMVP 三个组合**、`shortselling` 改为 TRUE、`weight_drift` 改为 TRUE（要求 skfolio ≥ 1.3.0）、评分改为年化 15% + 回撤 15% + 失败率 70%（**Sharpe 被移出评分**）。
+>
+> **做空（`shortselling=TRUE`）：选项已实现并手调扫描，出厂设置是关闭的。** 详见 [docs/round2-short-selling-zh.md](docs/round2-short-selling-zh.md)。三条依据：① 满仓把净敞口钉在 1，于是 `Gross = 1 + 2×总做空量`，**"可做空"与"`leverage=1`"在数学上互斥**；② 在出厂 `anchor_penalty=4.0` 下，做空额度基本不 binding——年化 16.407%→16.365%、回撤 57.001%→56.535%（都可忽略），而 Gross 从 1.000 抬到 1.156；模拟评分 0.509–0.516，而**任一折失败 = −0.51**；③ 回撤的大幅改善（57%→31%）只有把惩罚压到 0 才拿到，而 0 已因"复现被禁的 SCM-GMVP"被排除（5 资产上相关性 0.999）。`allow_short=False` 在 `leverage=1` 的**每一种**解读下都合法。
 >
 > 本轮最重要的一条发现：**`weight_drift=TRUE` 会让 skfolio 自带的 `HierarchicalRiskParity` / `HierarchicalEqualRiskContribution` 全数失败**（sp500 上 402/403 折失败）。根因是 `cross_val_predict` 把上一折权重以字典传递，而 HRP/HERC 内部拿这个字典构造 `Portfolio` 时 X 已是 numpy、列名丢失 → 每折必抛 `ValueError`。直接提交这两个类的同学 failure rate 会接近 100%，而失败率占 70% 的分。我们自己的实现不触碰 `previous_weights`，不受影响。
 >
 > 合规改造：Round 1 的回退链有六处调用 `_inverse_risk()`（`w ∝ 1/σ`，就是本轮被禁的 IVP），已**整条删除**而非重新加权；末级兜底改为**按列序线性递减预算**（与任何风险估计无关）。`anchor_penalty` 由 0.25 重推为 **4.0**，并在合规上明确排除 `p=0`——它在 5 资产上与 SCM-GMVP 相关性 **0.999**，那是同一方法而非相似方法。
 >
-> 验证：老师 `self_test.py` 127 组合 0 失败；隔离测试通过；23 例合成退化面板 0 失败 / 0 等权 / 0 逆波动率；**随机子集 × 随机两年窗口 12,000 折 / 0 失败 / 0 非法 / 0 等权**。
+> 顺带修掉两个既有缺陷：① 只要有一列不合格（历史不足/停牌），诊断函数就在 k 维/ n 维之间广播失败，异常被外层捕获后**把已收敛的 QP 解丢掉、静默退回 HRP 锚**（合成面板上 `regularized_qp` 15→17、`fallback_hrp` 2→0）；② 排名百分位把 1e-16 级差异当成不同名次，能给两个经济上等价的设置凭空造出 0.30 的分差。
+>
+> 验证：老师 `self_test.py` 127 组合 0 失败；隔离测试通过；23 例合成退化面板 0 失败 / 0 等权 / 0 逆波动率；**随机子集 × 随机两年窗口 12,000 折 / 0 失败 / 0 非法 / 0 等权**；pytest **128 通过 / 1 跳过 / 0 失败**；做空路径的投影与对偶间隙下界验证到 **1.4e-15**；**加参数未动老路径：220 个 case 逐位一致**（`np.array_equal`，非 allclose）。
 >
 > ---
 >
@@ -15,6 +19,8 @@
 > **模拟老师的出题方式**（随机抽股票子集 × 随机两年窗口）已单独压测：5 个数据集、**12,132 个折**，失败 0、非法权重 0、等权 0。回归入口在 `tools/verify_repo.py` 的 `random_windows` 检查项。
 >
 > 失败回退链已加固：候选链末级由"押注单一资产"改为**风险序递减预算**（按观测风险升序、按 1/rank 分配再归一化），既永远不等于等权，也不会在多标的可用时把全部资金押在一个名字上。回归测试见 `tests/test_equal_weight_prohibition.py`。
+>
+> ⚠️ **上面这条在第一轮成立，第二轮已被推翻。** `1/rank` 只是把波动率信号**序数化**再读一遍，正是 Round 2 禁止的 IVP。第二轮的末级兜底改成了**与风险无关的列序线性递减预算**，见 [docs/round2-report-zh.md](docs/round2-report-zh.md) 与 `src/portfolio_game_round2/core.py` 的 `_deterministic_budget`。
 >
 > 算法已升级：相关矩阵增加 **Marchenko–Pastur 特征值去噪**，锚惩罚由 1.0 调整为 **0.25**。选型依据见 [docs/method-selection-zh.md](docs/method-selection-zh.md)。
 >

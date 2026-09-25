@@ -1,0 +1,7 @@
+frozen config: allow_short=False short_cap=0.0
+temp dir : /var/folders/vb/4p6qfszn5n70kxq1wtk49_5w0000gn/T/r2_isolated_wjrsbaoe
+contents : ['driver.py', 'portfolio_round2.py']
+exit code: 0
+{"imported_file": "portfolio_round2.py", "n_portfolios": 403, "n_failed_portfolios": 0, "n_fallback_portfolios": 0, "annual_return": 0.1640688737460085, "max_drawdown": 0.5700135838835476, "max_short_total": 0.0, "max_gross": 1.0000000000000002, "violations": []}
+
+ISOLATED CHECK PASSED (single-file submission is self-contained)

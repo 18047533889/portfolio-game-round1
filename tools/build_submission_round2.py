@@ -25,7 +25,8 @@ def render(config_path: Path) -> str:
     sys.path.insert(0, str(ROOT / "src"))
     from portfolio_game_round2.core import allocate
     import numpy as np
-    keys = ("method", "half_life", "recent_mix", "anchor_penalty")
+    keys = ("method", "half_life", "recent_mix", "anchor_penalty",
+            "allow_short", "short_cap")
     params = {k: cfg[k] for k in keys}
     allocate(np.zeros((3, 2)), **params)  # validate the exact frozen parameters
     core = (ROOT / "src/portfolio_game_round2/core.py").read_text(encoding="utf-8")
@@ -46,13 +47,20 @@ from skfolio.optimization import BaseOptimization
 
 
 class CVXPYPortfolio(BaseOptimization):
-    """Round 2: return-only allocation, long-only, fully invested.
+    """Round 2: return-only allocation, fully invested, short budget optional.
 
     Prohibited this round: equal weight, inverse volatility, and global minimum
     variance on the sample covariance matrix. None of the three is formed on
     any code path -- the inverse-risk fallback of round 1 was deleted rather
     than reweighted, and the objective is an anchored variance problem on a
     shrunk and denoised covariance, not w'Sw on the sample covariance S.
+
+    The brief allows shortselling, so that permission is a parameter rather
+    than an assumption. allow_short = False (the frozen setting) restricts the
+    book to the long-only simplex; allow_short = True with short_cap = c
+    restricts it to w >= -c together with sum(w) = 1 instead. Net exposure is 1
+    in both cases, so granting a short budget also raises gross exposure to
+    1 + 2 * (total short); the realised figure is in diagnostics_["gross_exposure"].
 
     The class name is fixed by the submission rules and does not imply that
     CVXPY is used as the numerical solver; the solver here is a bounded
@@ -72,6 +80,8 @@ class CVXPYPortfolio(BaseOptimization):
             half_life={float(params['half_life'])!r},
             recent_mix={float(params['recent_mix'])!r},
             anchor_penalty={float(params['anchor_penalty'])!r},
+            allow_short={bool(params['allow_short'])!r},
+            short_cap={float(params['short_cap'])!r},
         )
         self.weights_ = result["weights"]
         self.diagnostics_ = result["diagnostics"]

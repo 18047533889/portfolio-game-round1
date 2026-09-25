@@ -1,0 +1,7 @@
+{
+  "trials": 60,
+  "max_projection_error_vs_bisection": 1.4432899320127035e-15,
+  "max_projection_error_vs_cvxpy": 1.5797585461996277e-11,
+  "max_gap_bound_error_vs_lp": 4.279243626115203e-12,
+  "verified": true
+}
