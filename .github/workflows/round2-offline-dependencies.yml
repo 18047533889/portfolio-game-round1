@@ -1,0 +1,50 @@
+name: Round 2 offline dependency bundle
+
+on:
+  push:
+    branches: [validation/round2-offline-deps-20260926]
+    paths: [.github/workflows/round2-offline-dependencies.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  download-public-wheels:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Download official PyPI distributions
+        run: |
+          python -m pip download --only-binary=:all: --dest wheelhouse \
+            'skfolio>=1.3.0,<2' 'cvxpy-base>=1.6,<2' \
+            'clarabel>=0.9' osqp scs \
+            'numpy==2.3.5' 'scipy==1.17.0' 'pandas==2.2.3' \
+            'scikit-learn==1.8.0' pytest
+          python -m pip download --only-binary=:all: --no-deps --dest minimum_version 'skfolio==1.3.0'
+      - name: Write hashes and package metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib, json, sys
+          result = {'python': sys.version, 'source': 'https://pypi.org/simple/', 'wheels': []}
+          for folder in ('wheelhouse', 'minimum_version'):
+              for path in sorted(Path(folder).glob('*.whl')):
+                  with ZipFile(path) as z:
+                      metadata = z.read(next(x for x in z.namelist() if x.endswith('.dist-info/METADATA'))).decode()
+                  result['wheels'].append({'file': str(path), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'metadata': [x for x in metadata.splitlines() if x.startswith(('Name:', 'Version:', 'Requires-Dist:', 'Requires-Python:'))]})
+          Path('bundle_manifest.json').write_text(json.dumps(result, indent=2))
+          print(json.dumps(result, indent=2))
+          PY
+      - uses: actions/upload-artifact@v7
+        with:
+          name: round2-python313-official-wheels
+          path: |
+            wheelhouse/
+            minimum_version/
+            bundle_manifest.json
+          retention-days: 3
+          if-no-files-found: error
