@@ -1,0 +1,26 @@
+
+=== sp500 ===
+  p= 4.00 lam= 0.00 fail=  0/ 403 annual=16.4069% dd=57.0014% L1gmvp= 0.738 L1ivp= 0.790
+  p= 4.00 lam= 0.25 fail=  0/ 403 annual=16.5545% dd=59.4019% L1gmvp= 0.797 L1ivp= 0.848
+  p= 4.00 lam= 0.50 fail=  0/ 403 annual=17.1099% dd=59.9651% L1gmvp= 0.828 L1ivp= 0.874
+  p= 4.00 lam= 1.00 fail=  0/ 403 annual=17.6016% dd=63.9128% L1gmvp= 0.857 L1ivp= 0.903
+  p= 4.00 lam= 2.00 fail=  0/ 403 annual=17.8321% dd=64.0839% L1gmvp= 0.919 L1ivp= 0.927
+  p= 4.00 lam= 4.00 fail=  0/ 403 annual=17.9084% dd=65.1599% L1gmvp= 0.947 L1ivp= 0.945
+
+=== ftse100 ===
+  p= 4.00 lam= 0.00 fail=  0/ 283 annual=13.6841% dd=45.6680% L1gmvp= 1.048 L1ivp= 1.373
+  p= 4.00 lam= 0.25 fail=  0/ 283 annual=14.2449% dd=46.6105% L1gmvp= 1.078 L1ivp= 1.410
+  p= 4.00 lam= 0.50 fail=  0/ 283 annual=14.1761% dd=50.9905% L1gmvp= 1.112 L1ivp= 1.428
+  p= 4.00 lam= 1.00 fail=  0/ 283 annual=13.4390% dd=54.9619% L1gmvp= 1.169 L1ivp= 1.441
+  p= 4.00 lam= 2.00 fail=  0/ 283 annual=12.8951% dd=59.4166% L1gmvp= 1.224 L1ivp= 1.466
+  p= 4.00 lam= 4.00 fail=  0/ 283 annual=12.7723% dd=59.5530% L1gmvp= 1.258 L1ivp= 1.481
+
+=== factors ===
+  p= 4.00 lam= 0.00 fail=  0/ 100 annual=10.9254% dd=39.8739% L1gmvp= 1.105 L1ivp= 0.657
+  p= 4.00 lam= 0.25 fail=  0/ 100 annual=11.0771% dd=39.8607% L1gmvp= 1.162 L1ivp= 0.655
+  p= 4.00 lam= 0.50 fail=  0/ 100 annual=10.9368% dd=39.8519% L1gmvp= 1.173 L1ivp= 0.659
+  p= 4.00 lam= 1.00 fail=  0/ 100 annual=11.1114% dd=39.8407% L1gmvp= 1.175 L1ivp= 0.644
+  p= 4.00 lam= 2.00 fail=  0/ 100 annual=11.4076% dd=39.8295% L1gmvp= 1.169 L1ivp= 0.647
+  p= 4.00 lam= 4.00 fail=  0/ 100 annual=11.3084% dd=39.8206% L1gmvp= 1.165 L1ivp= 0.640
+
+written -> reports/round2_downside_scan.json
