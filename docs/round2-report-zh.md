@@ -56,7 +56,8 @@ Gross = 1 + 2 × Short
 （`allow_short` / `short_cap`，出厂关闭），完整证据与手调比例的结果见
 **[docs/round2-short-selling-zh.md](round2-short-selling-zh.md)**。一句话概括：
 在出厂 `anchor_penalty=4.0` 下开做空，年化与回撤的变动都可忽略（−0.04pp / −0.47pp），
-而 Gross 从 1.000 抬到 1.156；模拟评分 0.509–0.516，而**任一折失败 = −0.51**。
+而 Gross 从 1.000 抬到 1.156；模拟评分 0.509–0.516，而同一模拟里
+**干净与崩掉之间的总分差约 0.51**（0 失败群体共享 `r_fail`，崩掉的 HRP/HERC 是 0.012）。
 
 ---
 
