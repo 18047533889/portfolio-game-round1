@@ -1,0 +1,199 @@
+{
+  "submission": "submission/portfolio_round3.py",
+  "submission_sha256": "5245c364aad965ca99fd7ce3861a123165a61739cf1ed911cce638fb2ba5b7ba",
+  "datasets": [
+    {
+      "dataset": "sp500",
+      "panel": {
+        "observations": 8312,
+        "assets": 20,
+        "start": "1990-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 126,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.5
+      },
+      "n_portfolios": 409,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.15960491496900878,
+      "annualized_mean": 0.15960491496900878,
+      "max_drawdown": 0.5097084325061432,
+      "annual_volatility": 0.16396057830396715,
+      "sharpe": 0.9734346915580927,
+      "exposure": {
+        "net_min": 0.9999999999999994,
+        "net_max": 1.0000000000000007,
+        "gross_max": 1.0000000000000007,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.20917682175949315,
+        "max": 0.5195794630543948
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 409,
+          "median": 0.8824636986733507,
+          "p05": 0.5466617190071142,
+          "p95": 1.2901809880369857,
+          "min": 0.3604514704541464
+        },
+        "ivp": {
+          "n": 409,
+          "median": 0.8179957924729826,
+          "p05": 0.4286623670616874,
+          "p95": 1.205427715419081,
+          "min": 0.2086039903246023
+        },
+        "scm_gmvp": {
+          "n": 409,
+          "median": 0.7398014185905438,
+          "p05": 0.44880301854422816,
+          "p95": 1.232591947611279,
+          "min": 0.26587706517806187
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    {
+      "dataset": "ftse100",
+      "panel": {
+        "observations": 5915,
+        "assets": 64,
+        "start": "2000-01-05",
+        "end": "2023-05-31"
+      },
+      "contract": {
+        "lookback": 126,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.5
+      },
+      "n_portfolios": 289,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.1357852669537538,
+      "annualized_mean": 0.1357852669537538,
+      "max_drawdown": 0.6056236630462051,
+      "annual_volatility": 0.1611142837428552,
+      "sharpe": 0.8427885088728229,
+      "exposure": {
+        "net_min": 0.9999841939445384,
+        "net_max": 1.0000000000000009,
+        "gross_max": 1.0000000000000009,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.2050692995419836,
+        "max": 0.4774682968274911
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 289,
+          "median": 1.464812765859816,
+          "p05": 0.9925710308552398,
+          "p95": 1.6378942964389929,
+          "min": 0.6658301236786002
+        },
+        "ivp": {
+          "n": 289,
+          "median": 1.4216227358544562,
+          "p05": 0.8705670592772374,
+          "p95": 1.5906886192773075,
+          "min": 0.4935600312344579
+        },
+        "scm_gmvp": {
+          "n": 289,
+          "median": 1.021543017886481,
+          "p05": 0.6576001299709336,
+          "p95": 1.4288097204218375,
+          "min": 0.494958707404186
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    {
+      "dataset": "factors",
+      "panel": {
+        "observations": 2263,
+        "assets": 5,
+        "start": "2014-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 126,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.5
+      },
+      "n_portfolios": 106,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.1152508293256032,
+      "annualized_mean": 0.1152508293256032,
+      "max_drawdown": 0.4009661944161722,
+      "annual_volatility": 0.16761304913684508,
+      "sharpe": 0.6876005771573813,
+      "exposure": {
+        "net_min": 0.9999999999999996,
+        "net_max": 1.0000000000000002,
+        "gross_max": 1.0000000000000002,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.48472750363235284,
+        "max": 0.6487546149795355
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 106,
+          "median": 0.7039359660744254,
+          "p05": 0.31974715128635467,
+          "p95": 0.8895367372499423,
+          "min": 0.21045594795515157
+        },
+        "ivp": {
+          "n": 106,
+          "median": 0.6477443061181247,
+          "p05": 0.3045705110070236,
+          "p95": 0.7496020270955255,
+          "min": 0.2446383976844397
+        },
+        "scm_gmvp": {
+          "n": 106,
+          "median": 1.0232236384813065,
+          "p05": 0.6267851378002144,
+          "p95": 1.5641178038102417,
+          "min": 0.5118027735064459
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    }
+  ],
+  "frozen_leverage_setting": {
+    "gross_leverage": 1.0,
+    "aggregate_short_budget": 0.0
+  }
+}

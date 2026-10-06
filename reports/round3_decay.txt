@@ -1,0 +1,20 @@
+  hl= 16.0 rm=0.25 sp500     fail=  0/ 409 annual=15.8465% vol=16.4549% dd=51.4782%
+  hl= 16.0 rm=0.25 ftse100   fail=  0/ 289 annual=13.5942% vol=16.0760% dd=60.7313%
+  hl= 16.0 rm=0.25 factors   fail=  0/ 106 annual=11.5337% vol=16.7582% dd=40.0854%
+  hl= 21.0 rm=0.25 sp500     fail=  0/ 409 annual=15.8540% vol=16.4200% dd=51.0517%
+  hl= 21.0 rm=0.25 ftse100   fail=  0/ 289 annual=13.5612% vol=16.0968% dd=60.8564%
+  hl= 21.0 rm=0.25 factors   fail=  0/ 106 annual=11.5310% vol=16.7595% dd=40.0903%
+  hl= 30.0 rm=0.25 sp500     fail=  0/ 409 annual=15.9605% vol=16.3961% dd=50.9708%
+  hl= 30.0 rm=0.25 ftse100   fail=  0/ 289 annual=13.5785% vol=16.1114% dd=60.5624%
+  hl= 30.0 rm=0.25 factors   fail=  0/ 106 annual=11.5251% vol=16.7613% dd=40.0966%
+  hl= 42.0 rm=0.25 sp500     fail=  0/ 409 annual=15.9283% vol=16.3939% dd=50.6576%
+  hl= 42.0 rm=0.25 ftse100   fail=  0/ 289 annual=13.6038% vol=16.1320% dd=60.1568%
+  hl= 42.0 rm=0.25 factors   fail=  0/ 106 annual=11.6039% vol=16.7674% dd=40.1021%
+
+written -> reports/round3_decay.json
+
+half_life recent_mix     sp500   ftse100   factors     mean    worst
+     42.0       0.25    0.5783    0.6153    0.6283   0.6073   0.5783
+     16.0       0.25    0.5783    0.6153    0.6283   0.6073   0.5783
+     30.0       0.25    0.5783    0.5931    0.6283   0.5999   0.5783
+     21.0       0.25    0.5783    0.5931    0.6283   0.5999   0.5783

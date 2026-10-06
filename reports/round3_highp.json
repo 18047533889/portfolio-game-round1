@@ -1,0 +1,672 @@
+{
+  "contract": {
+    "lookback": 126,
+    "optimize_every": 20,
+    "weight_drift": true,
+    "scoring": {
+      "annual_return": 0.2,
+      "annual_volatility": 0.1,
+      "failure_rate": 0.7
+    },
+    "half_life": 30.0,
+    "recent_mix": 0.25
+  },
+  "settings": [
+    {
+      "dataset": "sp500",
+      "penalty": 16.0,
+      "leverage": 1.0,
+      "n_portfolios": 409,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.15960491496900878,
+      "annual_volatility": 0.16396057830396715,
+      "max_drawdown": 0.5097084325061432
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 32.0,
+      "leverage": 1.0,
+      "n_portfolios": 409,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.16115419360634659,
+      "annual_volatility": 0.1647515173734465,
+      "max_drawdown": 0.5141089114582083
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 64.0,
+      "leverage": 1.0,
+      "n_portfolios": 409,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.1619900238232652,
+      "annual_volatility": 0.16521195883581877,
+      "max_drawdown": 0.5162484865987169
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 1000000.0,
+      "leverage": 1.0,
+      "n_portfolios": 409,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.16291049467006766,
+      "annual_volatility": 0.16572262217891195,
+      "max_drawdown": 0.5187569947662878
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 16.0,
+      "leverage": 1.0,
+      "n_portfolios": 289,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.1357852669537538,
+      "annual_volatility": 0.1611142837428552,
+      "max_drawdown": 0.6056236630462051
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 32.0,
+      "leverage": 1.0,
+      "n_portfolios": 289,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.1365972629063728,
+      "annual_volatility": 0.16203524040189357,
+      "max_drawdown": 0.6087123387122149
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 64.0,
+      "leverage": 1.0,
+      "n_portfolios": 289,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.13710418714066872,
+      "annual_volatility": 0.16256287826553326,
+      "max_drawdown": 0.6102815086163194
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 1000000.0,
+      "leverage": 1.0,
+      "n_portfolios": 289,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.13781709404805348,
+      "annual_volatility": 0.16316200116008456,
+      "max_drawdown": 0.610727256218206
+    },
+    {
+      "dataset": "factors",
+      "penalty": 16.0,
+      "leverage": 1.0,
+      "n_portfolios": 106,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.1152508293256032,
+      "annual_volatility": 0.16761304913684508,
+      "max_drawdown": 0.4009661944161722
+    },
+    {
+      "dataset": "factors",
+      "penalty": 32.0,
+      "leverage": 1.0,
+      "n_portfolios": 106,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.11526553556947922,
+      "annual_volatility": 0.1677239890613975,
+      "max_drawdown": 0.4010799590681279
+    },
+    {
+      "dataset": "factors",
+      "penalty": 64.0,
+      "leverage": 1.0,
+      "n_portfolios": 106,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0000000000000002,
+      "folds_using_shorts": 0,
+      "annual_return": 0.11527294744045295,
+      "annual_volatility": 0.1677801731707663,
+      "max_drawdown": 0.4011374262464563
+    },
+    {
+      "dataset": "factors",
+      "penalty": 1000000.0,
+      "leverage": 1.0,
+      "n_portfolios": 106,
+      "n_failed": 0,
+      "failure_rate": 0.0,
+      "n_fallback": 0,
+      "short_max": 0.0,
+      "gross_max": 1.0,
+      "folds_using_shorts": 0,
+      "annual_return": 0.11528039954623417,
+      "annual_volatility": 0.16783683985048367,
+      "max_drawdown": 0.4011952851897751
+    }
+  ],
+  "field": {
+    "sp500": [
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.19646270393051785,
+        "annual_volatility": 0.1976855771433439,
+        "max_drawdown": 0.6544136092450743,
+        "label": "Random(Dirichlet)",
+        "score": 0.5966666666666667
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1798920227039826,
+        "annual_volatility": 0.19006545146895415,
+        "max_drawdown": 0.5467247317739234,
+        "label": "MaxDiversification",
+        "score": 0.5889743589743589
+      },
+      {
+        "label": "OURS p=1000000.00 lev=1.00",
+        "annual_return": 0.16291049467006766,
+        "annual_volatility": 0.16572262217891195,
+        "failure_rate": 0.0,
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "score": 0.5889743589743589
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.17724395197821485,
+        "annual_volatility": 0.18894229586281056,
+        "max_drawdown": 0.5778273569279917,
+        "label": "EqualWeighted",
+        "score": 0.5812820512820512
+      },
+      {
+        "label": "OURS p=64.00 lev=1.00",
+        "annual_return": 0.1619900238232652,
+        "annual_volatility": 0.16521195883581877,
+        "failure_rate": 0.0,
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "score": 0.5658974358974358
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.16208883277195754,
+        "annual_volatility": 0.1716222147393284,
+        "max_drawdown": 0.5312724004567979,
+        "label": "RiskBudgeting",
+        "score": 0.5582051282051281
+      },
+      {
+        "label": "OURS p=32.00 lev=1.00",
+        "annual_return": 0.16115419360634659,
+        "annual_volatility": 0.1647515173734465,
+        "failure_rate": 0.0,
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "score": 0.5582051282051281
+      },
+      {
+        "label": "OURS p=16.00 lev=1.00",
+        "annual_return": 0.15960491496900878,
+        "annual_volatility": 0.16396057830396715,
+        "failure_rate": 0.0,
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "score": 0.5505128205128205
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.13436884049668485,
+        "annual_volatility": 0.15082901386870695,
+        "max_drawdown": 0.43820480752116664,
+        "label": "MinVariance(Shrunk)",
+        "score": 0.5351282051282051
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1431200458614491,
+        "annual_volatility": 0.156771385306984,
+        "max_drawdown": 0.4716071431665916,
+        "label": "SchurComplementary",
+        "score": 0.5274358974358974
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1568568487639987,
+        "annual_volatility": 0.17113405485050748,
+        "max_drawdown": 0.514367296025569,
+        "label": "InverseVolatility",
+        "score": 0.5043589743589743
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1342908587748493,
+        "annual_volatility": 0.1514493512057633,
+        "max_drawdown": 0.3675480995787592,
+        "label": "MinVariance(SCM)",
+        "score": 0.5043589743589743
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.13278042573092017,
+        "annual_volatility": 0.15061254875125696,
+        "max_drawdown": 0.37141259392530657,
+        "label": "MinVariance(Denoise)",
+        "score": 0.4966666666666666
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.133113277410677,
+        "annual_volatility": 0.15094403019181543,
+        "max_drawdown": 0.365613220566388,
+        "label": "NCO",
+        "score": 0.4966666666666666
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 408,
+        "failure_rate": 0.9975550122249389,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HRP",
+        "score": 0.02333333333333333
+      },
+      {
+        "n_portfolios": 409,
+        "n_failed": 408,
+        "failure_rate": 0.9975550122249389,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HERC",
+        "score": 0.02333333333333333
+      }
+    ],
+    "ftse100": [
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.14117789450908158,
+        "annual_volatility": 0.14058913041832266,
+        "max_drawdown": 0.43550726096762604,
+        "label": "MinVariance(Shrunk)",
+        "score": 0.6866666666666668
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.16527721535043602,
+        "annual_volatility": 0.19588133545132413,
+        "max_drawdown": 0.3911238569154769,
+        "label": "MinVariance(Denoise)",
+        "score": 0.62
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.16167904652713921,
+        "annual_volatility": 0.1932951682564405,
+        "max_drawdown": 0.44977776203027275,
+        "label": "MinVariance(SCM)",
+        "score": 0.6116666666666667
+      },
+      {
+        "label": "OURS p=1000000.00 lev=1.00",
+        "annual_return": 0.13781709404805348,
+        "annual_volatility": 0.16316200116008456,
+        "failure_rate": 0.0,
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "score": 0.6033333333333333
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.13593258948969267,
+        "annual_volatility": 0.15669606185310575,
+        "max_drawdown": 0.7831223598023579,
+        "label": "MaxDiversification",
+        "score": 0.595
+      },
+      {
+        "label": "OURS p=64.00 lev=1.00",
+        "annual_return": 0.13710418714066872,
+        "annual_volatility": 0.16256287826553326,
+        "failure_rate": 0.0,
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "score": 0.595
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1395522135399515,
+        "annual_volatility": 0.18716517680372025,
+        "max_drawdown": 0.40104550913916626,
+        "label": "SchurComplementary",
+        "score": 0.5866666666666667
+      },
+      {
+        "label": "OURS p=32.00 lev=1.00",
+        "annual_return": 0.1365972629063728,
+        "annual_volatility": 0.16203524040189357,
+        "failure_rate": 0.0,
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "score": 0.5866666666666667
+      },
+      {
+        "label": "OURS p=16.00 lev=1.00",
+        "annual_return": 0.1357852669537538,
+        "annual_volatility": 0.1611142837428552,
+        "failure_rate": 0.0,
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "score": 0.5616666666666666
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.1247793668182947,
+        "annual_volatility": 0.15950554267135722,
+        "max_drawdown": 0.5332103511752642,
+        "label": "RiskBudgeting",
+        "score": 0.5533333333333333
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11995447524979579,
+        "annual_volatility": 0.17920648852816717,
+        "max_drawdown": 0.6008064384317914,
+        "label": "EqualWeighted",
+        "score": 0.48666666666666664
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11650601131764035,
+        "annual_volatility": 0.16465478809111264,
+        "max_drawdown": 0.5120615122065264,
+        "label": "InverseVolatility",
+        "score": 0.47833333333333333
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11335163363952419,
+        "annual_volatility": 0.1803847910386795,
+        "max_drawdown": 0.6055167297035101,
+        "label": "Random(Dirichlet)",
+        "score": 0.445
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 5,
+        "failure_rate": 0.01730103806228374,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "NCO",
+        "score": 0.09333333333333332
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 288,
+        "failure_rate": 0.9965397923875432,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HRP",
+        "score": 0.02333333333333333
+      },
+      {
+        "n_portfolios": 289,
+        "n_failed": 288,
+        "failure_rate": 0.9965397923875432,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HERC",
+        "score": 0.02333333333333333
+      }
+    ],
+    "factors": [
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11852177385175987,
+        "annual_volatility": 0.17431639636914728,
+        "max_drawdown": 0.40690173043243427,
+        "label": "MaxDiversification",
+        "score": 0.612051282051282
+      },
+      {
+        "label": "OURS p=1000000.00 lev=1.00",
+        "annual_return": 0.11528039954623417,
+        "annual_volatility": 0.16783683985048367,
+        "failure_rate": 0.0,
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "score": 0.612051282051282
+      },
+      {
+        "label": "OURS p=64.00 lev=1.00",
+        "annual_return": 0.11527294744045295,
+        "annual_volatility": 0.1677801731707663,
+        "failure_rate": 0.0,
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "score": 0.6043589743589743
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.12152098923112947,
+        "annual_volatility": 0.1813779722694296,
+        "max_drawdown": 0.40713049415657776,
+        "label": "Random(Dirichlet)",
+        "score": 0.5966666666666667
+      },
+      {
+        "label": "OURS p=32.00 lev=1.00",
+        "annual_return": 0.11526553556947922,
+        "annual_volatility": 0.1677239890613975,
+        "failure_rate": 0.0,
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "score": 0.5966666666666667
+      },
+      {
+        "label": "OURS p=16.00 lev=1.00",
+        "annual_return": 0.1152508293256032,
+        "annual_volatility": 0.16761304913684508,
+        "failure_rate": 0.0,
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "score": 0.5889743589743589
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.10872697082047061,
+        "annual_volatility": 0.15619003999297054,
+        "max_drawdown": 0.3864729601712529,
+        "label": "MinVariance(Shrunk)",
+        "score": 0.5351282051282051
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.10865814789267332,
+        "annual_volatility": 0.15407709731855657,
+        "max_drawdown": 0.37672990686638297,
+        "label": "MinVariance(Denoise)",
+        "score": 0.5274358974358974
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.10753193583269591,
+        "annual_volatility": 0.1538527647345986,
+        "max_drawdown": 0.37705826524666775,
+        "label": "NCO",
+        "score": 0.5197435897435897
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11468413420434577,
+        "annual_volatility": 0.17743126328546263,
+        "max_drawdown": 0.4125589870425388,
+        "label": "EqualWeighted",
+        "score": 0.512051282051282
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.10749803770956312,
+        "annual_volatility": 0.15379137463120318,
+        "max_drawdown": 0.3770517655977612,
+        "label": "MinVariance(SCM)",
+        "score": 0.512051282051282
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11415092885792599,
+        "annual_volatility": 0.17440006560246205,
+        "max_drawdown": 0.4085074393669652,
+        "label": "RiskBudgeting",
+        "score": 0.512051282051282
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.11412907611890932,
+        "annual_volatility": 0.17450658598970675,
+        "max_drawdown": 0.40866117251463197,
+        "label": "InverseVolatility",
+        "score": 0.4889743589743589
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 0,
+        "failure_rate": 0.0,
+        "annual_return": 0.10285584278714494,
+        "annual_volatility": 0.16983902607743637,
+        "max_drawdown": 0.3864821108135207,
+        "label": "SchurComplementary",
+        "score": 0.43512820512820505
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 105,
+        "failure_rate": 0.9905660377358491,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HRP",
+        "score": 0.02333333333333333
+      },
+      {
+        "n_portfolios": 106,
+        "n_failed": 105,
+        "failure_rate": 0.9905660377358491,
+        "annual_return": NaN,
+        "annual_volatility": NaN,
+        "max_drawdown": NaN,
+        "label": "HERC",
+        "score": 0.02333333333333333
+      }
+    ]
+  }
+}

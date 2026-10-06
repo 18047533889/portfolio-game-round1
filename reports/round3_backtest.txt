@@ -1,0 +1,15 @@
+shipped submission SHA256: 5245c364aad965ca99fd7ce3861a123165a61739cf1ed911cce638fb2ba5b7ba
+frozen leverage setting  : gross_leverage=1.0 (aggregate short budget 0.0)
+
+dataset       n folds fail    annual      vol    maxdd  L1_EWP  L1_IVP  L1_GMVP  gross
+--------------------------------------------------------------------------------------
+sp500        20   409    0   15.96%  16.40%   50.97%   0.882   0.818    0.740  1.000
+ftse100      64   289    0   13.58%  16.11%   60.56%   1.465   1.422    1.022  1.000
+factors       5   106    0   11.53%  16.76%   40.10%   0.704   0.648    1.023  1.000
+
+total failed portfolios : 0 / 804
+total fallback portfolios: 0
+exact hits on a prohibited book: {'sp500': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}, 'ftse100': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}, 'factors': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0}}
+max gross exposure       : 1.000000
+max short exposure       : 0.000000
+datasets with gross > 1  : none

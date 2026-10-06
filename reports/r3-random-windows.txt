@@ -1,0 +1,31 @@
+frozen gross_leverage = 1.0  (aggregate short budget 0.0)
+
+==========================================================================
+sp500  (8312, 20)  cap=20
+  slices=  120 folds=  3000 failed=   0 illegal=   0 equal=  0  reasons={}
+  short_max=0.0 gross_max=1.0000000000000002 within_leverage=True
+
+==========================================================================
+ftse100  (5915, 64)  cap=64
+  slices=  120 folds=  3000 failed=   0 illegal=   0 equal=  0  reasons={}
+  short_max=0.0 gross_max=1.0000000000000002 within_leverage=True
+
+==========================================================================
+nasdaq  (1361, 60)  cap=60
+  slices=  120 folds=  3000 failed=   0 illegal=   0 equal=  0  reasons={}
+  short_max=0.0 gross_max=1.0000000000000002 within_leverage=True
+
+==========================================================================
+factors  (2263, 5)  cap=5
+  slices=  120 folds=  3000 failed=   0 illegal=   0 equal=  0  reasons={}
+  short_max=0.0 gross_max=1.0 within_leverage=True
+
+==========================================================================
+=== TOTAL ===
+slices          : 480
+folds           : 12000
+failed folds    : 0
+illegal folds   : 0
+equal-wt folds  : 0
+gross<=leverage : True  (leverage=1.0)
+written -> reports/round3_random_windows.json

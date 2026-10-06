@@ -1,0 +1,137 @@
+
+======================================================================================================================
+sp500  (8312, 20)
+  lev=1.00 p=  0.25 fail=  0/ 409 annual=13.9672% vol=15.1223% dd=43.5554% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  0.50 fail=  0/ 409 annual=14.2321% vol=15.3229% dd=45.5294% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  1.00 fail=  0/ 409 annual=14.6132% vol=15.5875% dd=47.3500% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  2.00 fail=  0/ 409 annual=15.0360% vol=15.8596% dd=48.5506% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  4.00 fail=  0/ 409 annual=15.4287% vol=16.0940% dd=49.4065% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  8.00 fail=  0/ 409 annual=15.7377% vol=16.2730% dd=50.3197% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p= 16.00 fail=  0/ 409 annual=15.9605% vol=16.3961% dd=50.9708% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.50 p=  0.25 fail=  0/ 409 annual=13.5367% vol=15.0374% dd=34.4625% short=0.2500 gross= 1.500 folds_with_shorts= 383
+  lev=1.50 p=  0.50 fail=  0/ 409 annual=13.9455% vol=15.2129% dd=36.8959% short=0.2500 gross= 1.500 folds_with_shorts= 356
+  lev=1.50 p=  1.00 fail=  0/ 409 annual=14.4090% vol=15.4603% dd=40.8190% short=0.2228 gross= 1.446 folds_with_shorts= 324
+  lev=1.50 p=  2.00 fail=  0/ 409 annual=14.9123% vol=15.7452% dd=44.6060% short=0.1601 gross= 1.320 folds_with_shorts= 274
+  lev=1.50 p=  4.00 fail=  0/ 409 annual=15.3745% vol=16.0163% dd=47.3778% short=0.1100 gross= 1.220 folds_with_shorts= 220
+  lev=1.50 p=  8.00 fail=  0/ 409 annual=15.7342% vol=16.2322% dd=49.2063% short=0.0696 gross= 1.139 folds_with_shorts= 187
+  lev=1.50 p= 16.00 fail=  0/ 409 annual=15.9763% vol=16.3794% dd=50.3510% short=0.0435 gross= 1.087 folds_with_shorts= 145
+
+  setting                         annual      vol   fail%   SCORE
+  Random(Dirichlet)             18.4540% 19.9019%    0.0%  0.5780
+  MaxDiversification            17.9892% 19.0065%    0.0%  0.5737
+  EqualWeighted                 17.7244% 18.8942%    0.0%  0.5693
+  OURS p=16.00 lev=1.50         15.9763% 16.3794%    0.0%  0.5693
+  RiskBudgeting                 16.2089% 17.1622%    0.0%  0.5650
+  OURS p=8.00 lev=1.00          15.7377% 16.2730%    0.0%  0.5563
+  OURS p=16.00 lev=1.00         15.9605% 16.3961%    0.0%  0.5563
+  OURS p=8.00 lev=1.50          15.7342% 16.2322%    0.0%  0.5519
+  OURS p=4.00 lev=1.00          15.4287% 16.0940%    0.0%  0.5389
+  OURS p=4.00 lev=1.50          15.3745% 16.0163%    0.0%  0.5345
+  OURS p=2.00 lev=1.00          15.0360% 15.8596%    0.0%  0.5302
+  InverseVolatility             15.6857% 17.1134%    0.0%  0.5258
+  OURS p=1.00 lev=1.00          14.6132% 15.5875%    0.0%  0.5258
+  OURS p=2.00 lev=1.50          14.9123% 15.7452%    0.0%  0.5258
+  OURS p=1.00 lev=1.50          14.4090% 15.4603%    0.0%  0.5215
+  OURS p=0.25 lev=1.00          13.9672% 15.1223%    0.0%  0.5128
+  OURS p=0.25 lev=1.50          13.5367% 15.0374%    0.0%  0.5128
+  OURS p=0.50 lev=1.00          14.2321% 15.3229%    0.0%  0.5084
+  SchurComplementary            14.3120% 15.6771%    0.0%  0.5041
+  MinVariance(Shrunk)           13.4369% 15.0829%    0.0%  0.4954
+  OURS p=0.50 lev=1.50          13.9455% 15.2129%    0.0%  0.4954
+  MinVariance(SCM)              13.4291% 15.1449%    0.0%  0.4737
+  MinVariance(Denoise)          13.2780% 15.0613%    0.0%  0.4737
+  NCO                           13.3113% 15.0944%    0.0%  0.4737
+  HRP                               nan%     nan%   99.8%  0.0140
+  HERC                              nan%     nan%   99.8%  0.0140
+
+======================================================================================================================
+ftse100  (5915, 64)
+  lev=1.00 p=  0.25 fail=  0/ 289 annual=13.4480% vol=14.0735% dd=45.1538% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  0.50 fail=  0/ 289 annual=13.3277% vol=14.4428% dd=48.5844% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  1.00 fail=  0/ 289 annual=13.2432% vol=14.9002% dd=52.8363% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  2.00 fail=  0/ 289 annual=13.3024% vol=15.3495% dd=56.2578% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  4.00 fail=  0/ 289 annual=13.4126% vol=15.7092% dd=58.5062% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  8.00 fail=  0/ 289 annual=13.4977% vol=15.9575% dd=59.8537% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p= 16.00 fail=  0/ 289 annual=13.5785% vol=16.1114% dd=60.5624% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.50 p=  0.25 fail=  0/ 289 annual=12.1884% vol=13.0469% dd=47.8998% short=0.2500 gross= 1.500 folds_with_shorts= 284
+  lev=1.50 p=  0.50 fail=  0/ 289 annual=12.2694% vol=13.4780% dd=48.6836% short=0.2500 gross= 1.500 folds_with_shorts= 289
+  lev=1.50 p=  1.00 fail=  0/ 289 annual=12.3981% vol=14.0616% dd=52.0560% short=0.2500 gross= 1.500 folds_with_shorts= 288
+  lev=1.50 p=  2.00 fail=  0/ 289 annual=12.6164% vol=14.6725% dd=54.5531% short=0.2500 gross= 1.500 folds_with_shorts= 287
+  lev=1.50 p=  4.00 fail=  0/ 289 annual=12.8704% vol=15.2109% dd=56.5401% short=0.2084 gross= 1.417 folds_with_shorts= 287
+  lev=1.50 p=  8.00 fail=  0/ 289 annual=13.1298% vol=15.6172% dd=58.1191% short=0.1474 gross= 1.295 folds_with_shorts= 287
+  lev=1.50 p= 16.00 fail=  0/ 289 annual=13.3582% vol=15.8990% dd=59.2919% short=0.0963 gross= 1.193 folds_with_shorts= 285
+
+  setting                         annual      vol   fail%   SCORE
+  MinVariance(Shrunk)           14.1178% 14.0589%    0.0%  0.6647
+  OURS p=0.25 lev=1.00          13.4480% 14.0735%    0.0%  0.6102
+  MaxDiversification            13.5933% 15.6696%    0.0%  0.6056
+  MinVariance(Denoise)          16.5277% 19.5881%    0.0%  0.5920
+  MinVariance(SCM)              16.1679% 19.3295%    0.0%  0.5875
+  OURS p=0.50 lev=1.00          13.3277% 14.4428%    0.0%  0.5784
+  SchurComplementary            13.9552% 18.7165%    0.0%  0.5738
+  OURS p=16.00 lev=1.00         13.5785% 16.1114%    0.0%  0.5738
+  OURS p=8.00 lev=1.00          13.4977% 15.9575%    0.0%  0.5693
+  OURS p=4.00 lev=1.00          13.4126% 15.7092%    0.0%  0.5647
+  OURS p=1.00 lev=1.00          13.2432% 14.9002%    0.0%  0.5511
+  OURS p=2.00 lev=1.00          13.3024% 15.3495%    0.0%  0.5511
+  OURS p=16.00 lev=1.50         13.3582% 15.8990%    0.0%  0.5511
+  OURS p=2.00 lev=1.50          12.6164% 14.6725%    0.0%  0.5284
+  OURS p=4.00 lev=1.50          12.8704% 15.2109%    0.0%  0.5284
+  OURS p=8.00 lev=1.50          13.1298% 15.6172%    0.0%  0.5284
+  OURS p=0.50 lev=1.50          12.2694% 13.4780%    0.0%  0.5147
+  OURS p=1.00 lev=1.50          12.3981% 14.0616%    0.0%  0.5147
+  OURS p=0.25 lev=1.50          12.1884% 13.0469%    0.0%  0.5102
+  RiskBudgeting                 12.4779% 15.9506%    0.0%  0.4738
+  Random(Dirichlet)             12.5002% 18.3260%    0.0%  0.4602
+  EqualWeighted                 11.9954% 17.9206%    0.0%  0.4193
+  InverseVolatility             11.6506% 16.4655%    0.0%  0.4147
+  NCO                               nan%     nan%    1.7%  0.0560
+  HRP                               nan%     nan%   99.7%  0.0140
+  HERC                              nan%     nan%   99.7%  0.0140
+
+======================================================================================================================
+factors  (2263, 5)
+  lev=1.00 p=  0.25 fail=  0/ 106 annual=11.4279% vol=16.1767% dd=39.3397% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  0.50 fail=  0/ 106 annual=11.4407% vol=16.3686% dd=39.6098% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  1.00 fail=  0/ 106 annual=11.4786% vol=16.5196% dd=39.8159% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  2.00 fail=  0/ 106 annual=11.5064% vol=16.6266% dd=39.9521% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  4.00 fail=  0/ 106 annual=11.5165% vol=16.6984% dd=40.0315% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p=  8.00 fail=  0/ 106 annual=11.5222% vol=16.7397% dd=40.0743% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.00 p= 16.00 fail=  0/ 106 annual=11.5251% vol=16.7613% dd=40.0966% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.50 p=  0.25 fail=  0/ 106 annual=11.3787% vol=16.0423% dd=39.3397% short=0.2500 gross= 1.500 folds_with_shorts=  65
+  lev=1.50 p=  0.50 fail=  0/ 106 annual=11.4472% vol=16.3006% dd=39.6098% short=0.1479 gross= 1.296 folds_with_shorts=  46
+  lev=1.50 p=  1.00 fail=  0/ 106 annual=11.4854% vol=16.4954% dd=39.8159% short=0.0668 gross= 1.134 folds_with_shorts=  30
+  lev=1.50 p=  2.00 fail=  0/ 106 annual=11.5057% vol=16.6232% dd=39.9521% short=0.0193 gross= 1.039 folds_with_shorts=  15
+  lev=1.50 p=  4.00 fail=  0/ 106 annual=11.5165% vol=16.6984% dd=40.0315% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.50 p=  8.00 fail=  0/ 106 annual=11.5222% vol=16.7397% dd=40.0743% short=0.0000 gross= 1.000 folds_with_shorts=   0
+  lev=1.50 p= 16.00 fail=  0/ 106 annual=11.5251% vol=16.7613% dd=40.0966% short=0.0000 gross= 1.000 folds_with_shorts=   0
+
+  setting                         annual      vol   fail%   SCORE
+  MaxDiversification            11.8522% 17.4316%    0.0%  0.5867
+  OURS p=16.00 lev=1.00         11.5251% 16.7613%    0.0%  0.5845
+  OURS p=16.00 lev=1.50         11.5251% 16.7613%    0.0%  0.5845
+  Random(Dirichlet)             11.9183% 18.2671%    0.0%  0.5780
+  OURS p=8.00 lev=1.00          11.5222% 16.7397%    0.0%  0.5758
+  OURS p=8.00 lev=1.50          11.5222% 16.7397%    0.0%  0.5758
+  OURS p=4.00 lev=1.00          11.5165% 16.6984%    0.0%  0.5671
+  OURS p=4.00 lev=1.50          11.5165% 16.6984%    0.0%  0.5671
+  OURS p=2.00 lev=1.00          11.5064% 16.6266%    0.0%  0.5606
+  OURS p=1.00 lev=1.50          11.4854% 16.4954%    0.0%  0.5563
+  OURS p=2.00 lev=1.50          11.5057% 16.6232%    0.0%  0.5563
+  OURS p=1.00 lev=1.00          11.4786% 16.5196%    0.0%  0.5432
+  OURS p=0.50 lev=1.50          11.4472% 16.3006%    0.0%  0.5389
+  OURS p=0.25 lev=1.00          11.4279% 16.1767%    0.0%  0.5258
+  OURS p=0.50 lev=1.00          11.4407% 16.3686%    0.0%  0.5258
+  OURS p=0.25 lev=1.50          11.3787% 16.0423%    0.0%  0.5041
+  MinVariance(Shrunk)           10.8727% 15.6190%    0.0%  0.4997
+  MinVariance(Denoise)          10.8658% 15.4077%    0.0%  0.4954
+  NCO                           10.7532% 15.3853%    0.0%  0.4910
+  MinVariance(SCM)              10.7498% 15.3791%    0.0%  0.4867
+  EqualWeighted                 11.4684% 17.7431%    0.0%  0.4780
+  RiskBudgeting                 11.4151% 17.4400%    0.0%  0.4519
+  InverseVolatility             11.4129% 17.4507%    0.0%  0.4389
+  SchurComplementary            10.2856% 16.9839%    0.0%  0.3997
+  HRP                               nan%     nan%   99.1%  0.0140
+  HERC                              nan%     nan%   99.1%  0.0140
+
+written -> reports/round3_sweep.json

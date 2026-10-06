@@ -1,0 +1,17 @@
+{
+  "cases": 23,
+  "failures": [],
+  "illegal": [],
+  "equal_weight": [],
+  "inverse_volatility": [],
+  "statuses": {
+    "regularized_qp": 17,
+    "emergency_no_observations": 3,
+    "fallback_insufficient_common_rows": 1,
+    "single_asset_rule_ambiguous": 1,
+    "fallback_insufficient_coverage": 1
+  },
+  "max_total_short": 0.0,
+  "max_gross": 1.0,
+  "gross_leverage": 1.0
+}
