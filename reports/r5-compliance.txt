@@ -1,0 +1,9 @@
+dataset    folds    L1 EWP med/min    L1 IVP med/min    L1 SCM-GMVP med/min   corr GMVP max
+------------------------------------------------------------------------------------------------
+sp500        403     0.920 / 0.509     0.784 / 0.393          0.629 / 0.240           0.987
+ftse100      283     1.333 / 0.771     1.212 / 0.766          0.856 / 0.487           0.939
+nasdaq        55     1.475 / 1.022     1.219 / 0.976          0.605 / 0.284           0.988
+factors      100     0.761 / 0.198     0.675 / 0.211          0.985 / 0.353           0.998
+
+written -> reports/round5_compliance.json
+worst single-fold L1 to the SCM minimum variance book: 0.2401

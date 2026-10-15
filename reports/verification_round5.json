@@ -1,0 +1,188 @@
+{
+  "round": 5,
+  "generated_at_utc": "2026-10-15T15:51:32.347395+00:00",
+  "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "skfolio": "1.3.4",
+    "cvxpy": null,
+    "cvxpy-base": "1.9.2"
+  },
+  "contract": {
+    "shortselling": false,
+    "budget": 1.0,
+    "lookback": 252,
+    "optimize_every": 20,
+    "weight_drift": true,
+    "weights_nonnegative_and_sum_to_one": true,
+    "scoring": {
+      "annual_volatility": 0.1,
+      "max_drawdown": 0.1,
+      "cvar_95": 0.1,
+      "failure_rate": 0.7
+    }
+  },
+  "frozen_params": {
+    "method": "regularized",
+    "half_life": 63.0,
+    "recent_mix": 0.25,
+    "anchor_penalty": 0.5,
+    "gross_budget": 1.0,
+    "downside_mix": 0.5
+  },
+  "prohibitions": [
+    "equally weighted portfolio (EWP)",
+    "inverse-volatility portfolio (IVP)",
+    "GMVP on the sample covariance matrix (SCM)"
+  ],
+  "checks": {
+    "build": {
+      "exit_code": 0,
+      "log": "reports/r5-build-check.txt"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log": "reports/r5-syntax-check.txt"
+    },
+    "frozen_config": {
+      "exit_code": 0,
+      "log": "reports/r5-frozen-config.txt"
+    },
+    "pytest": {
+      "exit_code": 0,
+      "log": "reports/r5-pytest.txt"
+    },
+    "hostile_inputs": {
+      "exit_code": 0,
+      "log": "reports/r5-stress.txt"
+    },
+    "random_windows": {
+      "exit_code": 0,
+      "log": "reports/r5-random-windows.txt"
+    },
+    "isolated_file": {
+      "exit_code": 0,
+      "log": "reports/r5-isolated.txt"
+    },
+    "backtest": {
+      "exit_code": 0,
+      "log": "reports/r5-backtest.txt"
+    },
+    "compliance_margin": {
+      "exit_code": 0,
+      "log": "reports/r5-compliance.txt"
+    },
+    "teacher_preflight": {
+      "exit_code": 0,
+      "log": "reports/r5-preflight.txt"
+    }
+  },
+  "pytest": {
+    "tests": 166,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 165
+  },
+  "submission_sha256": "84a8b3725c72c677787b37ed812754fb4d7c2f11496f5809348fd73f17e4b021",
+  "core_sha256": "43f7f48e07a50822a570d3f25c1d85e5c1abebd2e2a95de4899ee4400027d330",
+  "config_sha256": "ba23dde86d417443cc6bc8cfc3a3d208bc2fa4722cf18be14f6598ffb82193c8",
+  "backtest_sha256_matches_shipped_file": true,
+  "compliance_margin": {
+    "sp500": {
+      "l1_scm_gmvp_median": 0.6287222321472234,
+      "l1_scm_gmvp_worst_fold": 0.2400757337835742,
+      "corr_scm_gmvp_max": 0.9873167347610593,
+      "exact_hits": 0
+    },
+    "ftse100": {
+      "l1_scm_gmvp_median": 0.8557669869436693,
+      "l1_scm_gmvp_worst_fold": 0.48745746454492883,
+      "corr_scm_gmvp_max": 0.9386943808363034,
+      "exact_hits": 0
+    },
+    "nasdaq": {
+      "l1_scm_gmvp_median": 0.6045103115979239,
+      "l1_scm_gmvp_worst_fold": 0.2841164060718249,
+      "corr_scm_gmvp_max": 0.987676230084033,
+      "exact_hits": 0
+    },
+    "factors": {
+      "l1_scm_gmvp_median": 0.9845696975323748,
+      "l1_scm_gmvp_worst_fold": 0.35283356462992704,
+      "corr_scm_gmvp_max": 0.9976576391509687,
+      "exact_hits": 0
+    }
+  },
+  "no_fold_returns_a_prohibited_book_exactly": true,
+  "headline_backtest": {
+    "sp500": {
+      "portfolios": 409,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.14520663504744533,
+      "annual_volatility": 0.15342491709919034,
+      "max_drawdown": 0.4567081880907953,
+      "cvar_95": 0.02203851400739184,
+      "gross_max": 1.0000000000000007,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.6246575629609012,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    "ftse100": {
+      "portfolios": 289,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.1528055785750841,
+      "annual_volatility": 0.17322730584342966,
+      "max_drawdown": 0.5456048622849388,
+      "cvar_95": 0.02037062013752793,
+      "gross_max": 1.0000000000000007,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.846013053126325,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    },
+    "factors": {
+      "portfolios": 106,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.11945148907031179,
+      "annual_volatility": 0.1636399661003137,
+      "max_drawdown": 0.394821072507606,
+      "cvar_95": 0.02544313212353869,
+      "gross_max": 1.0000000000000002,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.8900884308443756,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0
+      }
+    }
+  },
+  "random_window_totals": {
+    "slices": 480,
+    "folds": 12000,
+    "failed": 0,
+    "illegal": 0,
+    "equal": 0
+  },
+  "real_skfolio_preflight": "PASSED",
+  "ready_for_teacher_submission": true,
+  "market_backtest": "RUN_ON_THREE_SKFOLIO_DATASETS_UNDER_THE_ROUND_5_CONTRACT",
+  "hyperparameter_search": "RUN_AS_A_RISK_BLEND_AND_PENALTY_SWEEP,SEE_reports/round5_sweep.json_and_round5_fine.json",
+  "notice": "Passing these gates establishes format compliance, the stated round-5 contract on every tested fold, absence of the three prohibited books, and robustness to hostile inputs. It does not establish a rank in the field: failure rate is 70% of that score and the three risk terms are close together across compliant candidates, so a clean run is the dominant term."
+}
