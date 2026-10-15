@@ -1,0 +1,236 @@
+{
+  "note": "L1 distance from each admittedly-legitimate reference method to the prohibited long-only SCM minimum variance book, on the same folds. The smallest of these is the distance at which a portfolio is demonstrably a different book.",
+  "rows": [
+    {
+      "dataset": "sp500",
+      "method": "EqualWeighted",
+      "folds": 403,
+      "l1_median": 1.1075592971996988,
+      "l1_min": 0.56580076634469
+    },
+    {
+      "dataset": "sp500",
+      "method": "InverseVolatility",
+      "folds": 403,
+      "l1_median": 0.9139410056243265,
+      "l1_min": 0.3841970094234946
+    },
+    {
+      "dataset": "sp500",
+      "method": "MinVariance(Denoise)",
+      "folds": 403,
+      "l1_median": 0.31500582514924624,
+      "l1_min": 0.06563750136279971
+    },
+    {
+      "dataset": "sp500",
+      "method": "MinVariance(Shrunk)",
+      "folds": 403,
+      "l1_median": 0.22282684620508456,
+      "l1_min": 0.07810377504353927
+    },
+    {
+      "dataset": "sp500",
+      "method": "RiskBudgeting",
+      "folds": 403,
+      "l1_median": 0.88733075872235,
+      "l1_min": 0.4047442727983687
+    },
+    {
+      "dataset": "sp500",
+      "method": "MaxDiversification",
+      "folds": 403,
+      "l1_median": 0.9218067801875613,
+      "l1_min": 0.4807462749367196
+    },
+    {
+      "dataset": "sp500",
+      "method": "SchurComplementary",
+      "folds": 403,
+      "l1_median": 0.7547564672547813,
+      "l1_min": 0.3799443522380902
+    },
+    {
+      "dataset": "sp500",
+      "method": "NCO",
+      "folds": 403,
+      "l1_median": 0.31829993526211287,
+      "l1_min": 5.0361062458836e-05
+    },
+    {
+      "dataset": "sp500",
+      "method": "HRP",
+      "folds": 1,
+      "l1_median": 0.7972397766514859,
+      "l1_min": 0.7972397766514859
+    },
+    {
+      "dataset": "sp500",
+      "method": "HERC",
+      "folds": 1,
+      "l1_median": 1.2378767768368044,
+      "l1_min": 1.2378767768368044
+    },
+    {
+      "dataset": "sp500",
+      "method": "Random(Dirichlet)",
+      "folds": 403,
+      "l1_median": 1.2703883306288235,
+      "l1_min": 0.6449204668860188
+    },
+    {
+      "dataset": "ftse100",
+      "method": "EqualWeighted",
+      "folds": 283,
+      "l1_median": 1.4810410897052166,
+      "l1_min": 1.0508905121212826
+    },
+    {
+      "dataset": "ftse100",
+      "method": "InverseVolatility",
+      "folds": 283,
+      "l1_median": 1.3792701708373531,
+      "l1_min": 0.9013532239590165
+    },
+    {
+      "dataset": "ftse100",
+      "method": "MinVariance(Denoise)",
+      "folds": 283,
+      "l1_median": 0.4259717859926488,
+      "l1_min": 0.15678410790724612
+    },
+    {
+      "dataset": "ftse100",
+      "method": "MinVariance(Shrunk)",
+      "folds": 283,
+      "l1_median": 0.21429283660137838,
+      "l1_min": 0.11421278497476894
+    },
+    {
+      "dataset": "ftse100",
+      "method": "RiskBudgeting",
+      "folds": 283,
+      "l1_median": 1.2475118626545694,
+      "l1_min": 0.7155526033440203
+    },
+    {
+      "dataset": "ftse100",
+      "method": "MaxDiversification",
+      "folds": 283,
+      "l1_median": 0.9756984641848143,
+      "l1_min": 0.48280802321953664
+    },
+    {
+      "dataset": "ftse100",
+      "method": "SchurComplementary",
+      "folds": 283,
+      "l1_median": 1.140179950390571,
+      "l1_min": 0.560854061503325
+    },
+    {
+      "dataset": "ftse100",
+      "method": "NCO",
+      "folds": 283,
+      "l1_median": 0.5868856957975817,
+      "l1_min": 0.005662298984202764
+    },
+    {
+      "dataset": "ftse100",
+      "method": "HRP",
+      "folds": 1,
+      "l1_median": 0.7820475926011946,
+      "l1_min": 0.7820475926011946
+    },
+    {
+      "dataset": "ftse100",
+      "method": "HERC",
+      "folds": 1,
+      "l1_median": 0.8803427250213472,
+      "l1_min": 0.8803427250213472
+    },
+    {
+      "dataset": "ftse100",
+      "method": "Random(Dirichlet)",
+      "folds": 283,
+      "l1_median": 1.5125779351804147,
+      "l1_min": 1.0904221996123242
+    },
+    {
+      "dataset": "factors",
+      "method": "EqualWeighted",
+      "folds": 100,
+      "l1_median": 1.4843468067601129,
+      "l1_min": 0.9339578629329582
+    },
+    {
+      "dataset": "factors",
+      "method": "InverseVolatility",
+      "folds": 100,
+      "l1_median": 1.3764080049994094,
+      "l1_min": 0.8477860590469817
+    },
+    {
+      "dataset": "factors",
+      "method": "MinVariance(Denoise)",
+      "folds": 100,
+      "l1_median": 0.06172214034289763,
+      "l1_min": 1.8491721285870463e-07
+    },
+    {
+      "dataset": "factors",
+      "method": "MinVariance(Shrunk)",
+      "folds": 100,
+      "l1_median": 0.31362282359004634,
+      "l1_min": 0.02712027411763174
+    },
+    {
+      "dataset": "factors",
+      "method": "RiskBudgeting",
+      "folds": 100,
+      "l1_median": 1.359101519164881,
+      "l1_min": 0.8668842598129375
+    },
+    {
+      "dataset": "factors",
+      "method": "MaxDiversification",
+      "folds": 100,
+      "l1_median": 1.1976827419595362,
+      "l1_min": 0.816090374049361
+    },
+    {
+      "dataset": "factors",
+      "method": "SchurComplementary",
+      "folds": 100,
+      "l1_median": 0.9370857867746993,
+      "l1_min": 0.243860320895348
+    },
+    {
+      "dataset": "factors",
+      "method": "NCO",
+      "folds": 100,
+      "l1_median": 9.80707705824256e-05,
+      "l1_min": 9.298408359166194e-08
+    },
+    {
+      "dataset": "factors",
+      "method": "HRP",
+      "folds": 1,
+      "l1_median": 0.7895921263223161,
+      "l1_min": 0.7895921263223161
+    },
+    {
+      "dataset": "factors",
+      "method": "HERC",
+      "folds": 1,
+      "l1_median": 0.9729075459765401,
+      "l1_min": 0.9729075459765401
+    },
+    {
+      "dataset": "factors",
+      "method": "Random(Dirichlet)",
+      "folds": 100,
+      "l1_median": 1.51005507843497,
+      "l1_min": 0.5187055502902598
+    }
+  ]
+}

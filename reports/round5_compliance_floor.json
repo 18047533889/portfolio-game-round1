@@ -1,0 +1,125 @@
+{
+  "note": "L1 in weight space against the long-only SCM minimum variance book rebuilt from the same training window. The minimum over folds, not the median, is what decides compliance.",
+  "rows": [
+    {
+      "dataset": "sp500",
+      "penalty": 0.1,
+      "downside_mix": 0.5,
+      "folds": 403,
+      "l1_median": 0.4148415857544231,
+      "l1_min": 0.1593509127570985,
+      "corr_max": 0.9901052043022502,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 0.25,
+      "downside_mix": 0.5,
+      "folds": 403,
+      "l1_median": 0.5238668448043899,
+      "l1_min": 0.2255559212604734,
+      "corr_max": 0.988943275659139,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 0.5,
+      "downside_mix": 0.5,
+      "folds": 403,
+      "l1_median": 0.6287222321472234,
+      "l1_min": 0.2400757337835742,
+      "corr_max": 0.9873167347610593,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "sp500",
+      "penalty": 1.0,
+      "downside_mix": 0.5,
+      "folds": 403,
+      "l1_median": 0.7254651473471372,
+      "l1_min": 0.24304928214246682,
+      "corr_max": 0.9828862861161595,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 0.1,
+      "downside_mix": 0.5,
+      "folds": 283,
+      "l1_median": 0.5854472294034809,
+      "l1_min": 0.2820860414869471,
+      "corr_max": 0.9653775612473035,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 0.25,
+      "downside_mix": 0.5,
+      "folds": 283,
+      "l1_median": 0.7152544602337525,
+      "l1_min": 0.36845403310467484,
+      "corr_max": 0.948223005507959,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 0.5,
+      "downside_mix": 0.5,
+      "folds": 283,
+      "l1_median": 0.8557669869436693,
+      "l1_min": 0.48745746454492883,
+      "corr_max": 0.9386943808363034,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "ftse100",
+      "penalty": 1.0,
+      "downside_mix": 0.5,
+      "folds": 283,
+      "l1_median": 0.9834844242259414,
+      "l1_min": 0.5889723831834597,
+      "corr_max": 0.9230429617849595,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "factors",
+      "penalty": 0.1,
+      "downside_mix": 0.5,
+      "folds": 100,
+      "l1_median": 0.5840019318242622,
+      "l1_min": 1.2418221837118418e-16,
+      "corr_max": 1.0,
+      "folds_below_0.10": 7
+    },
+    {
+      "dataset": "factors",
+      "penalty": 0.25,
+      "downside_mix": 0.5,
+      "folds": 100,
+      "l1_median": 0.8284039191076882,
+      "l1_min": 0.17293920754427622,
+      "corr_max": 0.9981757597677658,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "factors",
+      "penalty": 0.5,
+      "downside_mix": 0.5,
+      "folds": 100,
+      "l1_median": 0.9845696975323748,
+      "l1_min": 0.35283356462992704,
+      "corr_max": 0.9976576391509687,
+      "folds_below_0.10": 0
+    },
+    {
+      "dataset": "factors",
+      "penalty": 1.0,
+      "downside_mix": 0.5,
+      "folds": 100,
+      "l1_median": 1.0804290121513378,
+      "l1_min": 0.43574628467212206,
+      "corr_max": 0.9979522097008492,
+      "folds_below_0.10": 0
+    }
+  ]
+}

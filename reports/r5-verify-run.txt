@@ -1,0 +1,5 @@
+r5-build-check: exit=0
+r5-syntax-check: exit=0
+r5-frozen-config: exit=0
+r5-pytest: exit=0
+r5-stress: exit=0

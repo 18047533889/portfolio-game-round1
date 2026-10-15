@@ -1,0 +1,54 @@
+{
+  "submission": "submission/portfolio_round5.py",
+  "note": "L1 in weight space, median and worst fold. For long-only books the maximum is 2 and the scale is total absolute weight, so a distance of d means the books disagree on d/2 of the capital.",
+  "datasets": [
+    {
+      "dataset": "sp500",
+      "folds": 403,
+      "l1_ewp_median": 0.9196428865392257,
+      "l1_ewp_min": 0.5087343182142614,
+      "l1_ivp_median": 0.7839624986868685,
+      "l1_ivp_min": 0.3931171831019483,
+      "l1_scm_gmvp_median": 0.6287222321472234,
+      "l1_scm_gmvp_min": 0.2400757337835742,
+      "corr_scm_gmvp_max": 0.9873167347610593,
+      "exact_hits": 0
+    },
+    {
+      "dataset": "ftse100",
+      "folds": 283,
+      "l1_ewp_median": 1.3334850100890612,
+      "l1_ewp_min": 0.7711425255896093,
+      "l1_ivp_median": 1.2120213065148353,
+      "l1_ivp_min": 0.7663165068960301,
+      "l1_scm_gmvp_median": 0.8557669869436693,
+      "l1_scm_gmvp_min": 0.48745746454492883,
+      "corr_scm_gmvp_max": 0.9386943808363034,
+      "exact_hits": 0
+    },
+    {
+      "dataset": "nasdaq",
+      "folds": 55,
+      "l1_ewp_median": 1.4753448408880478,
+      "l1_ewp_min": 1.0220378990522743,
+      "l1_ivp_median": 1.2192771171956194,
+      "l1_ivp_min": 0.975836724240051,
+      "l1_scm_gmvp_median": 0.6045103115979239,
+      "l1_scm_gmvp_min": 0.2841164060718249,
+      "corr_scm_gmvp_max": 0.987676230084033,
+      "exact_hits": 0
+    },
+    {
+      "dataset": "factors",
+      "folds": 100,
+      "l1_ewp_median": 0.7611642752760255,
+      "l1_ewp_min": 0.19824324232235718,
+      "l1_ivp_median": 0.6748670522615383,
+      "l1_ivp_min": 0.21068927596761816,
+      "l1_scm_gmvp_median": 0.9845696975323748,
+      "l1_scm_gmvp_min": 0.35283356462992704,
+      "corr_scm_gmvp_max": 0.9976576391509687,
+      "exact_hits": 0
+    }
+  ]
+}

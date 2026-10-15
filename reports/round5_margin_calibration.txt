@@ -1,0 +1,49 @@
+
+=== sp500  (8312, 20)  (403 folds) ===
+  legitimate method            L1 med   L1 MIN
+  EqualWeighted                 1.108    0.566
+  InverseVolatility             0.914    0.384
+  MinVariance(Denoise)          0.315    0.066
+  MinVariance(Shrunk)           0.223    0.078
+  RiskBudgeting                 0.887    0.405
+  MaxDiversification            0.922    0.481
+  SchurComplementary            0.755    0.380
+  NCO                           0.318    0.000
+  HRP                           0.797    0.797
+  HERC                          1.238    1.238
+  Random(Dirichlet)             1.270    0.645
+
+=== ftse100  (5915, 64)  (283 folds) ===
+  legitimate method            L1 med   L1 MIN
+  EqualWeighted                 1.481    1.051
+  InverseVolatility             1.379    0.901
+  MinVariance(Denoise)          0.426    0.157
+  MinVariance(Shrunk)           0.214    0.114
+  RiskBudgeting                 1.248    0.716
+  MaxDiversification            0.976    0.483
+  SchurComplementary            1.140    0.561
+  NCO                           0.587    0.006
+  HRP                           0.782    0.782
+  HERC                          0.880    0.880
+  Random(Dirichlet)             1.513    1.090
+
+=== factors  (2263, 5)  (100 folds) ===
+  legitimate method            L1 med   L1 MIN
+  EqualWeighted                 1.484    0.934
+  InverseVolatility             1.376    0.848
+  MinVariance(Denoise)          0.062    0.000
+  MinVariance(Shrunk)           0.314    0.027
+  RiskBudgeting                 1.359    0.867
+  MaxDiversification            1.198    0.816
+  SchurComplementary            0.937    0.244
+  NCO                           0.000    0.000
+  HRP                           0.790    0.790
+  HERC                          0.973    0.973
+  Random(Dirichlet)             1.510    0.519
+
+written -> reports/round5_margin_calibration.json
+
+smallest per-fold distance among legitimate methods, per dataset:
+  sp500     0.000   (across 11 methods)
+  ftse100   0.006   (across 11 methods)
+  factors   0.000   (across 11 methods)
