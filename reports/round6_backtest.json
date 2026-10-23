@@ -1,0 +1,227 @@
+{
+  "submission": "submission/portfolio_round6.py",
+  "submission_sha256": "4b59923b08fe8643feb8273973c92ecb3a4d2a93fc20dc03f48ccc2704d4c221",
+  "datasets": [
+    {
+      "dataset": "sp500",
+      "panel": {
+        "observations": 8312,
+        "assets": 20,
+        "start": "1990-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 100,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 410,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.15911182134352317,
+      "annualized_mean": 0.15911182134352317,
+      "max_drawdown": 0.5338968067317347,
+      "annual_volatility": 0.16472915854339112,
+      "cvar_95": 0.02338032419497017,
+      "sharpe": 0.9658995574946235,
+      "exposure": {
+        "net_min": 0.9999894558976726,
+        "net_max": 1.0000000000000004,
+        "gross_max": 1.0000000000000004,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.2603505180642144,
+        "max": 0.6997209461384366
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 410,
+          "median": 1.0048378057589327,
+          "p05": 0.7007155273233289,
+          "p95": 1.3307764421178816,
+          "min": 0.5103467755872585
+        },
+        "ivp": {
+          "n": 410,
+          "median": 0.9465531591729911,
+          "p05": 0.6347161624562807,
+          "p95": 1.2376509195089442,
+          "min": 0.4332139908629779
+        },
+        "scm_gmvp": {
+          "n": 410,
+          "median": 0.837483309856994,
+          "p05": 0.4989613527551681,
+          "p95": 1.2602828287787189,
+          "min": 0.2950989562082207
+        },
+        "erc_scm": {
+          "n": 409,
+          "median": 0.8308843022167915,
+          "p05": 0.5771825183707234,
+          "p95": 1.1701508812607118,
+          "min": 0.4271810612566478
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    {
+      "dataset": "ftse100",
+      "panel": {
+        "observations": 5915,
+        "assets": 64,
+        "start": "2000-01-05",
+        "end": "2023-05-31"
+      },
+      "contract": {
+        "lookback": 100,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 290,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.14928228127248647,
+      "annualized_mean": 0.14928228127248647,
+      "max_drawdown": 0.6153487792421224,
+      "annual_volatility": 0.18514816709138043,
+      "cvar_95": 0.021735164408437938,
+      "sharpe": 0.8062854934923971,
+      "exposure": {
+        "net_min": 0.9999889884379747,
+        "net_max": 1.0000000000000009,
+        "gross_max": 1.0000000000000009,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.2629638365486168,
+        "max": 0.691429910867073
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 290,
+          "median": 1.4857960132738888,
+          "p05": 1.3225679571941578,
+          "p95": 1.6221425663472058,
+          "min": 1.115863732241739
+        },
+        "ivp": {
+          "n": 289,
+          "median": 1.4440083534790413,
+          "p05": 1.2976802681979782,
+          "p95": 1.577069598472032,
+          "min": 1.1677360833851917
+        },
+        "scm_gmvp": {
+          "n": 290,
+          "median": 1.12500606484581,
+          "p05": 0.7405933680019453,
+          "p95": 1.4752138898524154,
+          "min": 0.34931020423340087
+        },
+        "erc_scm": {
+          "n": 290,
+          "median": 1.322100620290419,
+          "p05": 1.1082004959509555,
+          "p95": 1.4827292519322341,
+          "min": 0.714639482917438
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    {
+      "dataset": "factors",
+      "panel": {
+        "observations": 2263,
+        "assets": 5,
+        "start": "2014-01-03",
+        "end": "2022-12-28"
+      },
+      "contract": {
+        "lookback": 100,
+        "optimize_every": 20,
+        "weight_drift": true,
+        "leverage": 1.0
+      },
+      "n_portfolios": 108,
+      "n_failed_portfolios": 0,
+      "n_fallback_portfolios": 0,
+      "failure_rate": 0.0,
+      "annual_return": 0.11829572422456185,
+      "annualized_mean": 0.11829572422456185,
+      "max_drawdown": 0.40368281219564894,
+      "annual_volatility": 0.1655311490954291,
+      "cvar_95": 0.025845683567396083,
+      "sharpe": 0.7146432853937604,
+      "exposure": {
+        "net_min": 0.9999999999999996,
+        "net_max": 1.0000000000000002,
+        "gross_max": 1.0000000000000002,
+        "short_max": 0.0,
+        "leverage_ok": true
+      },
+      "max_weight": {
+        "median": 0.4671040593116498,
+        "max": 0.6756237276010388
+      },
+      "prohibited_distance_l1": {
+        "ewp": {
+          "n": 108,
+          "median": 0.6727241638975426,
+          "p05": 0.3404695076078502,
+          "p95": 0.9480540673656653,
+          "min": 0.20611931024586516
+        },
+        "ivp": {
+          "n": 108,
+          "median": 0.6431220197180025,
+          "p05": 0.31255889714898455,
+          "p95": 0.8011445797751547,
+          "min": 0.1654987179097521
+        },
+        "scm_gmvp": {
+          "n": 108,
+          "median": 1.0224014392001886,
+          "p05": 0.6090990964289267,
+          "p95": 1.5557878108652203,
+          "min": 0.24402318374301368
+        },
+        "erc_scm": {
+          "n": 108,
+          "median": 0.605543607744121,
+          "p05": 0.2973550976687581,
+          "p95": 0.7870260625668716,
+          "min": 0.140315011493496
+        }
+      },
+      "prohibited_exact_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    }
+  ],
+  "frozen_budget_setting": {
+    "gross_budget": 1.0,
+    "downside_mix": 0.5,
+    "anchor_penalty": 4.0
+  }
+}

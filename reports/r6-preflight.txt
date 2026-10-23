@@ -1,0 +1,66 @@
+== dependency check ==
+skfolio 1.3.4 present
+
+== artifact in sync ==
+Round-6 standalone submission matches core and frozen config.
+
+== round-5 core tests ==
+........................                                                 [100%]
+24 passed in 1.30s
+
+== instructor self-test on the isolated file ==
+isolated directory contents: ['portfolio_round6.py', 'self_test.py']
+Basic checks passed. Backtest summary:
+Mean                                     0.071%
+Annualized Mean                          17.98%
+Variance                                0.00011
+Annualized Variance                       2.71%
+Semi-Variance                          0.000053
+Annualized Semi-Variance                  1.34%
+Standard Deviation                        1.04%
+Annualized Standard Deviation            16.46%
+Semi-Deviation                            0.73%
+Annualized Semi-Deviation                11.59%
+Mean Absolute Deviation                   0.71%
+CVaR at 95%                               2.31%
+EVaR at 95%                               4.44%
+Worst Realization                         8.80%
+CDaR at 95%                              21.22%
+MAX Drawdown                             40.26%
+Average Drawdown                          3.78%
+EDaR at 95%                              27.54%
+First Lower Partial Moment                0.36%
+Ulcer Index                               0.066
+Gini Mean Difference                      1.06%
+Value at Risk at 95%                      1.49%
+Drawdown at Risk at 95%                  14.87%
+Entropic Risk Measure at 95%               3.00
+Fourth Central Moment                 0.000015%
+Fourth Lower Partial Moment           0.000006%
+Skew                                     16.56%
+Kurtosis                               1258.15%
+Sharpe Ratio                              0.069
+Annualized Sharpe Ratio                    1.09
+Sortino Ratio                             0.098
+Annualized Sortino Ratio                   1.55
+Mean Absolute Deviation Ratio              0.10
+First Lower Partial Moment Ratio           0.20
+Value at Risk Ratio at 95%                0.048
+CVaR Ratio at 95%                         0.031
+Entropic Risk Measure Ratio at 95%      0.00024
+EVaR Ratio at 95%                         0.016
+Worst Realization Ratio                  0.0081
+Drawdown at Risk Ratio at 95%            0.0048
+CDaR Ratio at 95%                        0.0034
+Calmar Ratio                             0.0018
+Average Drawdown Ratio                    0.019
+EDaR Ratio at 95%                        0.0026
+Ulcer Index Ratio                         0.011
+Gini Mean Difference Ratio                0.067
+Avg nb of Assets per Portfolio             20.0
+Number of Portfolios                        127
+Number of Failed Portfolios                   0
+Number of Fallback Portfolios                 0
+dtype: object
+
+ROUND-6 FULL PREFLIGHT PASSED: real skfolio integration and the original instructor self-test, on the uploaded file alone.

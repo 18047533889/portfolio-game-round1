@@ -1,0 +1,7 @@
+frozen gross_budget: 1.0 (long-only)
+temp dir : /var/folders/vb/4p6qfszn5n70kxq1wtk49_5w0000gn/T/r6_isolated__cc6kzq4
+contents : ['driver.py', 'portfolio_round6.py']
+exit code: 0
+{"imported_file": "portfolio_round6.py", "n_portfolios": 410, "n_failed_portfolios": 0, "n_fallback_portfolios": 0, "annual_return": 0.15911182134352317, "annual_volatility": 0.16472915854339112, "max_short_total": 0.0, "max_drawdown": 0.5338968067317347, "cvar_95": 0.02338032419497017, "max_gross": 1.0000000000000002, "violations": []}
+
+ISOLATED CHECK PASSED (single-file submission is self-contained)
