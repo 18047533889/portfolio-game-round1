@@ -1,0 +1,12 @@
+dataset    folds    L1 EWP med/min    L1 IVP med/min    L1 SCM-GMVP med/min   L1 SCM-ERC med/min  corr GMVP max
+----------------------------------------------------------------------------------------------------------------------
+sp500        206     0.853 / 0.325     0.679 / 0.131          0.565 / 0.136        0.563 / 0.123       0.988114
+ftse100      146     1.294 / 0.253     1.187 / 0.143                    n/a                  n/a            nan
+nasdaq        32     1.028 / 0.655     0.771 / 0.355                    n/a                  n/a            nan
+factors       55     0.871 / 0.308     0.779 / 0.289          0.644 / 0.136        0.760 / 0.248       0.996918
+
+written -> reports/round7_compliance.json
+worst single-fold L1 to the banned SCM minimum variance book: 0.1358 (sp500)
+worst single-fold L1 to the banned SCM risk parity book: 0.1228 (sp500)
+folds where the SCM reference is undefined (n >= T): {'sp500': 1, 'ftse100': 146, 'nasdaq': 32}
+exact hits on any banned book, all datasets: 0

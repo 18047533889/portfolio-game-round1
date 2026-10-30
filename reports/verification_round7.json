@@ -1,0 +1,220 @@
+{
+  "round": 7,
+  "generated_at_utc": "2026-10-30T12:51:09.012202+00:00",
+  "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "skfolio": "1.3.4",
+    "cvxpy": null,
+    "cvxpy-base": "1.9.2"
+  },
+  "contract": {
+    "shortselling": false,
+    "budget": 1.0,
+    "lookback": 60,
+    "optimize_every": 40,
+    "weight_drift": true,
+    "weights_nonnegative_and_sum_to_one": true,
+    "scoring": {
+      "sharpe_median": 0.1,
+      "cvar_median": 0.2,
+      "failure_rate": 0.7
+    }
+  },
+  "frozen_params": {
+    "method": "regularized",
+    "half_life": 15.0,
+    "recent_mix": 0.25,
+    "anchor_penalty": 0.25,
+    "gross_budget": 1.0,
+    "downside_mix": 0.0
+  },
+  "prohibitions": [
+    "equally weighted portfolio (EWP)",
+    "inverse-volatility portfolio (IVP)",
+    "GMVP on the sample covariance matrix (SCM)",
+    "risk parity portfolio on the sample covariance matrix"
+  ],
+  "checks": {
+    "build": {
+      "exit_code": 0,
+      "log": "reports/r7-build-check.txt"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log": "reports/r7-syntax-check.txt"
+    },
+    "frozen_config": {
+      "exit_code": 0,
+      "log": "reports/r7-frozen-config.txt"
+    },
+    "pytest": {
+      "exit_code": 0,
+      "log": "reports/r7-pytest.txt"
+    },
+    "hostile_inputs": {
+      "exit_code": 0,
+      "log": "reports/r7-stress.txt"
+    },
+    "random_windows": {
+      "exit_code": 0,
+      "log": "reports/r7-random-windows.txt"
+    },
+    "isolated_file": {
+      "exit_code": 0,
+      "log": "reports/r7-isolated.txt"
+    },
+    "backtest": {
+      "exit_code": 0,
+      "log": "reports/r7-backtest.txt"
+    },
+    "compliance_margin": {
+      "exit_code": 0,
+      "log": "reports/r7-compliance.txt"
+    },
+    "teacher_preflight": {
+      "exit_code": 0,
+      "log": "reports/r7-preflight.txt"
+    }
+  },
+  "pytest": {
+    "tests": 214,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 213
+  },
+  "submission_sha256": "4de0bb25b7833c9d740f684023682205acbbd9682e541cfd76e123eb3e9ba7a7",
+  "core_sha256": "073c7e40d4ff6d6945fd1415f6c38cb236f93269a9efd92449ae44fc340c7627",
+  "config_sha256": "51b9c920f278a2974480fe7b7c0d7d2ba3a5161ed225668bff7966b1d15eaead",
+  "backtest_sha256_matches_shipped_file": true,
+  "compliance_margin": {
+    "sp500": {
+      "l1_scm_gmvp_median": 0.5653209148664056,
+      "l1_scm_gmvp_worst_fold": 0.13583351856741605,
+      "corr_scm_gmvp_max": 0.9881137413804428,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "ftse100": {
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_worst_fold": null,
+      "corr_scm_gmvp_max": null,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "nasdaq": {
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_worst_fold": null,
+      "corr_scm_gmvp_max": null,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "factors": {
+      "l1_scm_gmvp_median": 0.6436391192983931,
+      "l1_scm_gmvp_worst_fold": 0.136169203783091,
+      "corr_scm_gmvp_max": 0.9969179910851751,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    }
+  },
+  "no_fold_returns_a_prohibited_book_exactly": true,
+  "headline_backtest": {
+    "sp500": {
+      "portfolios": 206,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.14939367466647102,
+      "annual_volatility": 0.1760190933421387,
+      "max_drawdown": 0.3927274044000254,
+      "cvar_95": 0.02285517722581737,
+      "gross_max": 1.0000000000000007,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.5657539814970186,
+      "l1_to_erc_scm_median": 0.5628365932806474,
+      "sharpe_median": 1.5021530435996653,
+      "cvar_median": 0.014986841996966309,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    "ftse100": {
+      "portfolios": 146,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.12518714641791542,
+      "annual_volatility": 0.14043091895047427,
+      "max_drawdown": 0.5190995092220282,
+      "cvar_95": 0.02093206157788512,
+      "gross_max": 1.000000000000001,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.6947320987595751,
+      "l1_to_erc_scm_median": null,
+      "sharpe_median": 1.2807028518044814,
+      "cvar_median": 0.01414005112166938,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    "factors": {
+      "portfolios": 55,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.11947103603206993,
+      "annual_volatility": 0.15973719907237946,
+      "max_drawdown": 0.38871480811944226,
+      "cvar_95": 0.02472361776028914,
+      "gross_max": 1.0000000000000002,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.6436391192983931,
+      "l1_to_erc_scm_median": 0.7604814720925537,
+      "sharpe_median": 1.5281788590151049,
+      "cvar_median": 0.014708959547300334,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    }
+  },
+  "random_window_totals": {
+    "slices": 960,
+    "folds": 11520,
+    "failed": 0,
+    "illegal": 0,
+    "equal": 0
+  },
+  "real_skfolio_preflight": "PASSED",
+  "ready_for_teacher_submission": true,
+  "market_backtest": "RUN_ON_THREE_SKFOLIO_DATASETS_UNDER_THE_ROUND_7_CONTRACT",
+  "hyperparameter_search": "RUN_AS_A_PENALTY_AND_RISK_BLEND_SWEEP_WITH_A_PER_FOLD_COMPLIANCE_FLOOR,SEE_reports/round7_sweep.json,_round7_selection.json_and_round7_calibration.json",
+  "notice": "Passing these gates establishes format compliance, the stated round-7 contract on every tested fold, absence of all FOUR prohibited books, and robustness to hostile inputs. It does not establish a rank in the field: failure rate is 70% of that score, and the two reported terms are close together across compliant candidates, so a clean run is the dominant term. The per-fold compliance floor is a heuristic, not a certificate -- legitimate reference methods reach 0.000 against the same banned books on the same folds (reports/round7_calibration.json)."
+}

@@ -1,0 +1,86 @@
+{
+  "submission": "submission/portfolio_round7.py",
+  "note": "L1 in weight space, median and worst fold. For long-only books the maximum is 2 and the scale is total absolute weight, so a distance of d means the books disagree on d/2 of the capital.",
+  "datasets": [
+    {
+      "dataset": "sp500",
+      "folds": 206,
+      "l1_ewp_median": 0.8534173904950721,
+      "l1_ewp_min": 0.32538451484570685,
+      "l1_ivp_median": 0.6792537658668469,
+      "l1_ivp_min": 0.13071664104915728,
+      "l1_scm_gmvp_median": 0.5653209148664056,
+      "l1_scm_gmvp_min": 0.13583351856741605,
+      "l1_erc_scm_median": 0.5628365932806474,
+      "l1_erc_scm_min": 0.12280440784866305,
+      "corr_scm_gmvp_max": 0.9881137413804428,
+      "scm_reference_undefined_folds": 1,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    {
+      "dataset": "ftse100",
+      "folds": 146,
+      "l1_ewp_median": 1.2943187989065603,
+      "l1_ewp_min": 0.2525326837941447,
+      "l1_ivp_median": 1.1872968673583593,
+      "l1_ivp_min": 0.14349305729082684,
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_min": null,
+      "l1_erc_scm_median": null,
+      "l1_erc_scm_min": null,
+      "corr_scm_gmvp_max": null,
+      "scm_reference_undefined_folds": 146,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    {
+      "dataset": "nasdaq",
+      "folds": 32,
+      "l1_ewp_median": 1.0284781030201537,
+      "l1_ewp_min": 0.6545239744431356,
+      "l1_ivp_median": 0.7710509119467546,
+      "l1_ivp_min": 0.35510114957167516,
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_min": null,
+      "l1_erc_scm_median": null,
+      "l1_erc_scm_min": null,
+      "corr_scm_gmvp_max": null,
+      "scm_reference_undefined_folds": 32,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    {
+      "dataset": "factors",
+      "folds": 55,
+      "l1_ewp_median": 0.871323336212893,
+      "l1_ewp_min": 0.30831371916289285,
+      "l1_ivp_median": 0.779325425058878,
+      "l1_ivp_min": 0.28863125398613687,
+      "l1_scm_gmvp_median": 0.6436391192983931,
+      "l1_scm_gmvp_min": 0.136169203783091,
+      "l1_erc_scm_median": 0.7604814720925537,
+      "l1_erc_scm_min": 0.247926584466784,
+      "corr_scm_gmvp_max": 0.9969179910851751,
+      "scm_reference_undefined_folds": 0,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    }
+  ]
+}

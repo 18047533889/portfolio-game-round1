@@ -1,0 +1,215 @@
+
+======================================================================================================================================================
+sp500  (8312, 20)  folds~207
+  [field] EqualWeighted            fail=   0.0% sharpe_med= 1.3513 cvar_med=1.8265%
+  [field] InverseVolatility        fail=   0.5% sharpe_med= 1.4530 cvar_med=1.6972%
+  [field] MinVariance(SCM)         fail=   0.5% sharpe_med= 1.3674 cvar_med=1.5107%
+  [field] MinVariance(Denoise)     fail=   0.5% sharpe_med= 1.3743 cvar_med=1.4309%
+  [field] MinVariance(Shrunk)      fail=   0.0% sharpe_med= 1.4820 cvar_med=1.4679%
+  [field] RiskBudgeting            fail=   0.5% sharpe_med= 1.5025 cvar_med=1.6617%
+  [field] MaxDiversification       fail=   0.5% sharpe_med= 1.6045 cvar_med=1.8222%
+  [field] SchurComplementary       fail=   0.5% sharpe_med= 1.4654 cvar_med=1.5500%
+  [field] NCO                      fail=   0.5% sharpe_med= 1.2552 cvar_med=1.4663%
+  [field] HRP                      fail=  99.5% sharpe_med= 2.1610 cvar_med=1.8023%
+  [field] HERC                     fail=  99.5% sharpe_med=-1.8856 cvar_med=3.4403%
+  [field] Random(Dirichlet)        fail=   0.0% sharpe_med= 1.3737 cvar_med=2.0367%
+  mix=0.00 p=  0.25 fail=  0/ 206 sharpe_med= 1.5022 cvar_med=1.4987% dd=39.2727% maxw=0.181 gmvp_min= 0.136 erc_min= 0.123
+  mix=0.00 p=  0.50 fail=  0/ 206 sharpe_med= 1.5012 cvar_med=1.5146% dd=39.5936% maxw=0.192 gmvp_min= 0.187 erc_min= 0.130
+  mix=0.00 p=  1.00 fail=  0/ 206 sharpe_med= 1.5242 cvar_med=1.5199% dd=39.9641% maxw=0.202 gmvp_min= 0.253 erc_min= 0.140
+  mix=0.00 p=  2.00 fail=  0/ 206 sharpe_med= 1.5037 cvar_med=1.5382% dd=40.3115% maxw=0.209 gmvp_min= 0.284 erc_min= 0.151
+  mix=0.00 p=  4.00 fail=  0/ 206 sharpe_med= 1.5649 cvar_med=1.5400% dd=40.5555% maxw=0.209 gmvp_min= 0.287 erc_min= 0.161
+  mix=0.00 p=  8.00 fail=  0/ 206 sharpe_med= 1.5632 cvar_med=1.5401% dd=41.6944% maxw=0.212 gmvp_min= 0.291 erc_min= 0.168
+  mix=0.00 p= 16.00 fail=  0/ 206 sharpe_med= 1.5459 cvar_med=1.5446% dd=42.4642% maxw=0.213 gmvp_min= 0.295 erc_min= 0.172
+  mix=0.50 p=  0.25 fail=  0/ 206 sharpe_med= 1.5320 cvar_med=1.4667% dd=51.9705% maxw=0.249 gmvp_min= 0.208 erc_min= 0.424
+  mix=0.50 p=  0.50 fail=  0/ 206 sharpe_med= 1.4995 cvar_med=1.5034% dd=52.2422% maxw=0.257 gmvp_min= 0.219 erc_min= 0.384
+  mix=0.50 p=  1.00 fail=  0/ 206 sharpe_med= 1.5268 cvar_med=1.5201% dd=52.6385% maxw=0.264 gmvp_min= 0.209 erc_min= 0.413
+  mix=0.50 p=  2.00 fail=  0/ 206 sharpe_med= 1.5639 cvar_med=1.5514% dd=53.1028% maxw=0.268 gmvp_min= 0.275 erc_min= 0.432
+  mix=0.50 p=  4.00 fail=  0/ 206 sharpe_med= 1.4959 cvar_med=1.5868% dd=53.5320% maxw=0.271 gmvp_min= 0.331 erc_min= 0.428
+  mix=0.50 p=  8.00 fail=  0/ 206 sharpe_med= 1.4227 cvar_med=1.6206% dd=53.8667% maxw=0.274 gmvp_min= 0.370 erc_min= 0.433
+  mix=0.50 p= 16.00 fail=  0/ 206 sharpe_med= 1.4526 cvar_med=1.6268% dd=54.0920% maxw=0.274 gmvp_min= 0.404 erc_min= 0.436
+  mix=1.00 p=  0.25 fail=  0/ 206 sharpe_med= 1.5290 cvar_med=1.5315% dd=66.6767% maxw=0.271 gmvp_min= 0.324 erc_min= 0.377
+  mix=1.00 p=  0.50 fail=  0/ 206 sharpe_med= 1.4240 cvar_med=1.5758% dd=66.6767% maxw=0.276 gmvp_min= 0.419 erc_min= 0.412
+  mix=1.00 p=  1.00 fail=  0/ 206 sharpe_med= 1.4669 cvar_med=1.6149% dd=66.6767% maxw=0.280 gmvp_min= 0.487 erc_min= 0.473
+  mix=1.00 p=  2.00 fail=  0/ 206 sharpe_med= 1.5311 cvar_med=1.6508% dd=66.6767% maxw=0.280 gmvp_min= 0.577 erc_min= 0.478
+  mix=1.00 p=  4.00 fail=  0/ 206 sharpe_med= 1.5066 cvar_med=1.6927% dd=66.6767% maxw=0.283 gmvp_min= 0.633 erc_min= 0.492
+  mix=1.00 p=  8.00 fail=  0/ 206 sharpe_med= 1.5205 cvar_med=1.7107% dd=66.6767% maxw=0.285 gmvp_min= 0.639 erc_min= 0.500
+  mix=1.00 p= 16.00 fail=  0/ 206 sharpe_med= 1.4473 cvar_med=1.7070% dd=66.6767% maxw=0.284 gmvp_min= 0.639 erc_min= 0.504
+
+  setting                      sharpe_med  cvar_med   fail%   SCORE
+  OURS p=0.25 mix=0.50             1.5320   1.4667%    0.0%  0.7172
+  OURS p=0.25 mix=0.00             1.5022   1.4987%    0.0%  0.6766
+  MinVariance(Shrunk)              1.4820   1.4679%    0.0%  0.6703
+  OURS p=1.00 mix=0.00             1.5242   1.5199%    0.0%  0.6672
+  OURS p=4.00 mix=0.00             1.5649   1.5400%    0.0%  0.6672
+  OURS p=0.50 mix=0.50             1.4995   1.5034%    0.0%  0.6641
+  OURS p=1.00 mix=0.50             1.5268   1.5201%    0.0%  0.6641
+  OURS p=0.25 mix=1.00             1.5290   1.5315%    0.0%  0.6609
+  OURS p=0.50 mix=0.00             1.5012   1.5146%    0.0%  0.6547
+  OURS p=8.00 mix=0.00             1.5632   1.5401%    0.0%  0.6547
+  OURS p=16.00 mix=0.00            1.5459   1.5446%    0.0%  0.6453
+  OURS p=2.00 mix=0.00             1.5037   1.5382%    0.0%  0.6391
+  OURS p=2.00 mix=0.50             1.5639   1.5514%    0.0%  0.6391
+  OURS p=2.00 mix=1.00             1.5311   1.6508%    0.0%  0.5891
+  OURS p=4.00 mix=0.50             1.4959   1.5868%    0.0%  0.5797
+  OURS p=1.00 mix=1.00             1.4669   1.6149%    0.0%  0.5672
+  OURS p=0.50 mix=1.00             1.4240   1.5758%    0.0%  0.5641
+  OURS p=4.00 mix=1.00             1.5066   1.6927%    0.0%  0.5609
+  OURS p=16.00 mix=0.50            1.4526   1.6268%    0.0%  0.5453
+  OURS p=8.00 mix=1.00             1.5205   1.7107%    0.0%  0.5453
+  OURS p=8.00 mix=0.50             1.4227   1.6206%    0.0%  0.5422
+  OURS p=16.00 mix=1.00            1.4473   1.7070%    0.0%  0.5109
+  EqualWeighted                    1.3513   1.8265%    0.0%  0.4672
+  Random(Dirichlet)                1.3737   2.0367%    0.0%  0.4672
+  MinVariance(Denoise)             1.3743   1.4309%    0.5%  0.3250
+  NCO                              1.2552   1.4663%    0.5%  0.3063
+  MinVariance(SCM)                 1.3674   1.5107%    0.5%  0.2812
+  SchurComplementary               1.4654   1.5500%    0.5%  0.2500
+  MaxDiversification               1.6045   1.8222%    0.5%  0.2250
+  RiskBudgeting                    1.5025   1.6617%    0.5%  0.2219
+  InverseVolatility                1.4530   1.6972%    0.5%  0.1844
+  HRP                              2.1610   1.8023%   99.5%  0.1359
+  HERC                            -1.8856   3.4403%   99.5%  0.0109
+
+======================================================================================================================================================
+ftse100  (5915, 64)  folds~147
+  [field] EqualWeighted            fail=   0.0% sharpe_med= 1.1778 cvar_med=1.6944%
+  [field] InverseVolatility        fail=   0.7% sharpe_med= 1.2362 cvar_med=1.6053%
+  [field] MinVariance(SCM)         fail=   0.7% sharpe_med= 1.1682 cvar_med=1.4528%
+  [field] MinVariance(Denoise)     fail=   0.7% sharpe_med= 1.2472 cvar_med=1.4014%
+  [field] MinVariance(Shrunk)      fail=   0.0% sharpe_med= 1.3535 cvar_med=1.4358%
+  [field] RiskBudgeting            fail=   0.7% sharpe_med= 1.1606 cvar_med=1.5538%
+  [field] MaxDiversification       fail=   0.7% sharpe_med= 1.1832 cvar_med=1.5386%
+  [field] SchurComplementary       fail=   0.7% sharpe_med= 1.1972 cvar_med=1.4417%
+  [field] NCO                      fail=   2.7% sharpe_med= 1.2312 cvar_med=1.3956%
+  [field] HRP                      fail=  99.3% sharpe_med=-0.2753 cvar_med=2.1704%
+  [field] HERC                     fail=  99.3% sharpe_med=-3.4180 cvar_med=2.6613%
+  [field] Random(Dirichlet)        fail=   0.0% sharpe_med= 1.0142 cvar_med=1.7399%
+  mix=0.00 p=  0.25 fail=  0/ 146 sharpe_med= 1.2807 cvar_med=1.4140% dd=51.9100% maxw=0.139 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p=  0.50 fail=  0/ 146 sharpe_med= 1.2124 cvar_med=1.4303% dd=54.5943% maxw=0.158 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p=  1.00 fail=  0/ 146 sharpe_med= 1.1373 cvar_med=1.4285% dd=57.1721% maxw=0.175 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p=  2.00 fail=  0/ 146 sharpe_med= 1.1280 cvar_med=1.4495% dd=59.2333% maxw=0.188 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p=  4.00 fail=  0/ 146 sharpe_med= 1.1547 cvar_med=1.4862% dd=61.8419% maxw=0.195 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p=  8.00 fail=  0/ 146 sharpe_med= 1.1607 cvar_med=1.4956% dd=63.6101% maxw=0.200 gmvp_min=   nan erc_min=   nan
+  mix=0.00 p= 16.00 fail=  0/ 146 sharpe_med= 1.1475 cvar_med=1.4936% dd=64.6243% maxw=0.204 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  0.25 fail=  0/ 146 sharpe_med= 1.2472 cvar_med=1.4269% dd=59.3865% maxw=0.208 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  0.50 fail=  0/ 146 sharpe_med= 1.2395 cvar_med=1.4423% dd=64.2098% maxw=0.229 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  1.00 fail=  0/ 146 sharpe_med= 1.0387 cvar_med=1.4347% dd=69.7758% maxw=0.248 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  2.00 fail=  0/ 146 sharpe_med= 0.9471 cvar_med=1.4675% dd=74.1438% maxw=0.263 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  4.00 fail=  0/ 146 sharpe_med= 1.0597 cvar_med=1.4800% dd=77.3694% maxw=0.276 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p=  8.00 fail=  0/ 146 sharpe_med= 1.0139 cvar_med=1.5017% dd=79.5641% maxw=0.278 gmvp_min=   nan erc_min=   nan
+  mix=0.50 p= 16.00 fail=  0/ 146 sharpe_med= 1.0130 cvar_med=1.5226% dd=80.8811% maxw=0.282 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  0.25 fail=  0/ 146 sharpe_med= 0.9291 cvar_med=1.4996% dd=86.2670% maxw=0.232 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  0.50 fail=  0/ 146 sharpe_med= 0.9125 cvar_med=1.5243% dd=73.9080% maxw=0.246 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  1.00 fail=  0/ 146 sharpe_med= 1.0038 cvar_med=1.5914% dd=79.9557% maxw=0.263 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  2.00 fail=  0/ 146 sharpe_med= 1.0198 cvar_med=1.6424% dd=84.9478% maxw=0.278 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  4.00 fail=  0/ 146 sharpe_med= 0.9684 cvar_med=1.6720% dd=88.7469% maxw=0.286 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p=  8.00 fail=  0/ 146 sharpe_med= 0.9379 cvar_med=1.7181% dd=91.9202% maxw=0.290 gmvp_min=   nan erc_min=   nan
+  mix=1.00 p= 16.00 fail=  0/ 146 sharpe_med= 0.9332 cvar_med=1.7315% dd=94.1405% maxw=0.292 gmvp_min=   nan erc_min=   nan
+
+  setting                      sharpe_med  cvar_med   fail%   SCORE
+  OURS p=0.25 mix=0.00             1.2807   1.4140%    0.0%  0.7328
+  OURS p=0.25 mix=0.50             1.2472   1.4269%    0.0%  0.7203
+  MinVariance(Shrunk)              1.3535   1.4358%    0.0%  0.7047
+  OURS p=0.50 mix=0.00             1.2124   1.4303%    0.0%  0.6953
+  OURS p=0.50 mix=0.50             1.2395   1.4423%    0.0%  0.6797
+  OURS p=1.00 mix=0.00             1.1373   1.4285%    0.0%  0.6734
+  OURS p=1.00 mix=0.50             1.0387   1.4347%    0.0%  0.6516
+  OURS p=2.00 mix=0.00             1.1280   1.4495%    0.0%  0.6328
+  OURS p=4.00 mix=0.00             1.1547   1.4862%    0.0%  0.6172
+  OURS p=8.00 mix=0.00             1.1607   1.4956%    0.0%  0.6109
+  OURS p=4.00 mix=0.50             1.0597   1.4800%    0.0%  0.6109
+  OURS p=16.00 mix=0.00            1.1475   1.4936%    0.0%  0.6078
+  OURS p=2.00 mix=0.50             0.9471   1.4675%    0.0%  0.5922
+  OURS p=8.00 mix=0.50             1.0139   1.5017%    0.0%  0.5672
+  OURS p=16.00 mix=0.50            1.0130   1.5226%    0.0%  0.5578
+  OURS p=0.25 mix=1.00             0.9291   1.4996%    0.0%  0.5516
+  EqualWeighted                    1.1778   1.6944%    0.0%  0.5484
+  OURS p=0.50 mix=1.00             0.9125   1.5243%    0.0%  0.5297
+  OURS p=1.00 mix=1.00             1.0038   1.5914%    0.0%  0.5297
+  OURS p=2.00 mix=1.00             1.0198   1.6424%    0.0%  0.5297
+  OURS p=4.00 mix=1.00             0.9684   1.6720%    0.0%  0.5078
+  Random(Dirichlet)                1.0142   1.7399%    0.0%  0.4953
+  OURS p=8.00 mix=1.00             0.9379   1.7181%    0.0%  0.4891
+  OURS p=16.00 mix=1.00            0.9332   1.7315%    0.0%  0.4797
+  MinVariance(Denoise)             1.2472   1.4014%    0.7%  0.4078
+  SchurComplementary               1.1972   1.4417%    0.7%  0.3453
+  NCO                              1.2312   1.3956%    2.7%  0.3250
+  MinVariance(SCM)                 1.1682   1.4528%    0.7%  0.3172
+  MaxDiversification               1.1832   1.5386%    0.7%  0.2609
+  InverseVolatility                1.2362   1.6053%    0.7%  0.2547
+  RiskBudgeting                    1.1606   1.5538%    0.7%  0.2422
+  HRP                             -0.2753   2.1704%   99.3%  0.0203
+  HERC                            -3.4180   2.6613%   99.3%  0.0109
+
+======================================================================================================================================================
+factors  (2263, 5)  folds~56
+  [field] EqualWeighted            fail=   0.0% sharpe_med= 1.3901 cvar_med=1.6949%
+  [field] InverseVolatility        fail=   0.0% sharpe_med= 1.3503 cvar_med=1.6700%
+  [field] MinVariance(SCM)         fail=   0.0% sharpe_med= 1.3047 cvar_med=1.3901%
+  [field] MinVariance(Denoise)     fail=   0.0% sharpe_med= 1.4038 cvar_med=1.3650%
+  [field] MinVariance(Shrunk)      fail=   0.0% sharpe_med= 1.4171 cvar_med=1.4382%
+  [field] RiskBudgeting            fail=   0.0% sharpe_med= 1.3530 cvar_med=1.6705%
+  [field] MaxDiversification       fail=   0.0% sharpe_med= 1.3913 cvar_med=1.6439%
+  [field] SchurComplementary       fail=   0.0% sharpe_med= 1.3993 cvar_med=1.5672%
+  [field] NCO                      fail=   0.0% sharpe_med= 1.3048 cvar_med=1.3901%
+  [field] HRP                      fail=  98.2% sharpe_med= 1.4851 cvar_med=1.3934%
+  [field] HERC                     fail=  98.2% sharpe_med= 1.6258 cvar_med=1.2819%
+  [field] Random(Dirichlet)        fail=   0.0% sharpe_med= 1.2631 cvar_med=1.6944%
+  mix=0.00 p=  0.25 fail=  0/  55 sharpe_med= 1.5282 cvar_med=1.4709% dd=38.8715% maxw=0.516 gmvp_min= 0.136 erc_min= 0.248
+  mix=0.00 p=  0.50 fail=  0/  55 sharpe_med= 1.5440 cvar_med=1.4714% dd=39.1817% maxw=0.512 gmvp_min= 0.175 erc_min= 0.247
+  mix=0.00 p=  1.00 fail=  0/  55 sharpe_med= 1.5020 cvar_med=1.4870% dd=39.4430% maxw=0.505 gmvp_min= 0.244 erc_min= 0.249
+  mix=0.00 p=  2.00 fail=  0/  55 sharpe_med= 1.4879 cvar_med=1.4954% dd=39.6275% maxw=0.505 gmvp_min= 0.296 erc_min= 0.241
+  mix=0.00 p=  4.00 fail=  0/  55 sharpe_med= 1.4702 cvar_med=1.5017% dd=39.7391% maxw=0.499 gmvp_min= 0.324 erc_min= 0.236
+  mix=0.00 p=  8.00 fail=  0/  55 sharpe_med= 1.4610 cvar_med=1.5058% dd=39.8010% maxw=0.493 gmvp_min= 0.339 erc_min= 0.234
+  mix=0.00 p= 16.00 fail=  0/  55 sharpe_med= 1.4563 cvar_med=1.5081% dd=39.8338% maxw=0.492 gmvp_min= 0.346 erc_min= 0.233
+  mix=0.50 p=  0.25 fail=  0/  55 sharpe_med= 1.5659 cvar_med=1.5105% dd=38.6649% maxw=0.532 gmvp_min= 0.132 erc_min= 0.165
+  mix=0.50 p=  0.50 fail=  0/  55 sharpe_med= 1.5646 cvar_med=1.5537% dd=39.0912% maxw=0.513 gmvp_min= 0.157 erc_min= 0.115
+  mix=0.50 p=  1.00 fail=  0/  55 sharpe_med= 1.5679 cvar_med=1.5866% dd=39.4144% maxw=0.489 gmvp_min= 0.120 erc_min= 0.201
+  mix=0.50 p=  2.00 fail=  0/  55 sharpe_med= 1.5700 cvar_med=1.6068% dd=39.6224% maxw=0.490 gmvp_min= 0.141 erc_min= 0.239
+  mix=0.50 p=  4.00 fail=  0/  55 sharpe_med= 1.5665 cvar_med=1.6181% dd=39.7441% maxw=0.490 gmvp_min= 0.184 erc_min= 0.272
+  mix=0.50 p=  8.00 fail=  0/  55 sharpe_med= 1.5619 cvar_med=1.6242% dd=39.8097% maxw=0.491 gmvp_min= 0.209 erc_min= 0.258
+  mix=0.50 p= 16.00 fail=  0/  55 sharpe_med= 1.5594 cvar_med=1.6273% dd=39.8437% maxw=0.491 gmvp_min= 0.222 erc_min= 0.250
+  mix=1.00 p=  0.25 fail=  0/  55 sharpe_med= 1.5639 cvar_med=1.5462% dd=39.8681% maxw=0.532 gmvp_min= 0.102 erc_min= 0.251
+  mix=1.00 p=  0.50 fail=  0/  55 sharpe_med= 1.5953 cvar_med=1.5749% dd=40.5448% maxw=0.510 gmvp_min= 0.172 erc_min= 0.192
+  mix=1.00 p=  1.00 fail=  0/  55 sharpe_med= 1.5989 cvar_med=1.6040% dd=40.9689% maxw=0.486 gmvp_min= 0.239 erc_min= 0.244
+  mix=1.00 p=  2.00 fail=  0/  55 sharpe_med= 1.6047 cvar_med=1.6217% dd=41.2090% maxw=0.466 gmvp_min= 0.293 erc_min= 0.247
+  mix=1.00 p=  4.00 fail=  0/  55 sharpe_med= 1.5984 cvar_med=1.6316% dd=41.3371% maxw=0.463 gmvp_min= 0.320 erc_min= 0.248
+  mix=1.00 p=  8.00 fail=  0/  55 sharpe_med= 1.5857 cvar_med=1.6369% dd=41.4034% maxw=0.465 gmvp_min= 0.335 erc_min= 0.240
+  mix=1.00 p= 16.00 fail=  0/  55 sharpe_med= 1.5790 cvar_med=1.6396% dd=41.4371% maxw=0.465 gmvp_min= 0.342 erc_min= 0.236
+
+  setting                      sharpe_med  cvar_med   fail%   SCORE
+  MinVariance(Denoise)             1.4038   1.3650%    0.0%  0.5906
+  OURS p=0.25 mix=0.00             1.5282   1.4709%    0.0%  0.5844
+  OURS p=0.50 mix=0.00             1.5440   1.4714%    0.0%  0.5812
+  MinVariance(Shrunk)              1.4171   1.4382%    0.0%  0.5687
+  OURS p=1.00 mix=0.00             1.5020   1.4870%    0.0%  0.5687
+  NCO                              1.3048   1.3901%    0.0%  0.5625
+  MinVariance(SCM)                 1.3047   1.3901%    0.0%  0.5594
+  OURS p=2.00 mix=0.00             1.4879   1.4954%    0.0%  0.5594
+  OURS p=0.25 mix=0.50             1.5659   1.5105%    0.0%  0.5594
+  OURS p=0.50 mix=1.00             1.5953   1.5749%    0.0%  0.5531
+  OURS p=4.00 mix=0.00             1.4702   1.5017%    0.0%  0.5469
+  OURS p=0.25 mix=1.00             1.5639   1.5462%    0.0%  0.5469
+  OURS p=1.00 mix=1.00             1.5989   1.6040%    0.0%  0.5469
+  OURS p=0.50 mix=0.50             1.5646   1.5537%    0.0%  0.5437
+  OURS p=8.00 mix=0.00             1.4610   1.5058%    0.0%  0.5375
+  OURS p=1.00 mix=0.50             1.5679   1.5866%    0.0%  0.5344
+  OURS p=2.00 mix=1.00             1.6047   1.6217%    0.0%  0.5312
+  OURS p=16.00 mix=0.00            1.4563   1.5081%    0.0%  0.5281
+  OURS p=2.00 mix=0.50             1.5700   1.6068%    0.0%  0.5250
+  OURS p=4.00 mix=0.50             1.5665   1.6181%    0.0%  0.5125
+  OURS p=4.00 mix=1.00             1.5984   1.6316%    0.0%  0.5062
+  SchurComplementary               1.3993   1.5672%    0.0%  0.4937
+  OURS p=8.00 mix=1.00             1.5857   1.6369%    0.0%  0.4937
+  OURS p=8.00 mix=0.50             1.5619   1.6242%    0.0%  0.4875
+  OURS p=16.00 mix=1.00            1.5790   1.6396%    0.0%  0.4844
+  OURS p=16.00 mix=0.50            1.5594   1.6273%    0.0%  0.4781
+  MaxDiversification               1.3913   1.6439%    0.0%  0.4156
+  InverseVolatility                1.3503   1.6700%    0.0%  0.4000
+  RiskBudgeting                    1.3530   1.6705%    0.0%  0.3969
+  EqualWeighted                    1.3901   1.6949%    0.0%  0.3875
+  Random(Dirichlet)                1.2631   1.6944%    0.0%  0.3781
+  HERC                             1.6258   1.2819%   98.2%  0.3109
+  HRP                              1.4851   1.3934%   98.2%  0.2266
+
+written -> reports/round7_sweep.json

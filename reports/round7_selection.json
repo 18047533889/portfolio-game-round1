@@ -1,0 +1,435 @@
+{
+  "floor": 0.1,
+  "datasets": [
+    "sp500",
+    "ftse100",
+    "factors"
+  ],
+  "rows": [
+    {
+      "penalty": 0.12,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8374999999999999,
+        0.8958333333333333,
+        0.6166666666666667
+      ],
+      "mean": 0.7833333333333332,
+      "worst": 0.6166666666666667,
+      "min_gmvp": 0.10219173618409547,
+      "min_erc": 0.12130814277811319,
+      "gmvp_margin": 1.0219173618409545,
+      "erc_margin": 1.213081427781132,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.15,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8374999999999999,
+        0.9041666666666666,
+        0.6
+      ],
+      "mean": 0.7805555555555554,
+      "worst": 0.6,
+      "min_gmvp": 0.11023937389130672,
+      "min_erc": 0.12148740130043537,
+      "gmvp_margin": 1.1023937389130671,
+      "erc_margin": 1.2148740130043536,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.18,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8374999999999999,
+        0.8541666666666666,
+        0.6
+      ],
+      "mean": 0.7638888888888888,
+      "worst": 0.6,
+      "min_gmvp": 0.11721668104333241,
+      "min_erc": 0.12167092519514772,
+      "gmvp_margin": 1.172166810433324,
+      "erc_margin": 1.216709251951477,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.2,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8374999999999999,
+        0.8708333333333333,
+        0.6
+      ],
+      "mean": 0.7694444444444444,
+      "worst": 0.6,
+      "min_gmvp": 0.12306795831828336,
+      "min_erc": 0.12179502227656143,
+      "gmvp_margin": 1.2306795831828337,
+      "erc_margin": 1.2179502227656143,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.25,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8374999999999999,
+        0.8708333333333333,
+        0.6
+      ],
+      "mean": 0.7694444444444444,
+      "worst": 0.6,
+      "min_gmvp": 0.13583351856741605,
+      "min_erc": 0.12280440784866305,
+      "gmvp_margin": 1.3583351856741603,
+      "erc_margin": 1.2280440784866304,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.25,
+      "downside_mix": 0.5,
+      "scores": [
+        0.8624999999999999,
+        0.8624999999999999,
+        0.6
+      ],
+      "mean": 0.7749999999999999,
+      "worst": 0.6,
+      "min_gmvp": 0.13248324356013658,
+      "min_erc": 0.1647739007006217,
+      "gmvp_margin": 1.3248324356013657,
+      "erc_margin": 1.647739007006217,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.25,
+      "downside_mix": 1.0,
+      "scores": [
+        0.8291666666666666,
+        0.7458333333333333,
+        0.6
+      ],
+      "mean": 0.725,
+      "worst": 0.6,
+      "min_gmvp": 0.10181194981671973,
+      "min_erc": 0.2508813869505746,
+      "gmvp_margin": 1.0181194981671973,
+      "erc_margin": 2.508813869505746,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.5,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8208333333333333,
+        0.8458333333333332,
+        0.6
+      ],
+      "mean": 0.7555555555555555,
+      "worst": 0.6,
+      "min_gmvp": 0.17460244954895185,
+      "min_erc": 0.1302855002767798,
+      "gmvp_margin": 1.7460244954895183,
+      "erc_margin": 1.3028550027677979,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.5,
+      "downside_mix": 0.5,
+      "scores": [
+        0.8374999999999999,
+        0.8291666666666666,
+        0.6
+      ],
+      "mean": 0.7555555555555555,
+      "worst": 0.6,
+      "min_gmvp": 0.15739931590593648,
+      "min_erc": 0.11485467426401491,
+      "gmvp_margin": 1.5739931590593648,
+      "erc_margin": 1.148546742640149,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 0.5,
+      "downside_mix": 1.0,
+      "scores": [
+        0.7791666666666666,
+        0.7458333333333333,
+        0.5833333333333334
+      ],
+      "mean": 0.7027777777777778,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.17190302577040772,
+      "min_erc": 0.19184819991614066,
+      "gmvp_margin": 1.7190302577040772,
+      "erc_margin": 1.9184819991614066,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 1.0,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8291666666666666,
+        0.8041666666666666,
+        0.6
+      ],
+      "mean": 0.7444444444444445,
+      "worst": 0.6,
+      "min_gmvp": 0.24385062400657015,
+      "min_erc": 0.13965515065048695,
+      "gmvp_margin": 2.4385062400657014,
+      "erc_margin": 1.3965515065048695,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 1.0,
+      "downside_mix": 0.5,
+      "scores": [
+        0.8291666666666666,
+        0.8041666666666666,
+        0.5833333333333334
+      ],
+      "mean": 0.7388888888888889,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.12040321210748105,
+      "min_erc": 0.2006718904627622,
+      "gmvp_margin": 1.2040321210748104,
+      "erc_margin": 2.006718904627622,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 1.0,
+      "downside_mix": 1.0,
+      "scores": [
+        0.7958333333333333,
+        0.7124999999999999,
+        0.5833333333333334
+      ],
+      "mean": 0.6972222222222223,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.23866581930575587,
+      "min_erc": 0.2443160738828302,
+      "gmvp_margin": 2.3866581930575586,
+      "erc_margin": 2.443160738828302,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 2.0,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8291666666666666,
+        0.7708333333333333,
+        0.6
+      ],
+      "mean": 0.7333333333333333,
+      "worst": 0.6,
+      "min_gmvp": 0.28407976143726543,
+      "min_erc": 0.15095416225857505,
+      "gmvp_margin": 2.8407976143726543,
+      "erc_margin": 1.5095416225857505,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 2.0,
+      "downside_mix": 0.5,
+      "scores": [
+        0.8125,
+        0.7458333333333333,
+        0.5833333333333334
+      ],
+      "mean": 0.7138888888888889,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.14110518283838955,
+      "min_erc": 0.23921631784573483,
+      "gmvp_margin": 1.4110518283838953,
+      "erc_margin": 2.392163178457348,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 2.0,
+      "downside_mix": 1.0,
+      "scores": [
+        0.8125,
+        0.7041666666666666,
+        0.5833333333333334
+      ],
+      "mean": 0.7000000000000001,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.2925014058984962,
+      "min_erc": 0.24660009935011176,
+      "gmvp_margin": 2.925014058984962,
+      "erc_margin": 2.4660009935011176,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 4.0,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8291666666666666,
+        0.7541666666666667,
+        0.5916666666666667
+      ],
+      "mean": 0.725,
+      "worst": 0.5916666666666667,
+      "min_gmvp": 0.2867003007417297,
+      "min_erc": 0.16115511044516306,
+      "gmvp_margin": 2.867003007417297,
+      "erc_margin": 1.6115511044516306,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 4.0,
+      "downside_mix": 0.5,
+      "scores": [
+        0.8041666666666667,
+        0.7541666666666667,
+        0.5833333333333334
+      ],
+      "mean": 0.7138888888888889,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.18446918221237804,
+      "min_erc": 0.2717257798537064,
+      "gmvp_margin": 1.8446918221237802,
+      "erc_margin": 2.7172577985370636,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 4.0,
+      "downside_mix": 1.0,
+      "scores": [
+        0.7958333333333333,
+        0.6958333333333333,
+        0.5833333333333334
+      ],
+      "mean": 0.6916666666666668,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.32040655438129056,
+      "min_erc": 0.24810388849118697,
+      "gmvp_margin": 3.2040655438129053,
+      "erc_margin": 2.4810388849118694,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 8.0,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8291666666666666,
+        0.7625,
+        0.5916666666666667
+      ],
+      "mean": 0.7277777777777777,
+      "worst": 0.5916666666666667,
+      "min_gmvp": 0.29088555414474515,
+      "min_erc": 0.16780379759291247,
+      "gmvp_margin": 2.9088555414474513,
+      "erc_margin": 1.6780379759291246,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 8.0,
+      "downside_mix": 0.5,
+      "scores": [
+        0.7791666666666666,
+        0.7458333333333333,
+        0.5833333333333334
+      ],
+      "mean": 0.7027777777777778,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.20886553635763652,
+      "min_erc": 0.25764577998051336,
+      "gmvp_margin": 2.088655363576365,
+      "erc_margin": 2.5764577998051332,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 8.0,
+      "downside_mix": 1.0,
+      "scores": [
+        0.7791666666666666,
+        0.6791666666666666,
+        0.5833333333333334
+      ],
+      "mean": 0.6805555555555555,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.33461815365246056,
+      "min_erc": 0.24005375163215917,
+      "gmvp_margin": 3.3461815365246053,
+      "erc_margin": 2.4005375163215916,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 16.0,
+      "downside_mix": 0.0,
+      "scores": [
+        0.8291666666666666,
+        0.7541666666666667,
+        0.5916666666666667
+      ],
+      "mean": 0.725,
+      "worst": 0.5916666666666667,
+      "min_gmvp": 0.29500390687065753,
+      "min_erc": 0.17206941226556732,
+      "gmvp_margin": 2.950039068706575,
+      "erc_margin": 1.7206941226556731,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 16.0,
+      "downside_mix": 0.5,
+      "scores": [
+        0.7791666666666666,
+        0.7458333333333333,
+        0.5833333333333334
+      ],
+      "mean": 0.7027777777777778,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.2218533407198412,
+      "min_erc": 0.25036992994653195,
+      "gmvp_margin": 2.2185334071984117,
+      "erc_margin": 2.5036992994653193,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    },
+    {
+      "penalty": 16.0,
+      "downside_mix": 1.0,
+      "scores": [
+        0.7458333333333333,
+        0.6791666666666666,
+        0.5833333333333334
+      ],
+      "mean": 0.6694444444444444,
+      "worst": 0.5833333333333334,
+      "min_gmvp": 0.341790320889321,
+      "min_erc": 0.23595643212397166,
+      "gmvp_margin": 3.4179032088932098,
+      "erc_margin": 2.3595643212397164,
+      "datasets_with_undefined_reference": 2,
+      "admissible": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+running sp500 ...
+running ftse100 ...
+running factors ...
+
+shipped submission SHA256: 4de0bb25b7833c9d740f684023682205acbbd9682e541cfd76e123eb3e9ba7a7
+frozen setting           : budget=1.0 downside_mix=0.0 anchor_penalty=0.25
+
+dataset       n folds fail    annual      vol    maxdd  cvar95  cvarMed  shpMed  L1_EWP  L1_IVP  L1_GMVP  gross
+---------------------------------------------------------------------------------------------------------------
+sp500        20   206    0   14.94%  17.60%   39.27%   2.29%    1.50%   1.502   0.853   0.675    0.566  1.000
+ftse100      64   146    0   12.52%  14.04%   51.91%   2.09%    1.41%   1.281   1.294   1.185    0.695  1.000
+factors       5    55    0   11.95%  15.97%   38.87%   2.47%    1.47%   1.528   0.871   0.779    0.644  1.000
+
+total failed portfolios : 0 / 407
+total fallback portfolios: 0
+exact hits on a prohibited book: {'sp500': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0, 'erc_scm': 0}, 'ftse100': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0, 'erc_scm': 0}, 'factors': {'ewp': 0, 'ivp': 0, 'scm_gmvp': 0, 'erc_scm': 0}}
+max gross exposure       : 1.000000
+max short exposure       : 0.000000
+datasets with gross > 1  : none
