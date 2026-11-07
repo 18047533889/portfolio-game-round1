@@ -1,0 +1,231 @@
+r8-build-check: exit=0
+r8-syntax-check: exit=0
+r8-frozen-config: exit=0
+r8-pytest: exit=0
+r8-stress: exit=0
+r8-random-windows: exit=0
+r8-isolated: exit=0
+r8-backtest: exit=0
+r8-compliance: exit=0
+r8-preflight: exit=0
+{
+  "round": 8,
+  "generated_at_utc": "2026-11-07T04:30:52.901080+00:00",
+  "python": "3.13.12 (main, Feb  4 2026, 00:05:32) [Clang 21.1.4 ]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "pandas": "2.3.3",
+    "pytest": "9.1.1",
+    "skfolio": "1.3.4",
+    "cvxpy": null,
+    "cvxpy-base": "1.9.2"
+  },
+  "contract": {
+    "shortselling": false,
+    "budget": 1.0,
+    "lookback": 40,
+    "optimize_every": 40,
+    "weight_drift": true,
+    "weights_nonnegative_and_sum_to_one": true,
+    "scoring": {
+      "annual_return_median": 0.1,
+      "sharpe_median": 0.1,
+      "cvar_median": 0.1,
+      "failure_rate": 0.7
+    }
+  },
+  "frozen_params": {
+    "method": "regularized",
+    "half_life": 10.0,
+    "recent_mix": 0.25,
+    "anchor_penalty": 1.0,
+    "gross_budget": 1.0,
+    "downside_mix": 0.0
+  },
+  "prohibitions": [
+    "equally weighted portfolio (EWP)",
+    "inverse-volatility portfolio (IVP)",
+    "GMVP on the sample covariance matrix (SCM)",
+    "risk parity portfolio on the sample covariance matrix"
+  ],
+  "checks": {
+    "build": {
+      "exit_code": 0,
+      "log": "reports/r8-build-check.txt"
+    },
+    "syntax": {
+      "exit_code": 0,
+      "log": "reports/r8-syntax-check.txt"
+    },
+    "frozen_config": {
+      "exit_code": 0,
+      "log": "reports/r8-frozen-config.txt"
+    },
+    "pytest": {
+      "exit_code": 0,
+      "log": "reports/r8-pytest.txt"
+    },
+    "hostile_inputs": {
+      "exit_code": 0,
+      "log": "reports/r8-stress.txt"
+    },
+    "random_windows": {
+      "exit_code": 0,
+      "log": "reports/r8-random-windows.txt"
+    },
+    "isolated_file": {
+      "exit_code": 0,
+      "log": "reports/r8-isolated.txt"
+    },
+    "backtest": {
+      "exit_code": 0,
+      "log": "reports/r8-backtest.txt"
+    },
+    "compliance_margin": {
+      "exit_code": 0,
+      "log": "reports/r8-compliance.txt"
+    },
+    "teacher_preflight": {
+      "exit_code": 0,
+      "log": "reports/r8-preflight.txt"
+    }
+  },
+  "pytest": {
+    "tests": 238,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "passed": 237
+  },
+  "submission_sha256": "07dca1bded49b4e7e7e88355ddc7933826c109b7354808ad7be6ed7f42791dc5",
+  "core_sha256": "faeceb182b4b8f18369e77010523d213194d48dc57ab05697b34a8f67c995f92",
+  "config_sha256": "4ed0d58e72153d11e9ef249fdee4d82727f1233fb32bd165ad5a477ae71b5ccc",
+  "backtest_sha256_matches_shipped_file": true,
+  "compliance_margin": {
+    "sp500": {
+      "l1_scm_gmvp_median": 0.6904081498549866,
+      "l1_scm_gmvp_worst_fold": 0.24214216935062527,
+      "corr_scm_gmvp_max": 0.9855872800189214,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "ftse100": {
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_worst_fold": null,
+      "corr_scm_gmvp_max": null,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "nasdaq": {
+      "l1_scm_gmvp_median": null,
+      "l1_scm_gmvp_worst_fold": null,
+      "corr_scm_gmvp_max": null,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    },
+    "factors": {
+      "l1_scm_gmvp_median": 0.7796936337509259,
+      "l1_scm_gmvp_worst_fold": 0.17005580267947595,
+      "corr_scm_gmvp_max": 0.9954638211161049,
+      "exact_hits": {
+        "scm_gmvp": 0,
+        "erc_scm": 0,
+        "ewp": 0,
+        "ivp": 0
+      }
+    }
+  },
+  "no_fold_returns_a_prohibited_book_exactly": true,
+  "headline_backtest": {
+    "sp500": {
+      "portfolios": 206,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.14735282145099027,
+      "annual_volatility": 0.16911135044271242,
+      "max_drawdown": 0.4555017465565534,
+      "cvar_95": 0.02354972081927201,
+      "gross_max": 1.0000000000000004,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.6996835528850998,
+      "l1_to_erc_scm_median": 0.5563908167044692,
+      "sharpe_median": 1.2827522344823135,
+      "cvar_median": 0.015106707601132412,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    "ftse100": {
+      "portfolios": 146,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.11861454323889,
+      "annual_volatility": 0.14066472880721578,
+      "max_drawdown": 0.4429829698638228,
+      "cvar_95": 0.021067618127864875,
+      "gross_max": 1.0000000000000007,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.8728243128614428,
+      "l1_to_erc_scm_median": null,
+      "sharpe_median": 1.5508346770330228,
+      "cvar_median": 0.014050536505735203,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    },
+    "factors": {
+      "portfolios": 55,
+      "failed": 0,
+      "fallback": 0,
+      "annual_return": 0.11861342226626327,
+      "annual_volatility": 0.16245929887324406,
+      "max_drawdown": 0.4068289176195752,
+      "cvar_95": 0.025207850021846855,
+      "gross_max": 1.0000000000000004,
+      "short_max": 0.0,
+      "l1_to_scm_gmvp_median": 0.7796936337509259,
+      "l1_to_erc_scm_median": 0.6140896495674297,
+      "sharpe_median": 1.2447573112682955,
+      "cvar_median": 0.014356720116408813,
+      "exact_prohibited_hits": {
+        "ewp": 0,
+        "ivp": 0,
+        "scm_gmvp": 0,
+        "erc_scm": 0
+      }
+    }
+  },
+  "random_window_totals": {
+    "slices": 480,
+    "folds": 5760,
+    "failed": 0,
+    "illegal": 0,
+    "equal": 0
+  },
+  "real_skfolio_preflight": "PASSED",
+  "ready_for_teacher_submission": true,
+  "market_backtest": "RUN_ON_THREE_SKFOLIO_DATASETS_UNDER_THE_ROUND_8_CONTRACT",
+  "hyperparameter_search": "RUN_AS_A_PENALTY_AND_RISK_BLEND_SWEEP_WITH_A_PER_FOLD_COMPLIANCE_FLOOR,SEE_reports/round8_sweep.json,_round8_selection.json_and_round8_calibration.json",
+  "notice": "Passing these gates establishes format compliance, the stated round-7 contract on every tested fold, absence of all FOUR prohibited books, and robustness to hostile inputs. It does not establish a rank in the field: failure rate is 70% of that score, and the two reported terms are close together across compliant candidates, so a clean run is the dominant term. The per-fold compliance floor is a heuristic, not a certificate -- legitimate reference methods reach 0.000 against the same banned books on the same folds (reports/round8_calibration.json)."
+}

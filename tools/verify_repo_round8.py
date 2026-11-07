@@ -169,15 +169,16 @@ def main() -> int:
     no_exact_hits = all(_hits(v) == 0 for v in compliance.values()) if compliance else None
 
     report = {
-        "round": 7,
+        "round": 8,
         "generated_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "python": sys.version,
         "platform": platform.platform(),
         "packages": packages,
-        "contract": {"shortselling": False, "budget": 1.0, "lookback": 60,
+        "contract": {"shortselling": False, "budget": 1.0, "lookback": 40,
                      "optimize_every": 40, "weight_drift": True,
                      "weights_nonnegative_and_sum_to_one": True,
-                     "scoring": {"sharpe_median": 0.10, "cvar_median": 0.20,
+                     "scoring": {"annual_return_median": 0.10,
+                                 "sharpe_median": 0.10, "cvar_median": 0.10,
                                  "failure_rate": 0.70}},
         "frozen_params": {k: cfg.get(k) for k in
                           ("method", "half_life", "recent_mix", "anchor_penalty",

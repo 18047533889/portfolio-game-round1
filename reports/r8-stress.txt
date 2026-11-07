@@ -1,0 +1,36 @@
+frozen config: gross_budget=1.0 -> long-only, fully invested
+
+case                       status                             n    maxw   L1_eq  L1_ivp  verdict
+zeros                      regularized_qp                     4  0.4000  0.4000     nan  ok
+constant                   regularized_qp                     4  0.4000  0.4000  0.4000  ok
+one_live_rest_zero         regularized_qp                     4  0.3316  0.4895     nan  ok
+identical_columns          regularized_qp                     4  0.4917  0.4848  0.4848  ok
+all_nan                    emergency_no_observations          4  0.4000  0.4000     nan  ok
+nan_after_10               emergency_no_observations          4  0.4000  0.4000  0.6530  ok
+one_col_all_nan            regularized_qp                     4  0.3490  0.5000     nan  ok
+huge_values                regularized_qp                     4  0.4000  0.4000  0.4000  ok
+tiny_values                regularized_qp                     4  0.4000  0.4000     nan  ok
+inf_values                 emergency_no_observations          4  0.4000  0.4000     nan  ok
+mixed_inf_nan              regularized_qp                     4  0.5274  1.0000     nan  ok
+outliers                   regularized_qp                     4  0.2829  0.1975  0.2932  ok
+fat_tails                  regularized_qp                     4  0.2823  0.1317  0.0840  ok
+regime_shift               regularized_qp                     4  0.3255  0.1511  0.1177  ok
+two_rows                   regularized_qp                     4  0.4771  0.5185  0.4356  ok
+one_row                    fallback_insufficient_common_rows   4  0.4000  0.4000     nan  ok
+single_asset               single_asset_rule_ambiguous        1  1.0000  0.0000  0.0000  ok
+two_assets                 regularized_qp                     2  0.5241  0.0482  0.0813  ok
+three_assets               regularized_qp                     3  0.3468  0.0439  0.0305  ok
+wide_5                     regularized_qp                     5  0.2111  0.0438  0.0630  ok
+nan_in_last_row            fallback_insufficient_coverage     4  0.4000  0.4000  0.4183  ok
+zero_variance_plus_live    regularized_qp                     4  0.4758  0.9032     nan  ok
+perfectly_correlated       regularized_qp                     4  0.2819  0.1274  0.0880  ok
+
+=== TOTAL 23 cases ===
+failures (no weights)  : 0
+illegal weights        : 0
+equal-weight outputs   : 0  []
+inverse-vol outputs    : 0  []
+final-rule statuses    : {'regularized_qp': 17, 'emergency_no_observations': 3, 'fallback_insufficient_common_rows': 1, 'single_asset_rule_ambiguous': 1, 'fallback_insufficient_coverage': 1}
+max total short        : 0.000000
+max gross exposure     : 1.000000 (net is 1 by construction; gross = 1 + 2*short)
+gross within leverage 1: True

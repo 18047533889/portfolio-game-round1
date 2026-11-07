@@ -1,0 +1,7 @@
+CONFIG GATE PASSED
+  round            : 8
+  frozen params    : {'method': 'regularized', 'half_life': 10.0, 'recent_mix': 0.25, 'anchor_penalty': 1.0, 'gross_budget': 1.0, 'downside_mix': 0.0}
+  contract         : long-only, fully invested, budget=1.0
+  override         : anchor_penalty=1.0 (core default 4.0)
+  core sha256      : faeceb182b4b8f18369e77010523d213194d48dc57ab05697b34a8f67c995f92
+  shipped sha256   : 07dca1bded49b4e7e7e88355ddc7933826c109b7354808ad7be6ed7f42791dc5
