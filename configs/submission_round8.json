@@ -1,0 +1,14 @@
+{
+  "round": 8,
+  "method": "regularized",
+  "half_life": 10.0,
+  "recent_mix": 0.25,
+  "anchor_penalty": 1.0,
+  "gross_budget": 1.0,
+  "downside_mix": 0.0,
+  "overrides_core_default": [
+    "anchor_penalty"
+  ],
+  "selection_status": "anchor_penalty_set_by_the_per_fold_compliance_floor_at_lookback_40",
+  "note": "Round 8 is round 7 taken one step further into the same corner: lookback falls from 60 to 40, so n/T is 0.5 on sp500, 1.5 on nasdaq and 1.6 on ftse100. The sample covariance is singular on both wide panels, the two prohibitions qualified by 'using the SCM' do not define a portfolio there, and those folds are recorded as UNDEFINED rather than given a distance. The score adds annual return (median) back at 10% alongside Sharpe (median) 10% and CVaR 95% (median) 10%, with failure rate still 70%. (1) THE PENALTY IS SET BY THE FLOOR, AND AT THIS WINDOW THAT IS NOT A CLOSE CALL. Round 7 shipped anchor_penalty 0.25, which is NOT admissible here: measured per fold at lookback 40, the distance to the banned SCM minimum variance book falls to 0.017 on the 5-asset panel, i.e. the submitted book is nearly the prohibited one on the worst fold. Sweeping the penalty at this window (worst fold / median, sp500 and 5-asset panel): p=0.50 gives 0.084 / 0.211, p=1.00 gives 0.170 / 0.115, p=2.00 gives 0.253 / 0.093, p=4.00 gives 0.299 / 0.101. (2) WHY 1.00. The two constraints pull in OPPOSITE directions in the penalty: against the banned minimum variance book the distance rises monotonically with the penalty (0.084 -> 0.299 on the 5-asset panel), while against the banned risk parity book it FALLS (0.211 -> 0.093) because a heavier anchor is closer to a risk-based allocation. The joint minimum therefore peaks in the middle and p=1.00 is the only point that clears the 0.10 floor on both axes at once (0.170 and 0.115); p=4.00 also clears it (0.299 and 0.101) but by 1% on the risk parity axis, which is a coin flip, and it pays for that in return, which the score now rewards directly. (3) WHAT IS CARRIED AND WHAT IS NOT. half_life 10 is a quarter of the 40-day window, the same ratio as every previous round; recent_mix 0.25 and downside_mix 0.0 are carried from round 7. The downside blend stays off for the reason measured there: a semi-covariance halves the effective sample and at 40 observations that tail estimate is noise, so mixing it in raises CVaR instead of lowering it. (4) THE WEAKEST LINK, UNCHANGED FROM ROUND 7. At this window the anchor is weak relative to the estimation error, so the distance to the prohibited book comes mainly from the regularised estimator -- Ledoit-Wolf shrinkage, whose measured intensity rises as the window shortens, plus the eigenvalue floor -- rather than from the objective's anchor term. That is a conclusion rather than an omission, and it is the same caveat recorded in round 7."
+}
